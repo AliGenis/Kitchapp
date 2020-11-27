@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Kitchapp</string>
+    <string name="hello_its_kitchapp">Hello its Kitchapp!</string>
 </resources>
