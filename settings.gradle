@@ -1,2 +1,3 @@
+include ':ppahctik'
 include ':app', ':lib', ':kitachapp'
 rootProject.name='Kitchapp'
