@@ -5,6 +5,7 @@
       <module name="Kitchapp.app" target="1.8" />
       <module name="Kitchapp.kitachapp" target="1.8" />
       <module name="Kitchapp.ppahctik" target="1.8" />
+      <module name="lib" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
