@@ -26,8 +26,33 @@ public class Ingredient {
         this.shopable = shopable;
         this.name = name;
     }
-    /**
 
+    //Only name and number specified, other variables has set by default values. -Burak
+    public Ingredient( String name, int number) {
+        this.name = name;
+        this.number = number;
+        shopable = false;
+        defaultBuyValue = number; //How much firstly bought will be offered next time.
+        criticalNumber = 3; //Or may it will be asked later when setting it shopable?
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    /*
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference ref = database.getReference("message");
 
@@ -37,7 +62,7 @@ public class Ingredient {
 
     ingredients.put("alanisawesome", new Ingredient(5,3,false,"tomato"));
     ingredients.put("gracehop", new Ingredient(4, ));
-    **/
+    */
 
 
 

@@ -1,33 +1,63 @@
 {
   "project_info": {
-    "project_number": "58267233462",
-    "project_id": "kitchapp-b17d8",
-    "storage_bucket": "kitchapp-b17d8.appspot.com"
+    "project_number": "127585075832",
+    "firebase_url": "https://kitchapp-50c8f.firebaseio.com",
+    "project_id": "kitchapp-50c8f",
+    "storage_bucket": "kitchapp-50c8f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:58267233462:android:f2b91451bf146575668a17",
+        "mobilesdk_app_id": "1:127585075832:android:c87b784e147d0b2807238d",
         "android_client_info": {
-          "package_name": "com.example.kitchapp"
+          "package_name": "com.example.firstproject"
         }
       },
       "oauth_client": [
         {
-          "client_id": "58267233462-drp6a2u4gua0bddq6lkn720f9viekdgv.apps.googleusercontent.com",
+          "client_id": "127585075832-dj7r9d0ua87h12edo69mkec33dubufhl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA2yV50qCmcvQLX4Emuc89q_s4dIBOQRtg"
+          "current_key": "AIzaSyAOR6SiZFHy3_yhIS6s1egwwYHbdWicpU0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "58267233462-drp6a2u4gua0bddq6lkn720f9viekdgv.apps.googleusercontent.com",
+              "client_id": "127585075832-dj7r9d0ua87h12edo69mkec33dubufhl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127585075832:android:64cfd7a9c308ea5d07238d",
+        "android_client_info": {
+          "package_name": "com.example.kitchapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127585075832-dj7r9d0ua87h12edo69mkec33dubufhl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOR6SiZFHy3_yhIS6s1egwwYHbdWicpU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127585075832-dj7r9d0ua87h12edo69mkec33dubufhl.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
