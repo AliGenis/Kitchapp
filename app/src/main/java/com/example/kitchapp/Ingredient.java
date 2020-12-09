@@ -27,7 +27,7 @@ public class Ingredient {
         this.name = name;
     }
     /**
-     
+
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference ref = database.getReference("message");
 
