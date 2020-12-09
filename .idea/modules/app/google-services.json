@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "481505610621",
+    "project_id": "kitchapp-f3eb4",
+    "storage_bucket": "kitchapp-f3eb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481505610621:android:214a8b57f33187c2449a14",
+        "android_client_info": {
+          "package_name": "com.example.kitchapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481505610621-8kdeqcri98ro199gp3cjul5ilfr0987t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kitchapp",
+            "certificate_hash": "d5f7fdb7cde2d4f5cbfe2435ba801da87be56197"
+          }
+        },
+        {
+          "client_id": "481505610621-284qi64hj7qieli1608ml26io6qla64g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCec7XvcsTC1SyygyyTrly6h_dkawLZklU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481505610621-284qi64hj7qieli1608ml26io6qla64g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
