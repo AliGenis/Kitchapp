@@ -2,6 +2,7 @@ package com.example.kitchapp;
 import java.util.*;
 
 public class Fridge {
+    /**
     public void addByOne(Ingredient ingredient){
 
     }
@@ -20,5 +21,7 @@ public class Fridge {
     public void eatMeal(Recipe recipe){
 
     }
+     **/
+
 
 }
