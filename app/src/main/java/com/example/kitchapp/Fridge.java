@@ -2,14 +2,14 @@ package com.example.kitchapp;
 import java.util.*;
 
 public class Fridge {
-    IngredientList list;
+    private IngredientList list;
 
     public Fridge(IngredientList list){
     this.list = list;
     }
 
     public void addByOne(Ingredient ingredient){
-    list.add(ingredient,1);
+        list.add(ingredient,1);
     }
     public void eatByOne(Ingredient ingredient){
         list.eat(ingredient,1);
