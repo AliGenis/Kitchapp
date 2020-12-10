@@ -2,15 +2,23 @@ package com.example.kitchapp;
 import java.util.*;
 
 public class Fridge extends IngredientList {
-
-    public Fridge( ArrayList<Ingredient> list ){ //I changed because its parent already has list. -Burak
+    //constructor
+    public Fridge( ArrayList<Ingredient> list ){
         super();
         this.list = list;
     }
 
-    public void addByOne(Ingredient ingredient){ //No need to list.add(), we already have add method -Burak
+    /**
+     * adds just one to ingredient number
+     * @param ingredient
+     */
+    public void addByOne(Ingredient ingredient){
         add( ingredient,1);
     }
+    /**
+     * eats just one from the amount of ingredient
+     * @param ingredient
+     */
     public void eatByOne(Ingredient ingredient){ //same as above
         eat( ingredient, 1);
     }
@@ -42,7 +50,7 @@ public class Fridge extends IngredientList {
     public ArrayList<Recipe> recipesSpecificToUser(User user){
         //TODO: We need to get the full recipe list from database...
 
-        ArrayList<Recipe>  recipes; //Assume that we got the full recipe list.
+        ArrayList<Recipe> recipes; //Assume that we got the full recipe list.
         recipes = new ArrayList<Recipe>();
         ArrayList<Recipe> undesired = user.getUndesiredMeals();
 
