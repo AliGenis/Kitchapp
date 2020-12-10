@@ -2,7 +2,7 @@ package com.example.kitchapp;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.*;
 import android.os.Bundle;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -14,6 +14,9 @@ public class Ingredient {
     private int defaultBuyValue;
     private String name;
     private boolean shopable;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("message");
+
 
     public Ingredient(int number,int criticalNumber,boolean shopable,String name){
         this.number = number;
