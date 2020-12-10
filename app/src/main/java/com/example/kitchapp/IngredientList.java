@@ -22,6 +22,7 @@ public abstract class IngredientList {
         list.add(ingredient);
         return true;
     }
+
     public boolean eat( Ingredient ingredient , int number ){
         for(int i = 0; i < list.size(); i++){
             if(list.get(i).getName().equalsIgnoreCase(ingredient.getName())){
@@ -34,5 +35,20 @@ public abstract class IngredientList {
             }
         }
         return false;
+    }
+
+    /**
+     * -Burak ~ It helps when you do not want to mess with number.
+     * @param name Name of the Ingredient that will be searched.
+     * @return Ingredient if it finded, null vice-versa.
+     */
+    public Ingredient findByName( String name ){
+
+        for( int i = 0 ; i < list.size() ; i++ ){
+            if( name.equals( list.get(i).getName() ) )
+                return list.get(i);
+        }
+
+        return null;
     }
 }
