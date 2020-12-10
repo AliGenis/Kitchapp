@@ -20,6 +20,9 @@ public class Ingredient {
         this.criticalNumber = criticalNumber;
         this.shopable = shopable;
         this.name = name;
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Ingredients");
+        myRef.setValue(this);
     }
     public Ingredient(int number,boolean shopable,String name){
         this.number = number;
