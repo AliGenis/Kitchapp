@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Recipe of a meal
- * @author Burak, Ali
+ * @author Burak, Ali, Tarik
  * @version 10/12/2020
  */
 public class Recipe {
@@ -18,7 +18,12 @@ public class Recipe {
     private boolean isVegetarian;
 
     //DEFAULT CONSTRUCTOR
-    public Recipe(String name, String recipe, ArrayList<Ingredient> ingredients, double calorie, int prepTime, boolean isVegetarian) {
+    public Recipe(String name,
+                  String recipe,
+                  ArrayList<Ingredient> ingredients,
+                  double calorie,
+                  int prepTime,
+                  boolean isVegetarian) {
         this.name = name;
         this.recipe = recipe;
         this.ingredients = ingredients;

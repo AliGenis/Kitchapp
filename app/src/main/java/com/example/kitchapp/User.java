@@ -5,9 +5,10 @@ import android.media.Image;
 import java.util.ArrayList;
 
 /**
- * @author Burak,...
+ * @authors Burak, Tarik...
  * @version 10/12/2020
  */
+
 public class User {
 
     //VARIABLES
@@ -20,8 +21,8 @@ public class User {
     //CONSTRUCTORS
 
     //Everything is specified.
-    public User(String name, ArrayList<Recipe> undesiredMeals, Image profilePhoto,
-                boolean isVegetarian, ArrayList<Ingredient> allergiesList) {
+    public User( String name, ArrayList<Recipe> undesiredMeals, Image profilePhoto,
+                boolean isVegetarian, ArrayList<Ingredient> allergiesList ) {
         this.name = name;
         this.undesiredMeals = undesiredMeals;
         this.profilePhoto = profilePhoto;
@@ -30,8 +31,8 @@ public class User {
     }
 
     //undesiredMeals is not specified.
-    public User(String name, Image profilePhoto, boolean isVegetarian,
-                ArrayList<Ingredient> allergiesList) {
+    public User( String name, Image profilePhoto, boolean isVegetarian,
+                ArrayList<Ingredient> allergiesList ) {
         this.name = name;
         this.profilePhoto = profilePhoto;
         this.isVegetarian = isVegetarian;
@@ -50,7 +51,7 @@ public class User {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName( String name ) {
         this.name = name;
     }
 
@@ -58,7 +59,7 @@ public class User {
         return undesiredMeals;
     }
 
-    public void setUndesiredMeals(ArrayList<Recipe> undesiredMeals) {
+    public void setUndesiredMeals( ArrayList<Recipe> undesiredMeals ) {
         this.undesiredMeals = undesiredMeals;
     }
 
@@ -66,7 +67,7 @@ public class User {
         return profilePhoto;
     }
 
-    public void setProfilePhoto(Image profilePhoto) {
+    public void setProfilePhoto( Image profilePhoto ) {
         this.profilePhoto = profilePhoto;
     }
 
@@ -74,7 +75,7 @@ public class User {
         return isVegetarian;
     }
 
-    public void setVegetarian(boolean vegetarian) {
+    public void setVegetarian( boolean vegetarian ) {
         isVegetarian = vegetarian;
     }
 
@@ -82,7 +83,7 @@ public class User {
         return allergiesList;
     }
 
-    public void setAllergiesList(ArrayList<Ingredient> allergiesList) {
+    public void setAllergiesList( ArrayList<Ingredient> allergiesList ) {
         this.allergiesList = allergiesList;
     }
 
