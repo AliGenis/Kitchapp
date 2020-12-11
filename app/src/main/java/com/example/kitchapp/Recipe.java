@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Recipe of a meal
- * @author Burak, Ali
+ * @author Burak, Ali, Tarik
  * @version 10/12/2020
  */
 public class Recipe {

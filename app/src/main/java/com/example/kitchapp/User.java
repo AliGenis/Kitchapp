@@ -5,9 +5,10 @@ import android.media.Image;
 import java.util.ArrayList;
 
 /**
- * @author Burak,...
+ * @authors Burak, Tarik...
  * @version 10/12/2020
  */
+
 public class User {
 
     //VARIABLES
