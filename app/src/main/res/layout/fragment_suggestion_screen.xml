@@ -75,36 +75,21 @@
         android:background="@android:color/background_light"
         android:src="@drawable/suggestion_tick_button" />
 
-    <ImageView
-        android:id="@+id/suggestion_time"
-        android:layout_width="40dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="530dp"
-        android:src="@drawable/ic_time_icon" />
-
-    <ImageView
-        android:id="@+id/suggestion_calorie"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="530dp"
-        android:src="@drawable/ic_calorie_icon"
-        android:contentDescription="TODO" />
-
     <TextView
         android:id="@+id/timeText"
+        android:drawableStart="@drawable/ic_time_icon"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="545dp"
         android:text="@string/suggested_prep_time" />
 
     <TextView
         android:id="@+id/calText"
+        android:drawableStart="@drawable/ic_calorie_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="315dp"
+        android:layout_marginStart="230dp"
         android:layout_marginTop="545dp"
         android:text="@string/suggested_calorie" />
 
