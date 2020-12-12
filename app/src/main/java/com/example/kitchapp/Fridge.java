@@ -1,7 +1,13 @@
 package com.example.kitchapp;
 import java.util.*;
 
+/**
+ * Fridge
+ * @author Burak, Emre
+ * @version 12/12/2020
+ */
 public class Fridge extends IngredientList {
+    Recipe param;
     //constructor
     public Fridge( ArrayList<Ingredient> list ){
         super();
@@ -25,6 +31,7 @@ public class Fridge extends IngredientList {
 
     /**
      * -Burak ~ We can change return type to an IngredientList ???
+     * // tried to do the return type Ingredientlist but as it is abstract there were errors (deleted) -Emre
      * @param user The user who requested a suggestion.
      * @return  A specific ArrayList of Ingredient that will be used by suggestion.
      */
@@ -39,7 +46,7 @@ public class Fridge extends IngredientList {
         }
 
         return specificIngredients;
-        
+
     }
 
     /**
@@ -87,6 +94,7 @@ public class Fridge extends IngredientList {
 
             if( usableIngredients.containsAll( usableRecipes.get(i).getIngredients() ) ) {
                 randomizedRecipes.add(usableRecipes.get(i));
+                param = randomizedRecipes.get((int)(Math.random()*(randomizedRecipes.size())));
                 return randomizedRecipes.get((int)(Math.random()*(randomizedRecipes.size())));
             }
         }
@@ -94,13 +102,12 @@ public class Fridge extends IngredientList {
     }
 
     /**
-     * -Burak ~ TODO: We need another method that connects suggest and eat functions.
+     * -Burak, Emre ~ TODO: We need another method that connects suggest and eat functions. //maybe it is fixed (?)
      * When user accepts a recipe, the ingredients will be remove from fridge.
-     * @param recipe Recipe that chosen by user.
      */
-    public void eatMeal(Recipe recipe){
+    public void eatMeal(){
         ArrayList<Ingredient> recipeIngredients;
-        recipeIngredients = recipe.getIngredients();
+        recipeIngredients = param.getIngredients();
 
         for( int i = 0 ; i < recipeIngredients.size() ; i++ )
             eat( recipeIngredients.get(i) , recipeIngredients.get(i).getNumber() );
