@@ -29,6 +29,7 @@ public class SuggestionScreen extends Fragment {
     private String mParam1;
     private String mParam2;
     TabHost tab;
+
     public SuggestionScreen() {
         // Required empty public constructor
     }

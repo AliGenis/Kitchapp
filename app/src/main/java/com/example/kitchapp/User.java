@@ -21,8 +21,7 @@ public class User {
     //CONSTRUCTORS
 
     //Everything is specified.
-    public User( String name, ArrayList<Recipe> undesiredMeals, Image profilePhoto,
-                boolean isVegetarian, ArrayList<Ingredient> allergiesList ) {
+    public User( String name, ArrayList<Recipe> undesiredMeals, Image profilePhoto, boolean isVegetarian, ArrayList<Ingredient> allergiesList ){
         this.name = name;
         this.undesiredMeals = undesiredMeals;
         this.profilePhoto = profilePhoto;
@@ -31,8 +30,7 @@ public class User {
     }
 
     //undesiredMeals is not specified.
-    public User( String name, Image profilePhoto, boolean isVegetarian,
-                ArrayList<Ingredient> allergiesList ) {
+    public User( String name, Image profilePhoto, boolean isVegetarian, ArrayList<Ingredient> allergiesList ) {
         this.name = name;
         this.profilePhoto = profilePhoto;
         this.isVegetarian = isVegetarian;
@@ -93,7 +91,7 @@ public class User {
      * @param disliked Disliked meal
      */
     public void dislikeMeal( Recipe disliked ){
-        if( !undesiredMeals.contains( disliked ) )
+        if(!undesiredMeals.contains(disliked))
             undesiredMeals.add( disliked );
     }
 

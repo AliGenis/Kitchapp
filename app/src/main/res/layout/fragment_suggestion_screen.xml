@@ -70,14 +70,14 @@
         android:id="@+id/suggestion_tick_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
+        android:layout_marginStart="75dp"
         android:layout_marginTop="610dp"
         android:background="@android:color/background_light"
         android:src="@drawable/suggestion_tick_button" />
 
     <ImageView
         android:id="@+id/suggestion_time"
-        android:layout_width="50dp"
+        android:layout_width="40dp"
         android:layout_height="50dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="530dp"
@@ -95,7 +95,7 @@
     <TextView
         android:id="@+id/timeText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="120dp"
         android:layout_marginTop="545dp"
         android:text="@string/suggested_prep_time" />

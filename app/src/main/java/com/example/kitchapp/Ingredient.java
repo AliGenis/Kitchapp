@@ -8,6 +8,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+/**
+ * Ingredients
+ * @author
+ * @version 12/12/2020
+ */
 public class Ingredient {
     private int number;
     private int criticalNumber;
@@ -42,19 +47,19 @@ public class Ingredient {
         criticalNumber = 3; //Or may it will be asked later when setting it shopable?
     }
 
-    public String getName() {
+    public String getName(){
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name){
         this.name = name;
     }
 
-    public int getNumber() {
+    public int getNumber(){
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(int number){
         this.number = number;
     }
 
