@@ -1,0 +1,25 @@
+Index: app/src/main/java/com/example/kitchapp/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.kitchapp;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport com.google.firebase.database.DatabaseReference;\r\nimport com.google.firebase.database.FirebaseDatabase;\r\nimport android.content.Intent;\r\n\r\npublic class MainActivity extends AppCompatActivity {\r\n    Button button;\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        //setContentView(R.layout.activity_main);\r\n        setContentView(R.layout.fragment_suggestion_screen);\r\n        System.out.println(\"KITCHAPP!\");\r\n\r\n        FirebaseDatabase database = FirebaseDatabase.getInstance();\r\n        DatabaseReference myRef = database.getReference(\"message\");\r\n        myRef.setValue(\"Hello, World!\");\r\n/**\r\n        button = findViewById(R.id.button2);\r\n        button.setOnClickListener(new View.OnClickListener(){\r\n            public void onClick(View v){\r\n                openDataInsert();\r\n            }});\r\n   **/ }\r\n    public void openDataInsert(){\r\n        Intent intent = new Intent(this,DataInsert.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/kitchapp/MainActivity.java	(revision 71712d823202efc8b4b9dfcf9fa575b236f989f8)
++++ app/src/main/java/com/example/kitchapp/MainActivity.java	(date 1607783247794)
+@@ -23,13 +23,13 @@
+         FirebaseDatabase database = FirebaseDatabase.getInstance();
+         DatabaseReference myRef = database.getReference("message");
+         myRef.setValue("Hello, World!");
+-/**
++
+         button = findViewById(R.id.button2);
+         button.setOnClickListener(new View.OnClickListener(){
+             public void onClick(View v){
+                 openDataInsert();
+             }});
+-   **/ }
++    }
+     public void openDataInsert(){
+         Intent intent = new Intent(this,DataInsert.class);
+         startActivity(intent);

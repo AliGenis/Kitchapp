@@ -16,20 +16,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-        setContentView(R.layout.fragment_suggestion_screen);
+        setContentView(R.layout.activity_main);
+        /**setContentView(R.layout.fragment_suggestion_screen);
         System.out.println("KITCHAPP!");
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
-        myRef.setValue("Hello, World!");
-/**
-        button = findViewById(R.id.button2);
+        myRef.setValue("Hello, World!"); **/
+
+        button = (Button)findViewById(R.id.button2);
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 openDataInsert();
             }});
-   **/ }
+    }
     public void openDataInsert(){
         Intent intent = new Intent(this,DataInsert.class);
         startActivity(intent);
