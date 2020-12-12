@@ -1,2 +1,2 @@
-include ':app', ':lib', ':kitachapp'
+include ':app', ':lib'
 rootProject.name='Kitchapp'

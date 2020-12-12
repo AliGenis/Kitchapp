@@ -2,28 +2,37 @@ package com.example.kitchapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
-
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-        setContentView(R.layout.fragment_suggestion_screen);
+        setContentView(R.layout.activity_main);
+        /**setContentView(R.layout.fragment_suggestion_screen);
         System.out.println("KITCHAPP!");
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
-        myRef.setValue("Hello, World!");
-        //Hey There Emre
+        myRef.setValue("Hello, World!"); **/
 
-        // code code code
-        //kitchap
-        //alo
+        button = (Button)findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                openDataInsert();
+            }});
     }
+    public void openDataInsert(){
+        Intent intent = new Intent(this,DataInsert.class);
+        startActivity(intent);
+    }
+
 }
