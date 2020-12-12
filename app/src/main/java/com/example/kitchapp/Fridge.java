@@ -61,7 +61,7 @@ public class Fridge extends IngredientList {
     }
 
     /**
-     * -Burak ~ Please read FIXME and TODO entries.
+     * -Burak, Emre ~ Please read FIXME and TODO entries.
      * @param user The user who requested a suggestion.
      * @return  A specific ArrayList of Recipe that will be used by suggestion.
      */
@@ -72,6 +72,7 @@ public class Fridge extends IngredientList {
         // I think we should find another way to store number of Ingredient because it gives trouble
         // when comparing fridge ingredients and recipe ingredients. Or it's fine if you can find
         // another way to solve this :) -Burak
+        // maybe fixed :) -Emre
 
         ArrayList<Ingredient> usableIngredients;
         ArrayList<Recipe> usableRecipes;
@@ -79,11 +80,15 @@ public class Fridge extends IngredientList {
         usableIngredients   =   ingredientsSpecificToUser(user);
         usableRecipes       =   recipesSpecificToUser(user);
 
+        ArrayList<Recipe> randomizedRecipes;
+        randomizedRecipes = new ArrayList<Recipe>();
+
         for( int i = 0 ; i < usableRecipes.size() ; i++ ) {
 
-            if( usableIngredients.containsAll( usableRecipes.get(i).getIngredients() ) )
-                return usableRecipes.get(i);
-
+            if( usableIngredients.containsAll( usableRecipes.get(i).getIngredients() ) ) {
+                randomizedRecipes.add(usableRecipes.get(i));
+                return randomizedRecipes.get((int)(Math.random()*(randomizedRecipes.size())));
+            }
         }
         return null;
     }
