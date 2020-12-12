@@ -2,14 +2,17 @@ package com.example.kitchapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
-
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,10 +23,16 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
         myRef.setValue("Hello, World!");
-        //Hey There Emre
-
-        // code code code
-        //kitchap
-        //alo
+/**
+        button = findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                openDataInsert();
+            }});
+   **/ }
+    public void openDataInsert(){
+        Intent intent = new Intent(this,DataInsert.class);
+        startActivity(intent);
     }
+
 }
