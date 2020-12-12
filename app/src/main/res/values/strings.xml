@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Kitchapp</string>
     <string name="hello_its_kitchapp">Hello its Kitchapp!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="suggested_meal_name">Suggested Meal Name Placeholder</string>
+    <string name="suggested_prep_time">Time Placeholder</string>
+    <string name="suggested_calorie">Calorie Placeholder</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
