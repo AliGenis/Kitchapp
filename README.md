@@ -20,6 +20,7 @@ The information and code in this repository are submitted in partial fulfillment
 
 
 - [Gülçin ÖZKAHYA](group/Ozkahya_Gulcin_log.md)
+- [Emre ERDAL](group/Erdal_Emre_log.md)
 
 
 ****
