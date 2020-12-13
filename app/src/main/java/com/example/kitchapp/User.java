@@ -25,8 +25,11 @@ public class User {
     this.password = password;
     }
     //Everything is specified
-    public User( String name, ArrayList<Recipe> undesiredMeals, Image profilePhoto,
-                boolean isVegetarian, ArrayList<Ingredient> allergiesList ) {
+    public User( String name,
+                 ArrayList<Recipe> undesiredMeals,
+                 Image profilePhoto,
+                 boolean isVegetarian,
+                 ArrayList<Ingredient> allergiesList ) {
         this.name = name;
         this.undesiredMeals = undesiredMeals;
         this.profilePhoto = profilePhoto;
@@ -35,7 +38,10 @@ public class User {
     }
 
     //undesiredMeals is not specified.
-    public User( String name, Image profilePhoto, boolean isVegetarian, ArrayList<Ingredient> allergiesList ) {
+    public User( String name,
+                 Image profilePhoto,
+                 boolean isVegetarian,
+                 ArrayList<Ingredient> allergiesList ) {
         this.name = name;
         this.profilePhoto = profilePhoto;
         this.isVegetarian = isVegetarian;
@@ -57,6 +63,7 @@ public class User {
     public void setName( String name ) {
         this.name = name;
     }
+
     public void setPassword( String password) {
         this.password = password;
     }
