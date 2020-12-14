@@ -23,6 +23,7 @@ By using this application, we hope that people can easily control their kitchen 
 - [Emre ERDAL](group/Erdal_Emre_log.md)
 
 - [Tarik Demiroren](group/Demiroren_Tarik_log.md)
+- [Şulenur Yılmaz](group/Yılmaz_Sule_log.md)
 
 ****
 
