@@ -21,7 +21,7 @@ By using this application, we hope that people can easily control their kitchen 
 
 - [Gülçin ÖZKAHYA](group/Ozkahya_Gulcin_log.md)
 - [Emre ERDAL](group/Erdal_Emre_log.md)
-
+- [Ali GENİŞ](group/Genis_Ali_log.md)
 - [Tarik Demiroren](group/Demiroren_Tarik_log.md)
 - [Şulenur Yılmaz](group/Yılmaz_Sule_log.md)
 
