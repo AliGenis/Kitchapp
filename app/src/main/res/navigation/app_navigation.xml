@@ -97,9 +97,4 @@
             android:id="@+id/action_userSelection3_to_mainmenu_ph"
             app:destination="@id/mainmenu_ph" />
     </fragment>
-    <fragment
-        android:id="@+id/recipesFragment2"
-        android:name="com.example.kitchapp.RecipesFragment"
-        android:label="fragment_recipes_list"
-        tools:layout="@layout/fragment_recipes_list" />
 </navigation>
