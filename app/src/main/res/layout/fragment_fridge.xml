@@ -6,10 +6,21 @@
     tools:context=".FridgeFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Fridge"
-        android:textSize="25pt"/>
+        android:textSize="25pt"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="148dp" />
 
+    <ImageButton
+        android:id="@+id/fridgeFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:src="@drawable/ic_fridge"
+        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteY="29dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
