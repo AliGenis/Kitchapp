@@ -1,0 +1,59 @@
+Index: app/src/main/res/layout/fragment_fridge.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".FridgeFragment\">\r\n\r\n    <!-- TODO: Update blank fragment layout -->\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:text=\"Fridge\"\r\n        android:textSize=\"25pt\"/>\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_fridge.xml	(revision aa7af9d5dd1dbdd141bf71bf9273f8cf1bc74b78)
++++ app/src/main/res/layout/fragment_fridge.xml	(date 1607880354849)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+@@ -7,9 +7,9 @@
+ 
+     <!-- TODO: Update blank fragment layout -->
+     <TextView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
+         android:text="Fridge"
+-        android:textSize="25pt"/>
++        android:textSize="45sp" />
+ 
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/kitchapp/SuggestionScreen.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.kitchapp;\r\n\r\nimport android.annotation.SuppressLint;\r\nimport android.os.Bundle;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.fragment.app.Fragment;\r\nimport androidx.fragment.app.FragmentActivity;\r\n\r\nimport android.support.v4.app.*;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.TabHost;\r\nimport android.widget.TextView;\r\n\r\n/**\r\n * A simple {@link Fragment} subclass.\r\n * Use the {@link SuggestionScreen#newInstance} factory method to\r\n * create an instance of this fragment.\r\n */\r\npublic class SuggestionScreen extends AppCompatActivity{\r\n\r\n    // TODO: Rename parameter arguments, choose names that match\r\n    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER\r\n    //private static final String ARG_PARAM1 = \"param1\";\r\n    //private static final String ARG_PARAM2 = \"param2\";\r\n\r\n    // TODO: Rename and change types of parameters\r\n    /*private String mParam1;\r\n    private String mParam2;\r\n    TabHost tab;\r\n\r\n    public SuggestionScreen() {\r\n        // Required empty public constructor\r\n    }\r\n\r\n    /**\r\n     * Use this factory method to create a new instance of\r\n     * this fragment using the provided parameters.\r\n     *\r\n     * @param param1 Parameter 1.\r\n     * @param param2 Parameter 2.\r\n     * @return A new instance of fragment SuggestionScreen.\r\n     */\r\n    /*\r\n    // TODO: Rename and change types and number of parameters\r\n    public static SuggestionScreen newInstance(String param1, String param2) {\r\n        SuggestionScreen fragment = new SuggestionScreen();\r\n        Bundle args = new Bundle();\r\n        args.putString(ARG_PARAM1, param1);\r\n        args.putString(ARG_PARAM2, param2);\r\n        fragment.setArguments(args);\r\n        return fragment;\r\n    }*/\r\n\r\n    @Override\r\n    public void onCreate(Bundle savedInstanceState) {\r\n\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.fragment_suggestion_screen);\r\n        TextView textView = (TextView)findViewById(R.id.suggestedMealName);\r\n        textView.setText(\"Deneme\");\r\n        /*Trying to add functional tabs\r\n        tab=(TabHost)findViewById(R.id.tabs);\r\n        tab.setup();\r\n        TabHost.TabSpec s1=tab.newTabSpec(\"Sayfa-1\");\r\n        TabHost.TabSpec s2=tab.newTabSpec(\"Sayfa-2\");\r\n\r\n        s1.setContent(R.id.Ingredients);\r\n        s2.setContent(R.id.tab2);\r\n        s1.setIndicator(\"Sayfa-1\");\r\n        s2.setIndicator(\"Sayfa-2\");\r\n        tab.addTab(s1);\r\n        tab.addTab(s2);\r\n        */\r\n        /*\r\n        if (getArguments() != null) {\r\n            mParam1 = getArguments().getString(ARG_PARAM1);\r\n            mParam2 = getArguments().getString(ARG_PARAM2);\r\n        }*/\r\n    }\r\n\r\n    /*\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container,\r\n                             Bundle savedInstanceState) {\r\n        // Inflate the layout for this fragment\r\n        return inflater.inflate(R.layout.fragment_suggestion_screen, container, false);\r\n    }*/\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/kitchapp/SuggestionScreen.java	(revision aa7af9d5dd1dbdd141bf71bf9273f8cf1bc74b78)
++++ app/src/main/java/com/example/kitchapp/SuggestionScreen.java	(date 1607878012962)
+@@ -1,17 +1,10 @@
+ package com.example.kitchapp;
+ 
+-import android.annotation.SuppressLint;
+ import android.os.Bundle;
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+ import androidx.fragment.app.Fragment;
+-import androidx.fragment.app.FragmentActivity;
+ 
+-import android.support.v4.app.*;
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-import android.widget.TabHost;
+ import android.widget.TextView;
+ 
+ /**
