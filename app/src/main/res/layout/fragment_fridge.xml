@@ -24,6 +24,15 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="27dp" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu" />
 
     <ImageButton
         android:id="@+id/fridgeFragment"
@@ -32,9 +41,19 @@
         android:background="@android:color/background_light"
         android:src="@drawable/ic_fridge"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="82dp"
+        tools:layout_editor_absoluteY="89dp"
+
+    <ImageButton
+        android:id="@+id/star_logo"
+        android:layout_width="77dp"
+        android:layout_height="100dp"
+        android:background="@android:color/background_light"
+        android:src="@drawable/ic_star_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="286dp"
 
     <ImageButton
         android:id="@+id/help_screen"
