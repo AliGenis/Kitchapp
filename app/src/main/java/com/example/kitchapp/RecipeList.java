@@ -4,10 +4,17 @@ import java.util.ArrayList;
 
 public class RecipeList {
 
-    ArrayList<Recipe> recipes;
+    private ArrayList<Recipe> recipes = new ArrayList<Recipe>();
+    private ArrayList<Ingredient> Ing = new ArrayList<Ingredient>();
 
     public RecipeList(){
-        recipes = new ArrayList<Recipe>();
+        Ing.add(new Ingredient("Egg",1));
+        recipes.add(new Recipe( "Boiled Egg",
+                "Boil the eggs for about 5 to 20 mins according to your preference",
+                Ing,
+                15,
+                15,
+                false ));
     }
 
     public void addToList( Recipe e ){
@@ -21,5 +28,6 @@ public class RecipeList {
                 }
             } return null;
     }
+
 
 }
