@@ -16,6 +16,10 @@ By using this application, we hope that people can easily control their kitchen 
 + **Reflections:** incompleted 
 
 [Group Meetings Log](group/meetingslog.md)
+- On 15/12/2020
+   We've completed our Detailed Design Stage.
+   We shared our experiences with Android Studio.
+   We updated some classes in the code.
 #### Group Members
 
 
@@ -24,7 +28,7 @@ By using this application, we hope that people can easily control their kitchen 
 - [Ali GENİŞ](group/Genis_Ali_log.md)
 - [Tarik Demiroren](group/Demiroren_Tarik_log.md)
 - [Şulenur Yılmaz](group/Yılmaz_Sule_log.md)
-
+- [Ömer Burak DOĞAN](group/Dogan_OmerBurak_log.md)
 ****
 
 **Instructor:** _(Özcan Öztürk)_   **TA:**  _(Shirin Pirouzkhah)_
