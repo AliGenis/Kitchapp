@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@+id/user_select">
+
+    <fragment android:id="@+id/mainmenu_ph">
+        <action
+            android:id="@+id/action_mainmenu_ph_to_fridge_ph"
+            app:destination="@id/fridge_ph" />
+        <action
+            android:id="@+id/action_mainmenu_ph_to_recipes_ph"
+            app:destination="@id/recipes_ph" />
+        <action
+            android:id="@+id/action_mainmenu_ph_to_shoppinglist_ph"
+            app:destination="@id/shoppinglist_ph" />
+        <action
+            android:id="@+id/action_mainmenu_ph_to_suggestion_ph"
+            app:destination="@id/suggestion_ph" />
+        <action
+            android:id="@+id/action_mainmenu_ph_to_userSelection3"
+            app:destination="@id/user_settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/sign_up"
+        android:name="com.example.kitchapp.SignUp"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_sign_up_screen_to_userselection"
+            app:destination="@+id/user_select" />
+        <action
+            android:id="@+id/action_sign_up_screen_to_userSelection3"
+            app:destination="@id/user_settings" />
+    </fragment>
+    <fragment android:id="@+id/fridge_ph" >
+        <action
+            android:id="@+id/action_fridge_ph_to_mainmenu_ph"
+            app:destination="@id/mainmenu_ph" />
+    </fragment>
+    <fragment android:id="@+id/shoppinglist_ph" >
+        <action
+            android:id="@+id/action_shoppinglist_ph_to_mainmenu_ph"
+            app:destination="@id/mainmenu_ph" />
+        <action
+            android:id="@+id/action_shoppinglist_ph_to_placeholder12"
+            app:destination="@id/newingredient_ph" />
+    </fragment>
+    <fragment android:id="@+id/recipes_ph" >
+        <action
+            android:id="@+id/action_recipes_ph_to_mainmenu_ph"
+            app:destination="@id/mainmenu_ph" />
+        <action
+            android:id="@+id/action_recipes_ph_to_placeholder10"
+            app:destination="@id/a_recipe_ph" />
+    </fragment>
+    <fragment android:id="@+id/suggestion_ph" >
+        <action
+            android:id="@+id/action_suggestion_ph_to_mainmenu_ph"
+            app:destination="@id/mainmenu_ph" />
+        <action
+            android:id="@+id/action_suggestion_ph_to_a_recipe_ph"
+            app:destination="@id/a_recipe_ph" />
+        <action
+            android:id="@+id/action_suggestion_ph_self"
+            app:destination="@id/suggestion_ph" />
+    </fragment>
+    <fragment android:id="@+id/a_recipe_ph" >
+        <action
+            android:id="@+id/action_placeholder10_to_mainmenu_ph"
+            app:destination="@id/mainmenu_ph" />
+    </fragment>
+    <fragment android:id="@+id/newingredient_ph" >
+        <action
+            android:id="@+id/action_placeholder12_to_shoppinglist_ph"
+            app:destination="@id/shoppinglist_ph" />
+    </fragment>
+    <fragment
+        android:id="@+id/user_select"
+        tools:layout="@layout/fragment_user_selection">
+        <action
+            android:id="@+id/action_userselection_to_mainmenu_ph"
+            app:destination="@id/mainmenu_ph" />
+        <action
+            android:id="@+id/action_userselection_to_sign_up_screen"
+            app:destination="@id/sign_up" />
+    </fragment>
+    <fragment
+        android:id="@+id/user_settings"
+        android:name="com.example.kitchapp.UserSelection"
+        android:label="fragment_user_settings"
+        tools:layout="@layout/fragment_user_settings" >
+        <action
+            android:id="@+id/action_userSelection3_to_sign_up_screen"
+            app:destination="@id/sign_up" />
+        <action
+            android:id="@+id/action_userSelection3_to_mainmenu_ph"
+            app:destination="@id/mainmenu_ph" />
+    </fragment>
+</navigation>

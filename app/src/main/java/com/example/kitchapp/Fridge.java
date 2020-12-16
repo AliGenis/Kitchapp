@@ -72,7 +72,7 @@ public class Fridge extends IngredientList {
      * @param user The user who requested a suggestion.
      * @return  A specific ArrayList of Recipe that will be used by suggestion.
      */
-    public Recipe suggest(User user){
+    public ArrayList<Recipe> suggest(User user){
         //FIXME: This method is not completed and not true. I implemented to show an algorithm.
         //TODO: We should return a randomized Recipe ArrayList and suggest sequentially in case
         // user rejects meal.
@@ -87,27 +87,39 @@ public class Fridge extends IngredientList {
         usableIngredients   =   ingredientsSpecificToUser(user);
         usableRecipes       =   recipesSpecificToUser(user);
 
-        ArrayList<Recipe> randomizedRecipes;
-        randomizedRecipes = new ArrayList<Recipe>();
-
-        for( int i = 0 ; i < usableRecipes.size() ; i++ ) {
-
-            if( usableIngredients.containsAll( usableRecipes.get(i).getIngredients() ) ) {
-                randomizedRecipes.add(usableRecipes.get(i));
-                param = randomizedRecipes.get((int)(Math.random()*(randomizedRecipes.size())));
-                return randomizedRecipes.get((int)(Math.random()*(randomizedRecipes.size())));
-            }
+        for (int i = 0; i < usableRecipes.size() ; i++) {
+            if( !fridgeContains(usableRecipes.get(i), usableIngredients) )
+                usableRecipes.remove(i);
         }
-        return null;
+
+        Collections.shuffle( usableRecipes );
+
+        return usableRecipes;
+    }
+
+    private boolean fridgeContains( Recipe recipe, ArrayList<Ingredient> usableIngredients) {
+
+        for (int i = 0; i < recipe.getIngredients().size() ; i++) {
+
+            if( this.findByName( recipe.getIngredients().get(i).getName() ) != null ){
+                if( this.findByName( recipe.getIngredients().get(i).getName() ).getNumber()
+                        < recipe.getIngredients().get(i).getNumber() )
+                    return false;
+            }
+            else
+                return false;
+
+        }
+        return true;
     }
 
     /**
      * -Burak, Emre ~ TODO: We need another method that connects suggest and eat functions. //maybe it is fixed (?)
      * When user accepts a recipe, the ingredients will be remove from fridge.
      */
-    public void eatMeal(){
+    public void eatMeal( Recipe meal ){
         ArrayList<Ingredient> recipeIngredients;
-        recipeIngredients = param.getIngredients();
+        recipeIngredients = meal.getIngredients();
 
         for( int i = 0 ; i < recipeIngredients.size() ; i++ )
             eat( recipeIngredients.get(i) , recipeIngredients.get(i).getNumber() );

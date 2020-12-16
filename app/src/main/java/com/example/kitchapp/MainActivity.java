@@ -52,13 +52,6 @@ public class MainActivity extends AppCompatActivity {
         myRef.setValue("Hello, World!");
 
 
-        button = (Button)findViewById(R.id.button2);
-        /*button.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                openDataInsert();
-            }});*/
-
-
     }
     @NonNull
     private  NavController getNavController() {
