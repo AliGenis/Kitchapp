@@ -9,6 +9,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:shadowColor="#FA0303"
@@ -34,15 +35,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_menu" />
 
-    <ImageButton
-        android:id="@+id/fridgeFragment"
-        android:layout_width="77dp"
-        android:layout_height="100dp"
-        android:background="@android:color/background_light"
-        android:src="@drawable/ic_fridge"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="89dp"
+
+    <ScrollView
+        android:layout_width="179dp"
+        android:layout_height="144dp"
+        android:padding="16sp"
+        android:scrollbarSize="25sp"
+        android:scrollbarStyle="outsideInset"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="229dp"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+
+        </LinearLayout>
+    </ScrollView>
 
     <ImageButton
         android:id="@+id/star_logo"
@@ -65,6 +79,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="263dp"
+    <ImageButton
+        android:id="@+id/fridgeFragment"
+        android:layout_width="77dp"
+        android:layout_height="100dp"
+        android:background="@android:color/background_light"
+        android:src="@drawable/ic_fridge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="89dp"
 
     <ImageButton
         android:id="@+id/help_screen"
