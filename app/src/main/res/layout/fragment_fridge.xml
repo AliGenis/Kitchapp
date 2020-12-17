@@ -7,7 +7,6 @@
     tools:context=".FridgeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -76,4 +75,91 @@
         app:layout_constraintHorizontal_bias="0.005"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="28dp" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_500"
+            android:orientation="vertical"
+            android:gravity="center|right">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:gravity="center|right">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="8"
+                    android:layout_margin="5dp"
+                    android:text="snap deal"
+                    android:gravity="center" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:layout_margin="5dp"
+                    android:ems="10"
+                    android:text="Img"
+                    android:gravity="center" >
+                </TextView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center|right">
+
+                <EditText
+                    android:id="@+id/editMobileNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/login_edittext"
+                    android:ems="10"
+                    android:hint="Find your dil ki deal"
+                    android:drawableLeft="@drawable/search"
+                    android:gravity="center" >
+                </EditText>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+    <?xml version="1.0" encoding="utf-8"?>
+    <selector xmlns:android="http://schemas.android.com/apk/res/android">
+        <item>
+            <shape>
+                <gradient
+                    android:angle="270"
+                    android:endColor="@color/white"
+                    android:startColor="@color/white" />
+                <stroke
+                    android:width="1dp"
+                    android:color="@color/gray_500" />
+                <corners
+                    android:radius="1dp" />
+                <padding
+                    android:bottom="10dp"
+                    android:left="10dp"
+                    android:right="10dp"
+                    android:top="10dp" />
+            </shape>
+        </item>
+
+    </selector>
 </androidx.constraintlayout.widget.ConstraintLayout>
