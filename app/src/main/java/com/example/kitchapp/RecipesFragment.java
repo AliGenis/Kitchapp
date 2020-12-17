@@ -1,92 +1,71 @@
-    package com.example.kitchapp;
+package com.example.kitchapp;
 
-    import android.content.Context;
-    import android.os.Bundle;
+import android.content.Context;
+import android.os.Bundle;
 
-    import androidx.fragment.app.Fragment;
-    import androidx.recyclerview.widget.GridLayoutManager;
-    import androidx.recyclerview.widget.LinearLayoutManager;
-    import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-    import android.view.LayoutInflater;
-    import android.view.View;
-    import android.view.ViewGroup;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-    import com.example.kitchapp.dummy.DummyContent;
+import com.example.kitchapp.dummy.DummyContent;
+
+/**
+ * A fragment representing a list of Items.
+ */
+public class RecipesFragment extends Fragment {
+
+    // TODO: Customize parameter argument names
+    private static final String ARG_COLUMN_COUNT = "column-count";
+    // TODO: Customize parameters
+    private int mColumnCount = 1;
 
     /**
-     * A fragment representing a list of Items.
+     * Mandatory empty constructor for the fragment manager to instantiate the
+     * fragment (e.g. upon screen orientation changes).
      */
-    public class RecipesFragment extends AppCompatActivity {
-        SearchView searchView;
-        ListView listView;
-        ArrayList<String> list;
-        ArrayList<Recipe> recipes;
-        ArrayAdapter<String> adapter;
-        CustomListViewAdapter listViewAdapter;
-
-        @Override
-        protected void onCreate(@Nullable Bundle savedInstanceState) {
-            list = new ArrayList<String>();
-
-            list.add("Apple");
-            list.add("Banana");
-            list.add("Pineapple");
-            list.add("Orange");
-            list.add("Lychee");
-            list.add("Gavava");
-
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-            initialize();
-            fillArrayList(recipes);
-
-            searchView = (SearchView) findViewById(R.id.searchView);
-            listView = (ListView) findViewById(R.id.lv1);
-            adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
-            listView.setAdapter(adapter);
-
-
-
-            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-
-                    if (list.contains(query)) {
-                        adapter.getFilter().filter(query);
-                    } else {
-                        Toast.makeText(MainActivity.this, "No Match found", Toast.LENGTH_LONG).show();
-                    }
-                    return false;
-                }
-
-                @Override
-                public boolean onQueryTextChange(String newText) {
-                    return false;
-                }
-
-            });
-
-
-
-        }
-
-
-
-        private void initialize() {
-            recipes = new ArrayList<Recipe>();
-            listView = (ListView) findViewById(R.id.lv1);
-            listViewAdapter = new CustomListViewAdapter(MainActivity.this,recipes);
-            listView.setAdapter(listViewAdapter);
-        }
-
-        private void fillArrayList(ArrayList<Recipe>recipes){
-            for (int index = 0; index < 20; index++) {
-                Recipe recipe = new Recipe("Mr. Android " + index, "Nowhere", R.drawable.android_icon);
-                recipes.add(recipe);
-            }
-
-        }
-
-
+    public RecipesFragment() {
     }
+
+    // TODO: Customize parameter initialization
+    @SuppressWarnings("unused")
+    public static RecipesFragment newInstance(int columnCount) {
+        RecipesFragment fragment = new RecipesFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_COLUMN_COUNT, columnCount);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (getArguments() != null) {
+            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_recipes_list, container, false);
+
+        // Set the adapter
+        if (view instanceof RecyclerView) {
+            Context context = view.getContext();
+            RecyclerView recyclerView = (RecyclerView) view;
+            if (mColumnCount <= 1) {
+                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+            } else {
+                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+            }
+            recyclerView.setAdapter(new MyRecipeRecyclerViewAdapter(DummyContent.ITEMS));
+        }
+        return view;
+    }
+}
