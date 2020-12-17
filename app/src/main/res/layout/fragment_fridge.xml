@@ -57,8 +57,8 @@
 
 
     <ScrollView
-        android:layout_width="337dp"
-        android:layout_height="346dp"
+        android:layout_width="355dp"
+        android:layout_height="316dp"
         android:orientation="vertical"
         android:padding="16sp"
         android:scrollbarSize="25sp"
@@ -87,13 +87,15 @@
 
                 </LinearLayout>
 
-                <ImageButton
-                    android:id="@+id/imageView12"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="3dp"
-                    android:src="@drawable/ic_star_logo" />
+                <<TextView
+                android:id="@+id/item_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="3dp"
+                android:text="20"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
