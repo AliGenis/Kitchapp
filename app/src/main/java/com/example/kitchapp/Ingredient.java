@@ -46,6 +46,9 @@ public class Ingredient {
         defaultBuyValue = number; //How much firstly bought will be offered next time.
         criticalNumber = 3; //Or may it will be asked later when setting it shopable?
     }
+    public Ingredient (){
+
+    }
 
     public String getName(){
         return name;
