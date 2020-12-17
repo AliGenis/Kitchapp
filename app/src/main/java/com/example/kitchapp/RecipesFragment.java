@@ -13,6 +13,17 @@
     import android.view.ViewGroup;
 
     import com.example.kitchapp.dummy.DummyContent;
+    import androidx.annotation.Nullable;
+    import androidx.appcompat.app.AppCompatActivity;
+
+    import android.os.Bundle;
+    import android.widget.ArrayAdapter;
+    import android.widget.ListView;
+    import android.widget.SearchView;
+    import android.widget.Toast;
+
+    import java.util.ArrayList;
+
 
     /**
      * A fragment representing a list of Items.
@@ -21,14 +32,13 @@
         SearchView searchView;
         ListView listView;
         ArrayList<String> list;
-        ArrayList<Recipe> recipes;
         ArrayAdapter<String> adapter;
-        CustomListViewAdapter listViewAdapter;
+        //CustomListViewAdapter listViewAdapter;
 
         @Override
-        protected void onCreate(@Nullable Bundle savedInstanceState) {
+        public void onCreate(@Nullable Bundle savedInstanceState) {
             list = new ArrayList<String>();
-
+            //FixMe-- list arrayList implemented for testing purposes fix it for the final product
             list.add("Apple");
             list.add("Banana");
             list.add("Pineapple");
@@ -37,9 +47,9 @@
             list.add("Gavava");
 
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-            initialize();
-            fillArrayList(recipes);
+            setContentView(R.layout.fragment_recipes_list);
+            //initialize();
+            //fillArrayList(recipes);
 
             searchView = (SearchView) findViewById(R.id.searchView);
             listView = (ListView) findViewById(R.id.lv1);
@@ -55,7 +65,7 @@
                     if (list.contains(query)) {
                         adapter.getFilter().filter(query);
                     } else {
-                        Toast.makeText(MainActivity.this, "No Match found", Toast.LENGTH_LONG).show();
+                        Toast.makeText(RecipesFragment.this, "No Match found", Toast.LENGTH_LONG).show();
                     }
                     return false;
                 }
@@ -73,20 +83,20 @@
 
 
 
-        private void initialize() {
-            recipes = new ArrayList<Recipe>();
-            listView = (ListView) findViewById(R.id.lv1);
-            listViewAdapter = new CustomListViewAdapter(MainActivity.this,recipes);
-            listView.setAdapter(listViewAdapter);
-        }
+      //  private void initialize() {
+      //      recipes = new ArrayList<Recipe>();
+      //      listView = (ListView) findViewById(R.id.lv1);
+      //      listViewAdapter = new CustomListViewAdapter(MainActivity.this,recipes);
+      //      listView.setAdapter(listViewAdapter);
+      //   }
 
-        private void fillArrayList(ArrayList<Recipe>recipes){
+       /* private void fillArrayList(ArrayList<Recipe>recipes){
             for (int index = 0; index < 20; index++) {
                 Recipe recipe = new Recipe("Mr. Android " + index, "Nowhere", R.drawable.android_icon);
                 recipes.add(recipe);
             }
 
-        }
+        }*/
 
 
     }
