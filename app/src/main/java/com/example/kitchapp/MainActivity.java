@@ -46,10 +46,13 @@ public class MainActivity extends AppCompatActivity {
         //setContentView(R.layout.fragment_suggestion_screen);
 
         System.out.println("KITCHAPP!");
-
+        Ingredient deneme = new Ingredient( 200,4,true,"Hıyar");
+        Ingredient deneme1 = new Ingredient( 20,4,true,"Limon");
+/*
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-        myRef.setValue("Hello, World!");
+        DatabaseReference myRef = database.getReference("Ingredients");
+        myRef.setValue( new Ingredient( "Limoon", 40));
+*/
 
 
     }
