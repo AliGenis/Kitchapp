@@ -3,7 +3,7 @@ import java.util.*;
 
 /**
  * Fridge
- * @author Burak, Emre
+ * @author Burak, Emre, Gülçin
  * @version 12/12/2020
  */
 public class Fridge extends IngredientList {
