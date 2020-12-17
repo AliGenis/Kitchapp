@@ -87,13 +87,15 @@
 
                 </LinearLayout>
 
-                <ImageButton
-                    android:id="@+id/imageView12"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="3dp"
-                    android:src="@drawable/ic_star_logo" />
+                <<TextView
+                android:id="@+id/item_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="3dp"
+                android:text="20"/> />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -184,133 +186,3 @@
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
-
-<LinearLayout
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:orientation="vertical">
-
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-<ImageButton
-    android:id="@+id/star_logo"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@android:color/background_light"
-    android:src="@drawable/ic_star_logo"
-    app:layout_constraintEnd_toEndOf="@id/textView1"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:layout_editor_absoluteY="303dp"
-
-<TextView
-    android:id="@+id/textView1"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:text="TextView"
-    tools:layout_editor_absoluteY="300dp" />
-
-<ImageButton
-    android:id="@+id/star_logo1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@android:color/background_light"
-    android:src="@drawable/ic_star_logo"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:layout_editor_absoluteY="263dp"
-
-<ImageButton
-    android:id="@+id/star_logo2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@android:color/background_light"
-    android:src="@drawable/ic_star_logo"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:layout_editor_absoluteY="303dp"
-
-<ImageButton
-    android:id="@+id/star_logo3"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@android:color/background_light"
-    android:src="@drawable/ic_star_logo"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:layout_editor_absoluteY="263dp"
-
-<ImageButton
-    android:id="@+id/star_logo4"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@android:color/background_light"
-    android:src="@drawable/ic_star_logo"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:layout_editor_absoluteY="303dp"
-
-<ImageButton
-    android:id="@+id/star_logo5"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@android:color/background_light"
-    android:src="@drawable/ic_star_logo"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:layout_editor_absoluteY="263dp"
-
-<ImageButton
-    android:id="@+id/star_logo6"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@android:color/background_light"
-    android:src="@drawable/ic_star_logo"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:layout_editor_absoluteY="303dp"
-
-<ImageButton
-    android:id="@+id/star_logo7"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@android:color/background_light"
-    android:src="@drawable/ic_star_logo"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:layout_editor_absoluteY="263dp"
-
-<ImageButton
-    android:id="@+id/star_logo8"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@android:color/background_light"
-    android:src="@drawable/ic_star_logo"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:layout_editor_absoluteY="303dp"
-
-<ImageButton
-    android:id="@+id/star_logo9"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@android:color/background_light"
-    android:src="@drawable/ic_star_logo"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:layout_editor_absoluteY="263dp"
-</LinearLayout>
-    </ScrollView>
