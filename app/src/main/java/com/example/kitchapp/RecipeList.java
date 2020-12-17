@@ -29,5 +29,13 @@ public class RecipeList {
             } return null;
     }
 
+    public ArrayList<String> toArray(){
+        ArrayList<String> arr = new ArrayList<String>();
+        for ( int i =0; i<recipes.size(); i++ ){
+            arr.add( recipes.get(i).getName() );
+        }
+    return arr;
+    }
+
 
 }
