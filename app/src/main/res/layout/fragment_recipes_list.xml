@@ -9,7 +9,9 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.kitchapp.searchview.RecipesFragment">
 
+
     <ListView
+        android:clickable="true">
         android:id="@+id/lv1"
         android:layout_width="match_parent"
         android:layout_height="682dp"

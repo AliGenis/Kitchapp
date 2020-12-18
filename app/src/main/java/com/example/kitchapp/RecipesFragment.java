@@ -33,7 +33,7 @@
         ListView listView;
         ArrayList<String> list;
         ArrayAdapter<String> adapter;
-        //CustomListViewAdapter listViewAdapter;
+
 
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,11 +48,11 @@
 
             super.onCreate(savedInstanceState);
             setContentView(R.layout.fragment_recipes_list);
-            //initialize();
-            //fillArrayList(recipes);
+
 
             searchView = (SearchView) findViewById(R.id.searchView);
             listView = (ListView) findViewById(R.id.lv1);
+            list.setClickable(true);
             adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
             listView.setAdapter(adapter);
 
@@ -76,6 +76,15 @@
                 }
 
             });
+            ListView lv = getListView();
+            lv.setOnItemClickListener(new OnItemClickListener() {
+
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {  Toast.makeText(getApplicationContext(), ((TextView) view).getText(),
+                        Toast.LENGTH_SHORT).show();
+                    // When clicked perform some action...
+                }
+            });
+
 
 
 
@@ -83,20 +92,7 @@
 
 
 
-      //  private void initialize() {
-      //      recipes = new ArrayList<Recipe>();
-      //      listView = (ListView) findViewById(R.id.lv1);
-      //      listViewAdapter = new CustomListViewAdapter(MainActivity.this,recipes);
-      //      listView.setAdapter(listViewAdapter);
-      //   }
 
-       /* private void fillArrayList(ArrayList<Recipe>recipes){
-            for (int index = 0; index < 20; index++) {
-                Recipe recipe = new Recipe("Mr. Android " + index, "Nowhere", R.drawable.android_icon);
-                recipes.add(recipe);
-            }
-
-        }*/
 
 
     }
