@@ -1,188 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android ="http://schemas.android.com/apk/res/android"
+    xmlns:app ="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FridgeFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:shadowColor="#FA0303"
-        android:shadowDx="-6"
-        android:shadowDy="-6"
-        android:shadowRadius="7"
-        android:text="FRIDGE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="20pt"
-        android:textStyle="bold"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="27dp" />
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#fff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_menu" />
-    <ImageButton
-        android:id="@+id/fridgeFragment"
-        android:layout_width="77dp"
-        android:layout_height="100dp"
-        android:background="@android:color/background_light"
-        android:src="@drawable/ic_fridge"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="89dp"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        tools:context=".fridgeUI">
 
-    <ImageButton
-        android:id="@+id/help_screen"
-        android:layout_width="70dp"
-        android:layout_height="61dp"
-        android:background="@android:color/background_light"
-        android:src="@drawable/ic_help_screen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.005"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="28dp" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="#FA0303"
+            android:shadowDx="-6"
+            android:shadowDy="-6"
+            android:shadowRadius="7"
+            android:text="FRIDGE"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="20pt"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.462"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
+        <ImageButton
+            android:id="@+id/help_screen"
+            android:layout_width="31dp"
+            android:layout_height="36dp"
+            android:background="@android:color/background_light"
+            android:src="@drawable/ic_help_screen"
+            android:text="Text"
+            app:layout_constraintBottom_toBottomOf="@id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.076"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.469" />
 
-    <ScrollView
-        android:layout_width="337dp"
-        android:layout_height="346dp"
-        android:orientation="vertical"
-        android:padding="16sp"
-        android:scrollbarSize="25sp"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="302dp"
-        tools:visibility="visible">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:weightSum="3">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:orientation="vertical">
-
-                </LinearLayout>
-
-                <<TextView
-                android:id="@+id/item_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/text_margin"
-                android:textAppearance="?attr/textAppearanceListItem"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="3dp"
-                android:text="20"/> />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:orientation="vertical">
-
-                </LinearLayout>
-
-                <ImageButton
-                    android:id="@+id/star_logo3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/background_light"
-                    android:src="@drawable/ic_star_logo"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="263dp"
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="33dp"
-                    android:layout_marginBottom="21dp"
-                    android:gravity="center"
-                    android:text="Second Text view" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:weightSum="3">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:orientation="vertical">
-
-                </LinearLayout>
-
-                <ImageButton
-                    android:id="@+id/imageView13"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/ic_star_logo" />
-
-                <ImageButton
-                    android:id="@+id/star_logo4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/background_light"
-                    android:src="@drawable/ic_star_logo"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="263dp"
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="33dp"
-                    android:layout_marginBottom="21dp"
-                    android:gravity="center"
-                    android:text="Second Text view" />
-
-                <ImageButton
-                    android:id="@+id/star_logo5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/background_light"
-                    android:src="@drawable/ic_star_logo"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="263dp"
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
+        <ImageButton
+            android:id="@+id/fridgeFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/background_light"
+            android:src="@drawable/ic_fridge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.429"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/help_screen" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 
