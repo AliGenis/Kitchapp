@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Recipe of a meal
- * @author Burak, Ali, Tarik
+ * @author Burak, Ali, Tarik,Şule
  * @version 10/12/2020
  */
 public class Recipe {
@@ -16,6 +16,7 @@ public class Recipe {
     private double calorie;
     private int prepTime;
     private boolean isVegetarian;
+    private Image recipePhoto;
 
     //DEFAULT CONSTRUCTOR
     public Recipe(String name,
