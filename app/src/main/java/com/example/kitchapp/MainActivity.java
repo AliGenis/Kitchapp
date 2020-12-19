@@ -33,16 +33,16 @@ public class MainActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_main);
         //setContentView(R.layout.fragment_suggestion_screen);
 
-        setContentView(R.layout.activity_real_main);
-        BottomNavigationView navView = findViewById(R.id.bottomNavigationView);
-
-
-        //FIXME:app crashes when this two lines tries to make menu usable
-        //FIXME:it is related with NavController
-        //NavController navController = getNavController();
+        setContentView(R.layout.activity_main);
+        //BottomNavigationView navView = findViewById(R.id.bottomNavigationView);
+        //AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.fridgeFragment,
+               // R.id.shoppingListScreenFragment, R.id.suggestionScreen, R.id.recipesFragment, R.id.settingsFragment).build();
+        //NavController navController = Navigation.findNavController(this,R.id.nav_host_fragment_container);
+        //NavigationUI.setupActionBarWithNavController(this,navController,appBarConfiguration);
+        //NavController navController = getNavController(); //solution in the video
         //NavigationUI.setupWithNavController(navView,navController);
 
-        //AppBarConfiguration appBarConfiguration = new AppBarConfiguration()
+
         //setContentView(R.layout.fragment_suggestion_screen);
 
         System.out.println("KITCHAPP!");
@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    /*
     @NonNull
     private  NavController getNavController() {
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fridgeFragment);
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return ((NavHostFragment) fragment).getNavController();
 
-    }
+    }*/
 
     public void openDataInsert(){
         Intent intent = new Intent(this,DataInsert.class);
