@@ -17,9 +17,11 @@
     import androidx.appcompat.app.AppCompatActivity;
 
     import android.os.Bundle;
+    import android.widget.AdapterView;
     import android.widget.ArrayAdapter;
     import android.widget.ListView;
     import android.widget.SearchView;
+    import android.widget.TextView;
     import android.widget.Toast;
 
     import java.util.ArrayList;
@@ -52,7 +54,7 @@
 
             searchView = (SearchView) findViewById(R.id.searchView);
             listView = (ListView) findViewById(R.id.lv1);
-            list.setClickable(true);
+            listView.setClickable(true);
             adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
             listView.setAdapter(adapter);
 
@@ -76,8 +78,9 @@
                 }
 
             });
-            ListView lv = getListView();
-            lv.setOnItemClickListener(new OnItemClickListener() {
+            //FIXME: there is possible bug in line below
+            ListView lv = listView; // old version ListView lv = getListView();
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {  Toast.makeText(getApplicationContext(), ((TextView) view).getText(),
                         Toast.LENGTH_SHORT).show();
