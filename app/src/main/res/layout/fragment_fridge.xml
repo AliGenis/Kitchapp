@@ -15,14 +15,21 @@
             android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:layout_marginTop="756dp"
             android:background="#fff"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/bottom_menu" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/bottom_menu">
 
-        //we may add the quantity inside the text view by method as a string
-        //then may be converted by parseInt in string -Emre
+            <TextView
+                android:layout_width="169dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="800dp"
+                android:gravity="center"
+                android:text="w" />
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
         <TextView
             android:id="@+id/textView"
@@ -65,6 +72,7 @@
             android:layout_marginTop="20dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_fridge"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,444 +82,554 @@
             android:id="@+id/search"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:layout_marginTop="142dp"
+            android:layout_marginTop="152dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_search"
             app:layout_constraintBottom_toTopOf="@+id/star_logo3"
-            app:layout_constraintTop_toBottomOf="@+id/help_screen"
-            tools:layout_editor_absoluteX="0dp" />
+            app:layout_constraintEnd_toStartOf="@+id/textView7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/help_screen" />
 
         <ImageButton
             android:id="@+id/plus1"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/plus2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="228dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <ImageButton
             android:id="@+id/plus2"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/plus3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="268dp" />
+            app:layout_constraintTop_toBottomOf="@+id/plus1" />
 
         <ImageButton
             android:id="@+id/plus3"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/plus4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="308dp" />
+            app:layout_constraintTop_toBottomOf="@+id/plus2" />
 
         <ImageButton
             android:id="@+id/plus4"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/plus5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="348dp" />
+            app:layout_constraintTop_toBottomOf="@+id/plus3" />
 
         <ImageButton
             android:id="@+id/plus5"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/plus6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="388dp" />
+            app:layout_constraintTop_toBottomOf="@+id/plus4" />
 
         <ImageButton
             android:id="@+id/plus6"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/plus7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="428dp" />
+            app:layout_constraintTop_toBottomOf="@+id/plus5" />
 
         <ImageButton
             android:id="@+id/plus7"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/plus8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="468dp" />
+            app:layout_constraintTop_toBottomOf="@+id/plus6" />
 
         <ImageButton
             android:id="@+id/plus8"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/plus9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="508dp" />
+            app:layout_constraintTop_toBottomOf="@+id/plus7" />
 
         <ImageButton
             android:id="@+id/plus9"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/plus10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="548dp" />
+            app:layout_constraintTop_toBottomOf="@+id/plus8" />
 
         <ImageButton
             android:id="@+id/plus10"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/plus11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="588dp" />
+            app:layout_constraintTop_toBottomOf="@+id/plus9" />
 
         <ImageButton
             android:id="@+id/plus11"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/plus12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="628dp" />
+            app:layout_constraintTop_toBottomOf="@+id/plus10" />
 
         <ImageButton
             android:id="@+id/plus12"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
+            android:layout_marginBottom="26dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="668dp" />
+            app:layout_constraintTop_toBottomOf="@+id/plus11" />
 
         <ImageButton
             android:id="@+id/min1"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_min"
+            app:layout_constraintBottom_toTopOf="@+id/min2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="228dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <ImageButton
             android:id="@+id/min2"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_min"
+            app:layout_constraintBottom_toTopOf="@+id/min3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="268dp" />
+            app:layout_constraintTop_toBottomOf="@+id/min1" />
 
         <ImageButton
             android:id="@+id/min3"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_min"
+            app:layout_constraintBottom_toTopOf="@+id/min4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="308dp" />
+            app:layout_constraintTop_toBottomOf="@+id/min2" />
 
         <ImageButton
             android:id="@+id/min4"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_min"
+            app:layout_constraintBottom_toTopOf="@+id/min5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="348dp" />
+            app:layout_constraintTop_toBottomOf="@+id/min3" />
 
         <ImageButton
             android:id="@+id/min5"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_min"
+            app:layout_constraintBottom_toTopOf="@+id/min6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="388dp" />
+            app:layout_constraintTop_toBottomOf="@+id/min4" />
 
         <ImageButton
             android:id="@+id/min6"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_min"
+            app:layout_constraintBottom_toTopOf="@+id/min7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="428dp" />
+            app:layout_constraintTop_toBottomOf="@+id/min5" />
 
         <ImageButton
             android:id="@+id/min7"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_min"
+            app:layout_constraintBottom_toTopOf="@+id/min8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="468dp" />
+            app:layout_constraintTop_toBottomOf="@+id/min6" />
 
         <ImageButton
             android:id="@+id/min8"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_min"
+            app:layout_constraintBottom_toTopOf="@+id/min9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="508dp" />
+            app:layout_constraintTop_toBottomOf="@+id/min7" />
 
         <ImageButton
             android:id="@+id/min9"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_min"
+            app:layout_constraintBottom_toTopOf="@+id/min10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="548dp" />
+            app:layout_constraintTop_toBottomOf="@+id/min8" />
 
         <ImageButton
             android:id="@+id/min10"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_min"
+            app:layout_constraintBottom_toTopOf="@+id/min11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="588dp" />
+            app:layout_constraintTop_toBottomOf="@+id/min9" />
 
         <ImageButton
             android:id="@+id/min11"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_min"
+            app:layout_constraintBottom_toTopOf="@+id/min12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="628dp" />
+            app:layout_constraintTop_toBottomOf="@+id/min10" />
 
         <ImageButton
             android:id="@+id/min12"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
+            android:layout_marginBottom="26dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_min"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="668dp" />
+            app:layout_constraintTop_toBottomOf="@+id/min11" />
 
         <ImageButton
             android:id="@+id/quantity1"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="76dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_quantity"
+            app:layout_constraintBottom_toTopOf="@+id/quantity2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="228dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <ImageButton
             android:id="@+id/quantity2"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="76dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_quantity"
+            app:layout_constraintBottom_toTopOf="@+id/quantity3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="268dp" />
+            app:layout_constraintStart_toStartOf="@id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/quantity1" />
 
         <ImageButton
             android:id="@+id/quantity3"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="76dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_quantity"
+            app:layout_constraintBottom_toTopOf="@+id/quantity4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="308dp" />
+            app:layout_constraintTop_toBottomOf="@+id/quantity2" />
 
         <ImageButton
             android:id="@+id/quantity4"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="76dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_quantity"
+            app:layout_constraintBottom_toTopOf="@+id/quantity5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="348dp" />
+            app:layout_constraintTop_toBottomOf="@+id/quantity3" />
 
         <ImageButton
             android:id="@+id/quantity5"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="76dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_quantity"
+            app:layout_constraintBottom_toTopOf="@+id/quantity6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="388dp" />
+            app:layout_constraintTop_toBottomOf="@+id/quantity4" />
 
         <ImageButton
             android:id="@+id/quantity6"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="76dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_quantity"
+            app:layout_constraintBottom_toTopOf="@+id/quantity7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="428dp" />
+            app:layout_constraintTop_toBottomOf="@+id/quantity5" />
 
         <ImageButton
             android:id="@+id/quantity7"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="76dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_quantity"
+            app:layout_constraintBottom_toTopOf="@+id/quantity8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="468dp" />
+            app:layout_constraintTop_toBottomOf="@+id/quantity6" />
 
         <ImageButton
             android:id="@+id/quantity8"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="76dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_quantity"
+            app:layout_constraintBottom_toTopOf="@+id/quantity9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="508dp" />
+            app:layout_constraintTop_toBottomOf="@+id/quantity7" />
 
         <ImageButton
             android:id="@+id/quantity9"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="76dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_quantity"
+            app:layout_constraintBottom_toTopOf="@+id/quantity10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="548dp" />
+            app:layout_constraintTop_toBottomOf="@+id/quantity8" />
 
         <ImageButton
             android:id="@+id/quantity10"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="76dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_quantity"
+            app:layout_constraintBottom_toTopOf="@+id/quantity11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="588dp" />
+            app:layout_constraintTop_toBottomOf="@+id/quantity9" />
 
         <ImageButton
             android:id="@+id/quantity11"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="76dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_quantity"
+            app:layout_constraintBottom_toTopOf="@+id/quantity12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="628dp" />
+            app:layout_constraintTop_toBottomOf="@+id/quantity10" />
 
         <ImageButton
             android:id="@+id/quantity12"
             android:layout_width="38dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="76dp"
+            android:layout_marginBottom="26dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_quantity"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf=""
-            tools:layout_editor_absoluteY="668dp" />
+            app:layout_constraintTop_toBottomOf="@+id/quantity11" />
 
 
         <TextView
@@ -523,13 +641,22 @@
             android:layout_alignRight="@+id/quantity1"
             android:layout_alignBottom="@+id/quantity1"
             android:layout_margin="1dp"
+            android:layout_marginStart="270dp"
+            android:layout_marginEnd="200dp"
+            android:layout_marginBottom="900dp"
             android:gravity="center"
             android:text="5"
             android:textColor="#000000"
             android:textSize="6pt"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="233dp"
-            tools:layout_editor_absoluteY="234dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/plus2"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintStart_toEndOf="@+id/textView8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3" />
 
         <TextView
             android:id="@+id/myImageViewText2"
@@ -540,13 +667,21 @@
             android:layout_alignRight="@+id/quantity1"
             android:layout_alignBottom="@+id/quantity1"
             android:layout_margin="1dp"
+            android:layout_marginStart="371dp"
+            android:layout_marginTop="314dp"
+            android:layout_marginEnd="138dp"
+            android:layout_marginBottom="846dp"
             android:gravity="center"
             android:text=""
             android:textColor="#000000"
             android:textSize="6pt"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="233dp"
-            tools:layout_editor_absoluteY="274dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.61" />
 
         <TextView
             android:id="@+id/myImageViewText3"
@@ -557,13 +692,22 @@
             android:layout_alignRight="@+id/quantity1"
             android:layout_alignBottom="@+id/quantity1"
             android:layout_margin="1dp"
+            android:layout_marginStart="273dp"
+            android:layout_marginEnd="362dp"
+            android:layout_marginBottom="900dp"
             android:gravity="center"
             android:text="8"
             android:textColor="#000000"
             android:textSize="6pt"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="233dp"
-            tools:layout_editor_absoluteY="314dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/plus3"
+            app:layout_constraintHorizontal_bias="0.94"
+            app:layout_constraintStart_toEndOf="@+id/quantity3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.41000003" />
 
         <TextView
             android:id="@+id/myImageViewText4"
@@ -574,13 +718,20 @@
             android:layout_alignRight="@+id/quantity1"
             android:layout_alignBottom="@+id/quantity1"
             android:layout_margin="1dp"
+            android:layout_marginStart="273dp"
+            android:layout_marginEnd="362dp"
+            android:layout_marginBottom="900dp"
             android:gravity="center"
             android:text="7"
             android:textColor="#000000"
             android:textSize="6pt"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="233dp"
-            tools:layout_editor_absoluteY="354dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45999998" />
 
         <TextView
             android:id="@+id/myImageViewText5"
@@ -591,13 +742,21 @@
             android:layout_alignRight="@+id/quantity1"
             android:layout_alignBottom="@+id/quantity1"
             android:layout_margin="1dp"
+            android:layout_marginStart="371dp"
+            android:layout_marginTop="41dp"
+            android:layout_marginEnd="138dp"
+            android:layout_marginBottom="846dp"
             android:gravity="center"
             android:text=""
             android:textColor="#000000"
             android:textSize="6pt"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="233dp"
-            tools:layout_editor_absoluteY="394dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.71"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.87" />
 
         <TextView
             android:id="@+id/myImageViewText6"
@@ -608,13 +767,21 @@
             android:layout_alignRight="@+id/quantity1"
             android:layout_alignBottom="@+id/quantity1"
             android:layout_margin="1dp"
+            android:layout_marginStart="355dp"
+            android:layout_marginTop="450dp"
+            android:layout_marginEnd="127dp"
+            android:layout_marginBottom="846dp"
             android:gravity="center"
             android:text="16"
             android:textColor="#000000"
             android:textSize="6pt"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="228dp"
-            tools:layout_editor_absoluteY="434dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.51" />
 
         <TextView
             android:id="@+id/myImageViewText7"
@@ -625,13 +792,21 @@
             android:layout_alignRight="@+id/quantity1"
             android:layout_alignBottom="@+id/quantity1"
             android:layout_margin="1dp"
+            android:layout_marginStart="269dp"
+            android:layout_marginTop="846dp"
+            android:layout_marginEnd="362dp"
+            android:layout_marginBottom="422dp"
             android:gravity="center"
             android:text="3"
             android:textColor="#000000"
             android:textSize="6pt"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="233dp"
-            tools:layout_editor_absoluteY="474dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.56" />
 
         <TextView
             android:id="@+id/myImageViewText8"
@@ -642,13 +817,21 @@
             android:layout_alignRight="@+id/quantity1"
             android:layout_alignBottom="@+id/quantity1"
             android:layout_margin="1dp"
+            android:layout_marginStart="363dp"
+            android:layout_marginTop="547dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginBottom="593dp"
             android:gravity="center"
             android:text="1"
             android:textColor="#000000"
             android:textSize="6pt"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="233dp"
-            tools:layout_editor_absoluteY="514dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.65999997" />
 
         <TextView
             android:id="@+id/myImageViewText9"
@@ -659,13 +842,21 @@
             android:layout_alignRight="@+id/quantity1"
             android:layout_alignBottom="@+id/quantity1"
             android:layout_margin="1dp"
+            android:layout_marginStart="363dp"
+            android:layout_marginTop="614dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginBottom="846dp"
             android:gravity="center"
             android:text="2"
             android:textColor="#000000"
             android:textSize="6pt"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="233dp"
-            tools:layout_editor_absoluteY="554dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.77" />
 
         <TextView
             android:id="@+id/myImageViewText10"
@@ -676,13 +867,21 @@
             android:layout_alignRight="@+id/quantity1"
             android:layout_alignBottom="@+id/quantity1"
             android:layout_margin="1dp"
+            android:layout_marginStart="273dp"
+            android:layout_marginTop="634dp"
+            android:layout_marginEnd="370dp"
+            android:layout_marginBottom="846dp"
             android:gravity="center"
             android:text=""
             android:textColor="#000000"
             android:textSize="6pt"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="233dp"
-            tools:layout_editor_absoluteY="594dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.71"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.36" />
 
         <TextView
             android:id="@+id/myImageViewText11"
@@ -693,13 +892,21 @@
             android:layout_alignRight="@+id/quantity1"
             android:layout_alignBottom="@+id/quantity1"
             android:layout_margin="1dp"
+            android:layout_marginStart="273dp"
+            android:layout_marginTop="697dp"
+            android:layout_marginEnd="362dp"
+            android:layout_marginBottom="846dp"
             android:gravity="center"
             android:text="6"
             android:textColor="#000000"
             android:textSize="6pt"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="233dp"
-            tools:layout_editor_absoluteY="634dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.71000004" />
 
         <TextView
             android:id="@+id/myImageViewText12"
@@ -710,33 +917,40 @@
             android:layout_alignRight="@+id/quantity1"
             android:layout_alignBottom="@+id/quantity1"
             android:layout_margin="1dp"
+            android:layout_marginStart="363dp"
+            android:layout_marginTop="740dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginBottom="846dp"
             android:gravity="center"
             android:text="9"
             android:textColor="#000000"
             android:textSize="6pt"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="233dp"
-            tools:layout_editor_absoluteY="674dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.82" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="292dp"
             android:layout_height="32dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="198dp"
+            android:layout_marginBottom="592dp"
             android:gravity="center"
             android:text="Second Text view"
-            app:layout_constraintBottom_toTopOf="@+id/plus1"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/search"
-            app:layout_constraintTop_toBottomOf="@+id/fridgeFragment" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/star_logo3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_star_logo"
@@ -758,6 +972,7 @@
             android:text="Second Text view"
             app:layout_constraintBottom_toTopOf="@+id/textView8"
             app:layout_constraintEnd_toStartOf="@+id/quantity1"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/star_logo3"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -939,12 +1154,15 @@
             android:id="@+id/star_logo10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_star_logo"
+            app:layout_constraintBottom_toTopOf="@+id/star_logo11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="508dp" />
+            app:layout_constraintTop_toBottomOf="@+id/star_logo9" />
 
         <TextView
             android:id="@+id/textView10"
@@ -965,12 +1183,15 @@
             android:id="@+id/star_logo11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_light"
             android:src="@drawable/ic_star_logo"
+            app:layout_constraintBottom_toTopOf="@+id/star_logo12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="548dp" />
+            app:layout_constraintTop_toBottomOf="@+id/star_logo10" />
 
         <TextView
             android:id="@+id/textView12"
@@ -991,12 +1212,15 @@
             android:id="@+id/star_logo12"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:background="@android:color/background_bl"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/background_l,ght"
             android:src="@drawable/ic_filled_star_logo"
+            app:layout_constraintBottom_toTopOf="@+id/star_logo13"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="588dp" />
+            app:layout_constraintTop_toBottomOf="@+id/star_logo11" />
 
         <TextView
             android:id="@+id/textView13"
@@ -1017,12 +1241,15 @@
             android:id="@+id/star_logo13"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
             android:background="@android:color/background_bl"
             android:src="@drawable/ic_filled_star_logo"
+            app:layout_constraintBottom_toTopOf="@+id/star_logo14"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="628dp" />
+            app:layout_constraintTop_toBottomOf="@+id/star_logo12" />
 
         <TextView
             android:id="@+id/textView11"
@@ -1043,12 +1270,15 @@
             android:id="@+id/star_logo14"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="26dp"
             android:background="@android:color/background_bl"
             android:src="@drawable/ic_filled_star_logo"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="668dp" />
+            app:layout_constraintTop_toBottomOf="@+id/star_logo13" />
 
         <TextView
             android:id="@+id/textView14"
@@ -1063,13 +1293,6 @@
             app:layout_constraintStart_toEndOf="@+id/star_logo14"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-        <TextView
-            android:layout_width="169dp"
-            android:layout_height="32dp"
-            android:gravity="center"
-            android:text="w"
-            tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="768dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 
