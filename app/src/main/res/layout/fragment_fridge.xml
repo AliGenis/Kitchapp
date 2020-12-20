@@ -103,7 +103,6 @@
             app:layout_constraintBottom_toTopOf="@+id/plus2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <ImageButton
@@ -118,7 +117,6 @@
             app:layout_constraintBottom_toTopOf="@+id/plus3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/plus1" />
 
         <ImageButton
@@ -133,7 +131,6 @@
             app:layout_constraintBottom_toTopOf="@+id/plus4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/plus2" />
 
         <ImageButton
@@ -148,7 +145,6 @@
             app:layout_constraintBottom_toTopOf="@+id/plus5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/plus3" />
 
         <ImageButton
@@ -163,7 +159,6 @@
             app:layout_constraintBottom_toTopOf="@+id/plus6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/plus4" />
 
         <ImageButton
@@ -178,7 +173,6 @@
             app:layout_constraintBottom_toTopOf="@+id/plus7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/plus5" />
 
         <ImageButton
@@ -193,7 +187,6 @@
             app:layout_constraintBottom_toTopOf="@+id/plus8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/plus6" />
 
         <ImageButton
@@ -208,7 +201,6 @@
             app:layout_constraintBottom_toTopOf="@+id/plus9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/plus7" />
 
         <ImageButton
@@ -223,7 +215,6 @@
             app:layout_constraintBottom_toTopOf="@+id/plus10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/plus8" />
 
         <ImageButton
@@ -238,7 +229,6 @@
             app:layout_constraintBottom_toTopOf="@+id/plus11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/plus9" />
 
         <ImageButton
@@ -253,7 +243,7 @@
             app:layout_constraintBottom_toTopOf="@+id/plus12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
+
             app:layout_constraintTop_toBottomOf="@+id/plus10" />
 
         <ImageButton
@@ -268,7 +258,6 @@
             app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/plus11" />
 
         <ImageButton
@@ -283,7 +272,6 @@
             app:layout_constraintBottom_toTopOf="@+id/min2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <ImageButton
@@ -298,7 +286,6 @@
             app:layout_constraintBottom_toTopOf="@+id/min3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/min1" />
 
         <ImageButton
@@ -313,7 +300,6 @@
             app:layout_constraintBottom_toTopOf="@+id/min4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/min2" />
 
         <ImageButton
@@ -328,7 +314,6 @@
             app:layout_constraintBottom_toTopOf="@+id/min5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/min3" />
 
         <ImageButton
@@ -343,7 +328,6 @@
             app:layout_constraintBottom_toTopOf="@+id/min6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/min4" />
 
         <ImageButton
@@ -358,7 +342,6 @@
             app:layout_constraintBottom_toTopOf="@+id/min7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/min5" />
 
         <ImageButton
@@ -373,7 +356,6 @@
             app:layout_constraintBottom_toTopOf="@+id/min8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/min6" />
 
         <ImageButton
@@ -388,7 +370,6 @@
             app:layout_constraintBottom_toTopOf="@+id/min9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/min7" />
 
         <ImageButton
@@ -403,7 +384,6 @@
             app:layout_constraintBottom_toTopOf="@+id/min10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/min8" />
 
         <ImageButton
@@ -418,7 +398,6 @@
             app:layout_constraintBottom_toTopOf="@+id/min11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/min9" />
 
         <ImageButton
@@ -433,7 +412,6 @@
             app:layout_constraintBottom_toTopOf="@+id/min12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/min10" />
 
         <ImageButton
@@ -448,7 +426,6 @@
             app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/min11" />
 
         <ImageButton
@@ -463,7 +440,6 @@
             app:layout_constraintBottom_toTopOf="@+id/quantity2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <ImageButton
@@ -493,7 +469,6 @@
             app:layout_constraintBottom_toTopOf="@+id/quantity4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/quantity2" />
 
         <ImageButton
@@ -508,7 +483,6 @@
             app:layout_constraintBottom_toTopOf="@+id/quantity5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/quantity3" />
 
         <ImageButton
@@ -523,7 +497,6 @@
             app:layout_constraintBottom_toTopOf="@+id/quantity6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/quantity4" />
 
         <ImageButton
@@ -538,7 +511,6 @@
             app:layout_constraintBottom_toTopOf="@+id/quantity7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/quantity5" />
 
         <ImageButton
@@ -553,7 +525,6 @@
             app:layout_constraintBottom_toTopOf="@+id/quantity8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/quantity6" />
 
         <ImageButton
@@ -568,7 +539,6 @@
             app:layout_constraintBottom_toTopOf="@+id/quantity9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/quantity7" />
 
         <ImageButton
@@ -583,7 +553,6 @@
             app:layout_constraintBottom_toTopOf="@+id/quantity10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/quantity8" />
 
         <ImageButton
@@ -598,7 +567,6 @@
             app:layout_constraintBottom_toTopOf="@+id/quantity11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/quantity9" />
 
         <ImageButton
@@ -613,7 +581,6 @@
             app:layout_constraintBottom_toTopOf="@+id/quantity12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/quantity10" />
 
         <ImageButton
@@ -628,7 +595,6 @@
             app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf=""
             app:layout_constraintTop_toBottomOf="@+id/quantity11" />
 
 
@@ -1214,7 +1180,7 @@
             android:layout_height="32dp"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
-            android:background="@android:color/background_l,ght"
+            android:background="@android:color/background_light"
             android:src="@drawable/ic_filled_star_logo"
             app:layout_constraintBottom_toTopOf="@+id/star_logo13"
             app:layout_constraintEnd_toEndOf="parent"
@@ -1243,7 +1209,7 @@
             android:layout_height="32dp"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
-            android:background="@android:color/background_bl"
+            android:background="@android:color/background_light"
             android:src="@drawable/ic_filled_star_logo"
             app:layout_constraintBottom_toTopOf="@+id/star_logo14"
             app:layout_constraintEnd_toEndOf="parent"
@@ -1272,7 +1238,7 @@
             android:layout_height="32dp"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="26dp"
-            android:background="@android:color/background_bl"
+            android:background="@android:color/background_light"
             android:src="@drawable/ic_filled_star_logo"
             app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"

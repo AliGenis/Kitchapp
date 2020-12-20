@@ -23,8 +23,8 @@ public class fridgeUI extends AppCompatActivity {
             //you can see all child item in CardView, so we just cast object in CardView
             CardView cardView = (CardView)mainGrid.getChildAt(i);
             final int finalI = i;
-            cardView.setOnClickListener((view));
-            Toast.makeText(fragment)
+          //  cardView.setOnClickListener((view));
+           // Toast.makeText(fragment);
 
         }
     }
