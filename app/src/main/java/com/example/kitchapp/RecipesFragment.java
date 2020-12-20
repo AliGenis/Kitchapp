@@ -1,28 +1,16 @@
     package com.example.kitchapp;
 
-    import android.content.Context;
     import android.os.Bundle;
-
-    import androidx.fragment.app.Fragment;
-    import androidx.recyclerview.widget.GridLayoutManager;
-    import androidx.recyclerview.widget.LinearLayoutManager;
-    import androidx.recyclerview.widget.RecyclerView;
-
-    import android.view.LayoutInflater;
     import android.view.View;
-    import android.view.ViewGroup;
-
-    import com.example.kitchapp.dummy.DummyContent;
-    import androidx.annotation.Nullable;
-    import androidx.appcompat.app.AppCompatActivity;
-
-    import android.os.Bundle;
     import android.widget.AdapterView;
     import android.widget.ArrayAdapter;
     import android.widget.ListView;
-    import android.widget.SearchView;
     import android.widget.TextView;
     import android.widget.Toast;
+
+    import androidx.annotation.Nullable;
+    import androidx.appcompat.app.AppCompatActivity;
+    import androidx.appcompat.widget.SearchView;
 
     import java.util.ArrayList;
 

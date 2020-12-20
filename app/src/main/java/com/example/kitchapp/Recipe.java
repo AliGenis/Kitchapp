@@ -1,7 +1,5 @@
 package com.example.kitchapp;
 
-import android.media.Image;
-
 import java.util.ArrayList;
 
 /**
@@ -18,7 +16,7 @@ public class Recipe {
     private double calorie;
     private int prepTime;
     private boolean isVegetarian;
-    private Image recipePhoto;
+    private int recipePhotoId;
 
     //DEFAULT CONSTRUCTOR
     public Recipe(String name,
@@ -35,6 +33,13 @@ public class Recipe {
         this.isVegetarian = isVegetarian;
     }
 
+    public Recipe(String name, String recipe, int recipePhotoId)
+    {
+        this.name = name;
+        this.recipe = recipe;
+        this.recipePhotoId= recipePhotoId;
+
+    }
     //GETTERS AND SETTERS
     public String getName() {
         return name;
@@ -83,6 +88,9 @@ public class Recipe {
     public void setVegetarian(boolean vegetarian) {
         isVegetarian = vegetarian;
     }
+    public int getRecipePhotoId(){return recipePhotoId;}
+    public void setRecipePhotoId( int recipePhotoId){this.recipePhotoId =  recipePhotoId;}
+
 
     //TODO: connection to the database will be established
 }
