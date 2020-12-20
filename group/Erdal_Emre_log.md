@@ -19,6 +19,12 @@ I am trying to fix the run error in the android studio.
 ### ~ 14/12/2020 - 20/12/2020 ~
 I am trying to fix the run error in the android studio again.
 I helped my friends to write the detailed design report.
+I finished the UI of fridge with my friends.
+I started to add the functionality to the buttons in the fridge.
+I changed some variables from database by coding.
+I fixed the emulator killed error.
+
+### ~ 21/12/2020 - 27/12/2020 ~
 .
 .
 .
