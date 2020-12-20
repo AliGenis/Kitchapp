@@ -71,10 +71,10 @@
     <TextView
         android:id="@+id/suggestedMealName"
         android:layout_width="wrap_content"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/suggested_meal_name"
-        />
+        tools:layout_marginTop="60dp"
+        android:text="@string/suggested_meal_name" />
 
     <ImageButton
         android:id="@+id/suggestion_research_button"
