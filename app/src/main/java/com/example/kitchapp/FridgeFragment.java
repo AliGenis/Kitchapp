@@ -53,7 +53,21 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-/**
+
+
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+ }
+
+        }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_fridge,container,true); //to make operations on design (another roots will be connected to it)
+
         ImageButton plusButton1 = rootView.findViewById(R.id.plus1); //to reach to button
         ImageButton plusButton2 = rootView.findViewById(R.id.plus2);
         ImageButton plusButton3 = rootView.findViewById(R.id.plus3);
@@ -67,18 +81,18 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
         ImageButton plusButton11 = rootView.findViewById(R.id.plus11);
         ImageButton plusButton12 = rootView.findViewById(R.id.plus12);
 
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
- }
-        **/
-        }
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_fridge,container,true); //to make operations on design (another roots will be connected to it)
+        plusButton1.setOnClickListener(this);
+        plusButton2.setOnClickListener(this);
+        plusButton3.setOnClickListener(this);
+        plusButton4.setOnClickListener(this);
+        plusButton5.setOnClickListener(this);
+        plusButton6.setOnClickListener(this);
+        plusButton7.setOnClickListener(this);
+        plusButton8.setOnClickListener(this);
+        plusButton9.setOnClickListener(this);
+        plusButton10.setOnClickListener(this);
+        plusButton11.setOnClickListener(this);
+        plusButton12.setOnClickListener(this);
 
 
 
@@ -86,7 +100,44 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
     }
 
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
+        if(v.getId() == R.id.plus1){
+
+        }
+        else if(v.getId() == R.id.plus2){
+
+        }
+       else if(v.getId() == R.id.plus3){
+
+        }
+       else if(v.getId() == R.id.plus4){
+
+        }
+       else if(v.getId() == R.id.plus5){
+
+        }
+       else if(v.getId() == R.id.plus6){
+
+        }
+        else if(v.getId() == R.id.plus7){
+
+        }
+        else if(v.getId() == R.id.plus8){
+
+        }
+        else if(v.getId() == R.id.plus9){
+
+        }
+        else if(v.getId() == R.id.plus10){
+
+        }
+        else if(v.getId() == R.id.plus11){
+
+        }
+        else if(v.getId() == R.id.plus12){
+
+        }
+
 
     }
 
