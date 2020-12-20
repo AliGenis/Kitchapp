@@ -94,6 +94,58 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
         plusButton11.setOnClickListener(this);
         plusButton12.setOnClickListener(this);
 
+        ImageButton minusButton1 = rootView.findViewById(R.id.min1);
+        ImageButton minusButton2 = rootView.findViewById(R.id.min2);
+        ImageButton minusButton3 = rootView.findViewById(R.id.min3);
+        ImageButton minusButton4 = rootView.findViewById(R.id.min4);
+        ImageButton minusButton5 = rootView.findViewById(R.id.min5);
+        ImageButton minusButton6 = rootView.findViewById(R.id.min6);
+        ImageButton minusButton7 = rootView.findViewById(R.id.min7);
+        ImageButton minusButton8 = rootView.findViewById(R.id.min8);
+        ImageButton minusButton9 = rootView.findViewById(R.id.min9);
+        ImageButton minusButton10 = rootView.findViewById(R.id.min10);
+        ImageButton minusButton11 = rootView.findViewById(R.id.min11);
+        ImageButton minusButton12 = rootView.findViewById(R.id.min12);
+
+        minusButton1.setOnClickListener(this);
+        minusButton2.setOnClickListener(this);
+        minusButton3.setOnClickListener(this);
+        minusButton4.setOnClickListener(this);
+        minusButton5.setOnClickListener(this);
+        minusButton6.setOnClickListener(this);
+        minusButton7.setOnClickListener(this);
+        minusButton8.setOnClickListener(this);
+        minusButton9.setOnClickListener(this);
+        minusButton10.setOnClickListener(this);
+        minusButton11.setOnClickListener(this);
+        minusButton12.setOnClickListener(this);
+
+        ImageButton starLogoButton1 = rootView.findViewById(R.id.star_logo3);
+        ImageButton starLogoButton2 = rootView.findViewById(R.id.star_logo4);
+        ImageButton starLogoButton3 = rootView.findViewById(R.id.star_logo5);
+        ImageButton starLogoButton4 = rootView.findViewById(R.id.star_logo6);
+        ImageButton starLogoButton5 = rootView.findViewById(R.id.star_logo7);
+        ImageButton starLogoButton6 = rootView.findViewById(R.id.star_logo8);
+        ImageButton starLogoButton7 = rootView.findViewById(R.id.star_logo9);
+        ImageButton starLogoButton8 = rootView.findViewById(R.id.star_logo10);
+        ImageButton starLogoButton9 = rootView.findViewById(R.id.star_logo11);
+        ImageButton starLogoButton10 = rootView.findViewById(R.id.star_logo12);
+        ImageButton starLogoButton11 = rootView.findViewById(R.id.star_logo13);
+        ImageButton starLogoButton12 = rootView.findViewById(R.id.star_logo14);
+
+        starLogoButton1.setOnClickListener(this);
+        starLogoButton2.setOnClickListener(this);
+        starLogoButton3.setOnClickListener(this);
+        starLogoButton4.setOnClickListener(this);
+        starLogoButton5.setOnClickListener(this);
+        starLogoButton6.setOnClickListener(this);
+        starLogoButton7.setOnClickListener(this);
+        starLogoButton8.setOnClickListener(this);
+        starLogoButton9.setOnClickListener(this);
+        starLogoButton10.setOnClickListener(this);
+        starLogoButton11.setOnClickListener(this);
+        starLogoButton12.setOnClickListener(this);
+
 
 
         return rootView;
@@ -101,6 +153,44 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+
+        if(v.getId() == R.id.star_logo3){
+
+        }
+        else if(v.getId() == R.id.star_logo4){
+
+        }
+        else if(v.getId() == R.id.star_logo5){
+
+        }
+        else if(v.getId() == R.id.star_logo6){
+
+        }
+        else if(v.getId() == R.id.star_logo7){
+
+        }
+        else if(v.getId() == R.id.star_logo8){
+
+        }
+        else if(v.getId() == R.id.star_logo9){
+
+        }
+        else if(v.getId() == R.id.star_logo10){
+
+        }
+        else if(v.getId() == R.id.star_logo11){
+
+        }
+        else if(v.getId() == R.id.star_logo12){
+
+        }
+        else if(v.getId() == R.id.star_logo13){
+
+        }
+        else if(v.getId() == R.id.star_logo14){
+
+        }
+
         if(v.getId() == R.id.plus1){
 
         }
@@ -135,6 +225,43 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
 
         }
         else if(v.getId() == R.id.plus12){
+
+        }
+
+        if(v.getId() == R.id.min1){
+
+        }
+        else if(v.getId() == R.id.min2){
+
+        }
+        else if(v.getId() == R.id.min3){
+
+        }
+        else if(v.getId() == R.id.min4){
+
+        }
+        else if(v.getId() == R.id.min5){
+
+        }
+        else if(v.getId() == R.id.min6){
+
+        }
+        else if(v.getId() == R.id.min7){
+
+        }
+        else if(v.getId() == R.id.min8){
+
+        }
+        else if(v.getId() == R.id.min9){
+
+        }
+        else if(v.getId() == R.id.min10){
+
+        }
+        else if(v.getId() == R.id.min11){
+
+        }
+        else if(v.getId() == R.id.min12){
 
         }
 
