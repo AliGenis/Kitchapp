@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -24,35 +24,82 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import android.content.Intent;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //setContentView(R.layout.activity_main);
         //setContentView(R.layout.fragment_suggestion_screen);
+        setContentView(R.layout.fragment_recipes_list);
+        //setContentView(R.layout.activity_main);
+        /* TODO: it is activity solution
+        BottomNavigationView navView = findViewById(R.id.bottomNavigationView);
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
 
-        setContentView(R.layout.activity_main);
+                    case R.id.fridgeFragment:
+                        break;
+
+                    case R.id.shoppingListScreenFragment:
+                        Intent intent1 = new Intent(MainActivity.this, ShoppingListScreenFragment.class);
+                        startActivity(intent1);
+                        break;
+
+                    case R.id.suggestionScreen:
+                        Intent intent2 = new Intent(MainActivity.this, SuggestionScreen.class);
+                        startActivity(intent2);
+                        break;
+
+                    case R.id.recipesFragment:
+                        Intent intent3 = new Intent(MainActivity.this, RecipesFragment.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.settingsFragment:
+                        Intent intent4 = new Intent(MainActivity.this, SettingsFragment.class);
+                        startActivity(intent4);
+                        break;
+                }
+
+
+                return false;
+            }
+        });
+        */
+
+        //TODO: it is fragment solution
         //BottomNavigationView navView = findViewById(R.id.bottomNavigationView);
         //AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.fridgeFragment,
                // R.id.shoppingListScreenFragment, R.id.suggestionScreen, R.id.recipesFragment, R.id.settingsFragment).build();
-        //NavController navController = Navigation.findNavController(this,R.id.nav_host_fragment_container);
+        //NavController navController = Navigation.findNavController(this,R.id.nav_host_fragment);
         //NavigationUI.setupActionBarWithNavController(this,navController,appBarConfiguration);
         //NavController navController = getNavController(); //solution in the video
         //NavigationUI.setupWithNavController(navView,navController);
 
 
         //setContentView(R.layout.fragment_suggestion_screen);
-
+        ArrayList<Ingredient> Arr = new ArrayList<Ingredient>();
         System.out.println("KITCHAPP!");
-        Ingredient deneme = new Ingredient( 200,4,true,"Hıyar");
+        //Ingredient deneme = new Ingredient( 200,4,true,"Hıyar");
         Ingredient deneme1 = new Ingredient( 20,4,true,"Limon");
-/*
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Ingredients");
-        myRef.setValue( new Ingredient( "Limoon", 40));
-*/
+        Arr.add(new Ingredient("Egg",1));
+        Arr.add(new Ingredient("butter",1));
+        Arr.add(new Ingredient("Hıyar",2));
+        Recipe rec = new Recipe( "Boiled Egg", "Boil the eggs for about 5 to 20 mins according to your preference", Arr, 15, 15, false );
+        //deneme1.setName("Limoon");
+        deneme1.setNumber(10);
+
+        Fridge fridge = new Fridge(Arr);
+
+        //FirebaseDatabase database = FirebaseDatabase.getInstance();
+        //DatabaseReference myRef = database.getReference();
+        //myRef.child("Ingredients").child("Armut").setValue( new Ingredient( "Armut", 20));
+        //myRef.child("Ingredients").child("Hıyar").setValue( new Ingredient( "Hıyar", 2));
 
 
     }

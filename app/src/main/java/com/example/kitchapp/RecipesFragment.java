@@ -1,7 +1,9 @@
     package com.example.kitchapp;
 
     import android.os.Bundle;
+    import android.view.LayoutInflater;
     import android.view.View;
+    import android.view.ViewGroup;
     import android.widget.AdapterView;
     import android.widget.ArrayAdapter;
     import android.widget.ListView;
@@ -11,6 +13,7 @@
     import androidx.annotation.Nullable;
     import androidx.appcompat.app.AppCompatActivity;
     import androidx.appcompat.widget.SearchView;
+    import androidx.fragment.app.Fragment;
 
     import java.util.ArrayList;
 
@@ -21,12 +24,14 @@
     public class RecipesFragment extends AppCompatActivity {
         SearchView searchView;
         ListView listView;
-        ArrayList<String> list;
+        ArrayList<String> list = new ArrayList<String>();
+        RecipeList recipes = new RecipeList();
         ArrayAdapter<String> adapter;
 
 
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
+
             list = new ArrayList<String>();
             //FixMe-- list arrayList implemented for testing purposes fix it for the final product
             list.add("Apple");
@@ -35,6 +40,9 @@
             list.add("Orange");
             list.add("Lychee");
             list.add("Gavava");
+
+
+            //list = recipes.toArray();
 
             super.onCreate(savedInstanceState);
             setContentView(R.layout.fragment_recipes_list);
@@ -67,6 +75,7 @@
 
             });
             //FIXME: there is possible bug in line below
+
             ListView lv = listView; // old version ListView lv = getListView();
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -75,14 +84,19 @@
                     // When clicked perform some action...
                 }
             });
-
-
-
-
         }
+        /*
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            // Inflate the layout for this fragment
+            return inflater.inflate(R.layout.fragment_recipes, container, false);
+        }*/
 
 
-
+        public RecipesFragment() {
+            // Required empty public constructor
+        }
 
 
 

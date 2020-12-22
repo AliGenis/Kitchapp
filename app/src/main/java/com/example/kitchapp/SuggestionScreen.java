@@ -11,6 +11,7 @@ import android.support.v4.app.*;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -19,15 +20,16 @@ import android.widget.TextView;
  * Use the {@link SuggestionScreen#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SuggestionScreen extends AppCompatActivity{
+public class SuggestionScreen extends Fragment{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    //private static final String ARG_PARAM1 = "param1";
-    //private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+    //ImageButton tick = rootView.R.id.suggestion_tick_button;
 
     // TODO: Rename and change types of parameters
-    /*private String mParam1;
+    private String mParam1;
     private String mParam2;
     TabHost tab;
 
@@ -43,6 +45,7 @@ public class SuggestionScreen extends AppCompatActivity{
      * @param param2 Parameter 2.
      * @return A new instance of fragment SuggestionScreen.
      */
+
     /*
     // TODO: Rename and change types and number of parameters
     public static SuggestionScreen newInstance(String param1, String param2) {
@@ -58,9 +61,11 @@ public class SuggestionScreen extends AppCompatActivity{
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_suggestion_screen);
-        TextView textView = (TextView)findViewById(R.id.suggestedMealName);
-        textView.setText("Deneme");
+        //TextView textView = (TextView)findViewById(R.id.timeText);
+        //textView.setText("Deneme");
+        //setContentView(R.layout.fragment_suggestion_screen);
+
+
         /*Trying to add functional tabs
         tab=(TabHost)findViewById(R.id.tabs);
         tab.setup();
@@ -81,11 +86,15 @@ public class SuggestionScreen extends AppCompatActivity{
         }*/
     }
 
-    /*
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_suggestion_screen, container, false);
-    }*/
+        //TextView textView = textView.findViewById(R.id.timeText);
+        //textView.setText("Deneme");
+        //setContentView(R.layout.fragment_suggestion_screen);
+
+    }
 }
