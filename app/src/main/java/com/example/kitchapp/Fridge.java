@@ -1,4 +1,7 @@
 package com.example.kitchapp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.*;
 
 /**
@@ -7,11 +10,17 @@ import java.util.*;
  * @version 12/12/2020
  */
 public class Fridge extends IngredientList {
-    Recipe param;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference().child("Fridge");
     //constructor
     public Fridge( ArrayList<Ingredient> list ){
         super();
         this.list = list;
+        myRef.setValue(list);
+    }
+    public Fridge(){
+        super();
+        myRef.setValue(list);
     }
 
     /**

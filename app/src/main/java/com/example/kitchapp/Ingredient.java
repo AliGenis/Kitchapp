@@ -1,10 +1,15 @@
 package com.example.kitchapp;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.*;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
@@ -19,8 +24,8 @@ public class Ingredient {
     private int defaultBuyValue;
     private String name;
     private boolean shopable;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference myRef = database.getReference().child("Ingredients");
 
 
     public Ingredient(int number,int criticalNumber,boolean shopable,String name){
@@ -28,14 +33,13 @@ public class Ingredient {
         this.criticalNumber = criticalNumber;
         this.shopable = shopable;
         this.name = name;
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Ingredients");
-        myRef.setValue(this);
+        myRef.child(name).setValue(this);
     }
     public Ingredient(int number,boolean shopable,String name){
         this.number = number;
         this.shopable = shopable;
         this.name = name;
+        myRef.child(name).setValue(this);
     }
 
     //Only name and number specified, other variables has set by default values. -Burak
@@ -45,40 +49,35 @@ public class Ingredient {
         shopable = false;
         defaultBuyValue = number; //How much firstly bought will be offered next time.
         criticalNumber = 3; //Or may it will be asked later when setting it shopable?
-    }
-    public Ingredient (){
-
+        myRef.child(name).setValue(this);
     }
 
-    public String getName(){
-        return name;
-    }
+    public String getName(){ return name; }
 
-    public void setName(String name){
-        this.name = name;
+    public void setName(String newName){
+        myRef.child(name).child("name").setValue(newName);
+        this.name = newName;
     }
 
     public int getNumber(){
         return number;
     }
 
-    public void setNumber(int number){
+    public void setNumber(int newNumber){
+        myRef.child(name).child("number").setValue(newNumber);
         this.number = number;
     }
-
     /*
-    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference ref = database.getReference("message");
+    ValueEventListener postListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
+            this = dataSnapshot.getValue(Post.class);
+        }
 
-    DatabaseReference usersRef = ref.child("ingredients");
-    ArrayList<Ingredient> ingr
-   Map<String, Ingredient> ingredients = new HashMap<>();
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
 
-    ingredients.put("alanisawesome", new Ingredient(5,3,false,"tomato"));
-    ingredients.put("gracehop", new Ingredient(4, ));
-    */
-
-
-
+        }
+    }*/
 
 }

@@ -1,5 +1,8 @@
 package com.example.kitchapp;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 /**
@@ -17,6 +20,8 @@ public class Recipe {
     private int prepTime;
     private boolean isVegetarian;
     private int recipePhotoId;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference().child("Recipes");
 
     //DEFAULT CONSTRUCTOR
     public Recipe(String name,
@@ -31,6 +36,7 @@ public class Recipe {
         this.calorie = calorie;
         this.prepTime = prepTime;
         this.isVegetarian = isVegetarian;
+        myRef.child(name).setValue(this);
     }
 
     public Recipe(String name, String recipe, int recipePhotoId)
@@ -38,8 +44,11 @@ public class Recipe {
         this.name = name;
         this.recipe = recipe;
         this.recipePhotoId= recipePhotoId;
-
+        myRef.child(name).setValue(this);
     }
+
+
+
     //GETTERS AND SETTERS
     public String getName() {
         return name;
