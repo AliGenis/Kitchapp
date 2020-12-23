@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/sign_up"
-        android:name="com.example.kitchapp.SignUp"
+        android:name="com.example.kitchapp.ui.signup.SignUp"
         tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_sign_up_screen_to_userselection"
@@ -87,7 +87,7 @@
     </fragment>
     <fragment
         android:id="@+id/user_settings"
-        android:name="com.example.kitchapp.UserSelection"
+        android:name="com.example.kitchapp.ui.userselection.UserSelection"
         android:label="fragment_user_settings"
         tools:layout="@layout/fragment_user_settings" >
         <action

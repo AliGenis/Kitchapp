@@ -1,4 +1,4 @@
-package com.example.kitchapp;
+package com.example.kitchapp.ui.shoppinglist;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.kitchapp.R;
 import com.example.kitchapp.dummy.DummyContent.DummyItem;
 
 import java.util.List;
@@ -15,18 +16,18 @@ import java.util.List;
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyRecipeRecyclerViewAdapter extends RecyclerView.Adapter<MyRecipeRecyclerViewAdapter.ViewHolder> {
+public class MyShoppingListScreenRecyclerViewAdapter extends RecyclerView.Adapter<MyShoppingListScreenRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
 
-    public MyRecipeRecyclerViewAdapter(List<DummyItem> items) {
+    public MyShoppingListScreenRecyclerViewAdapter(List<DummyItem> items) {
         mValues = items;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_recipes, parent, false);
+                .inflate(R.layout.fragment_shoppinglist, parent, false);
         return new ViewHolder(view);
     }
 

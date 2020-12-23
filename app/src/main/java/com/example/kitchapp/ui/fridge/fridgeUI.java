@@ -1,4 +1,4 @@
-package com.example.kitchapp;
+package com.example.kitchapp.ui.fridge;
 
 import android.os.Bundle;
 import android.widget.GridLayout;
@@ -6,6 +6,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import com.example.kitchapp.R;
 
 public class fridgeUI extends AppCompatActivity {
     GridLayout mainGrid;

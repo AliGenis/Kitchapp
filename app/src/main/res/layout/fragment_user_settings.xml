@@ -5,7 +5,7 @@
     android:id="@+id/user_select"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserSelection">
+    tools:context=".ui.userselection.UserSelection">
 
     <view
         android:id="@+id/view"

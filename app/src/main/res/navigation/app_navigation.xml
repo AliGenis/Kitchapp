@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/fridgeFragment"
-        android:name="com.example.kitchapp.FridgeFragment"
+        android:name="com.example.kitchapp.ui.fridge.FridgeFragment"
         android:label="fragment_fridge"
         tools:layout="@layout/fragment_fridge" />
     <fragment
         android:id="@+id/shoppingListScreenFragment"
-        android:name="com.example.kitchapp.ShoppingListScreenFragment"
+        android:name="com.example.kitchapp.ui.shoppinglist.ShoppingListScreenFragment"
         android:label="fragment_shoppinglist_list"
         tools:layout="@layout/fragment_shoppinglist_list" />
     <fragment
         android:id="@+id/suggestionScreen"
-        android:name="com.example.kitchapp.SuggestionScreen"
+        android:name="com.example.kitchapp.ui.suggestion.tabs.SuggestionScreen"
         android:label="fragment_suggestion_screen"
         tools:layout="@layout/fragment_suggestion_screen" />
     <fragment
         android:id="@+id/recipesFragment"
-        android:name="com.example.kitchapp.RecipesFragment"
+        android:name="com.example.kitchapp.ui.recipes.RecipesFragment"
         android:label="fragment_recipes"
         tools:layout="@layout/fragment_recipes" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.kitchapp.SettingsFragment"
+        android:name="com.example.kitchapp.ui.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

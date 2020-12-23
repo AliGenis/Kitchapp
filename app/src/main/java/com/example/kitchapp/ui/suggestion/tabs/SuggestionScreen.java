@@ -1,21 +1,18 @@
-package com.example.kitchapp;
+package com.example.kitchapp.ui.suggestion.tabs;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
-import android.support.v4.app.*;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.TabHost;
 import android.widget.TextView;
+
+import com.example.kitchapp.R;
 
 /**
  * A simple {@link Fragment} subclass.

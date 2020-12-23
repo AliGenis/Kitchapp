@@ -5,7 +5,7 @@
     android:id="@+id/UserCreate"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp">
+    tools:context=".ui.signup.SignUp">
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"

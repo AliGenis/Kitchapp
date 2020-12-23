@@ -1,4 +1,4 @@
-package com.example.kitchapp;
+package com.example.kitchapp.ui.shoppinglist;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.kitchapp.R;
 import com.example.kitchapp.dummy.DummyContent;
 
 /**

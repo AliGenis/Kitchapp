@@ -1,4 +1,4 @@
-    package com.example.kitchapp;
+    package com.example.kitchapp.ui.recipes;
 
     import android.os.Bundle;
     import android.view.LayoutInflater;
@@ -14,6 +14,9 @@
     import androidx.appcompat.app.AppCompatActivity;
     import androidx.appcompat.widget.SearchView;
     import androidx.fragment.app.Fragment;
+
+    import com.example.kitchapp.R;
+    import com.example.kitchapp.RecipeList;
 
     import java.util.ArrayList;
 

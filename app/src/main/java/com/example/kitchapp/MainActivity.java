@@ -3,26 +3,18 @@ package com.example.kitchapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
-import com.google.android.gms.common.util.CollectionUtils;
+import com.example.kitchapp.ui.fridge.FridgeFragment;
+import com.example.kitchapp.ui.recipes.RecipesFragment;
+import com.example.kitchapp.ui.settings.SettingsFragment;
+import com.example.kitchapp.ui.shoppinglist.ShoppingListScreenFragment;
+import com.example.kitchapp.ui.suggestion.tabs.SuggestionScreen;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.internal.NavigationMenu;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import android.content.Intent;
 
 import java.util.ArrayList;
 
