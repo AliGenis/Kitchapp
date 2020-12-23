@@ -162,6 +162,13 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
         TextView nameOfIng4 = rootView.findViewById(R.id.textView2);
         TextView nameOfIng5 = rootView.findViewById(R.id.textView3);
         TextView nameOfIng6 = rootView.findViewById(R.id.textView4);
+        TextView nameOfIng7 = rootView.findViewById(R.id.textView5);
+        TextView nameOfIng8 = rootView.findViewById(R.id.textView10);
+        TextView nameOfIng9 = rootView.findViewById(R.id.textView12);
+        TextView nameOfIng10 = rootView.findViewById(R.id.textView13);
+        TextView nameOfIng11 = rootView.findViewById(R.id.textView11);
+        TextView nameOfIng12 = rootView.findViewById(R.id.textView14);
+        
 
 
         return rootView;
