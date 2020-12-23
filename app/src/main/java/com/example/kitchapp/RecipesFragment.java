@@ -22,15 +22,24 @@
      * A fragment representing a list of Items.
      */
     public class RecipesFragment extends Fragment {
-        SearchView searchView;
+        private SearchView searchView;
         ListView listView;
         ArrayList<String> list = new ArrayList<String>();
         RecipeList recipes = new RecipeList();
         ArrayAdapter<String> adapter;
 
-        /** TODO change methods according to fragment class
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+        }
+
+        @Override
+        public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+            super.onActivityCreated(savedInstanceState);
+        }
+
+        @Override
+        public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
             list = new ArrayList<String>();
             //FixMe-- list arrayList implemented for testing purposes fix it for the final product
@@ -44,26 +53,23 @@
 
             //list = recipes.toArray();
 
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.fragment_recipes_list);
 
-
-            searchView = findViewById(R.id.searchView);
-            listView = (ListView) findViewById(R.id.lv1);
-            listView.setClickable(true);
-            adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
-            listView.setAdapter(adapter);
+            searchView = (SearchView)view.findViewById(R.id.searchView);
+            listView = view.findViewById(R.id.lv1);
+            //listView.setClickable(true);
+            //adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
+            //listView.setAdapter(adapter);
 
 
 
-            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            /*searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(String query) {
 
                     if (list.contains(query)) {
                         adapter.getFilter().filter(query);
                     } else {
-                        Toast.makeText(RecipesFragment.this, "No Match found", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(RecipesFragment.this, "No Match found", Toast.LENGTH_LONG).show();
                     }
                     return false;
                 }
@@ -73,19 +79,20 @@
                     return false;
                 }
 
-            });
+            });*/
             //FIXME: there is possible bug in line below
 
             ListView lv = listView; // old version ListView lv = getListView();
+            /*
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {  Toast.makeText(getApplicationContext(), ((TextView) view).getText(),
                         Toast.LENGTH_SHORT).show();
                     // When clicked perform some action...
                 }
-            });
+            });*/
         }
-        /*
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
@@ -97,7 +104,7 @@
         public RecipesFragment() {
             // Required empty public constructor
         }
-**/
+
 
 
     }

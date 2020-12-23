@@ -1,23 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.kitchapp.searchview.RecipesFragment">
 
-    <TextView
-        android:id="@+id/item_number"
-        android:layout_width="wrap_content"
+
+    <ListView
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/lv1"
+        android:layout_width="match_parent"
+        android:layout_height="682dp"
+        android:layout_below="@+id/searchView"
+        android:layout_marginTop="1dp"
+        android:divider="#ad5"
+        android:dividerHeight="2dp" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:layout_alignParentTop="true"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search Here"/>
 
-    <TextView
-        android:id="@+id/content"
-        android:layout_width="wrap_content"
+
+    <!--
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:layout_alignParentTop="true"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search Here"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"/>-->
 
-</LinearLayout>
+
+</RelativeLayout>
