@@ -8,27 +8,27 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.kitchapp.searchview.RecipesFragment">
+    //tools:context="com.example.kitchapp.searchview.RecipesFragment">
 
 
-    <ListView
-        android:clickable="true"
-        android:focusable="true"
-        android:id="@+id/lv1"
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="682dp"
-        android:layout_below="@+id/searchView"
-        android:layout_marginTop="1dp"
-        android:divider="#ad5"
-        android:dividerHeight="2dp" />
+        android:layout_height="362dp"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-    <SearchView
-        android:id="@+id/searchView"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="183dp"
+        android:text="TextView" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:iconifiedByDefault="false"
-        android:queryHint="Search Here"/>
+        tools:srcCompat="@tools:sample/avatars" />
+</RelativeLayout>
 
 
     <!--
