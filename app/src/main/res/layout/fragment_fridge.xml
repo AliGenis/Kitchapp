@@ -3,7 +3,8 @@
     xmlns:app ="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".FridgeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -11,17 +12,7 @@
         android:padding="40dp"
         tools:context=".fridgeUI">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="756dp"
-            android:background="#fff"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/bottom_menu">
+
 
             <TextView
                 android:layout_width="169dp"
@@ -29,7 +20,7 @@
                 android:layout_marginTop="800dp"
                 android:gravity="center"
                 android:text="w" />
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 
         <TextView
             android:id="@+id/textView"
