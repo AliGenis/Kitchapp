@@ -2,6 +2,7 @@ package com.example.kitchapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -22,12 +24,17 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final String TAG = "FRIDGEFRAGMENT";
+
+    private static final String KEY_TITLE = "Title";//when we save data to firebase we need key for them
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private ImageButton button;
     private String plusName;
+    private FragmentAListener listener;
     public FridgeFragment() {
         // Required empty public constructor
     }
@@ -50,10 +57,13 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
         return fragment;
     }
 
+    public interface FragmentAListener{
+        void onInputASent(CharSequence input);
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+    //    setContentView(R.layout.fragment_fridge); //niye bilmiyorum
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -62,7 +72,7 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
 
         }
 
-
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -146,6 +156,12 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
         starLogoButton11.setOnClickListener(this);
         starLogoButton12.setOnClickListener(this);
 
+        TextView nameOfIng1 = rootView.findViewById(R.id.textView6);
+        TextView nameOfIng2 = rootView.findViewById(R.id.textView8);
+        TextView nameOfIng3 = rootView.findViewById(R.id.textView9);
+        TextView nameOfIng4 = rootView.findViewById(R.id.textView2);
+        TextView nameOfIng5 = rootView.findViewById(R.id.textView3);
+        TextView nameOfIng6 = rootView.findViewById(R.id.textView4);
 
 
         return rootView;
@@ -155,7 +171,7 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
 
         if(v.getId() == R.id.star_logo3){
-
+        //Toast.makeText(this,"Button 1 is clicked",Toast.LENGTH_SHORT).show();
         }
         else if(v.getId() == R.id.star_logo4){
 
