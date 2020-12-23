@@ -2,10 +2,12 @@ package com.example.kitchapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +16,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,20 +34,20 @@ public class FridgeFragment extends AppCompatActivity implements View.OnClickLis
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private static final String TAG = "FRIDGEFRAGMENT";
+    private static final String TAG = "FridgeFragment";
 
-    private static final String KEY_Ingredient1 = "Title";
-    private static final String KEY_Ingredient2 = "Title";
-    private static final String KEY_Ingredient3 = "Title";
-    private static final String KEY_Ingredient4 = "Title";
-    private static final String KEY_Ingredient5 = "Title";
-    private static final String KEY_Ingredient6 = "Title";
-    private static final String KEY_Ingredient7 = "Title";
-    private static final String KEY_Ingredient8 = "Title";
-    private static final String KEY_Ingredient9 = "Title";
-    private static final String KEY_Ingredient10 = "Title";
-    private static final String KEY_Ingredient11 = "Title";
-    private static final String KEY_Ingredient12 = "Title";//when we save data to firebase we need key for them
+    private static final String KEY_Ingredient1 = "ing1";
+    private static final String KEY_Ingredient2 = "ing2";
+    private static final String KEY_Ingredient3 = "ing3";
+    private static final String KEY_Ingredient4 = "ing4";
+    private static final String KEY_Ingredient5 = "ing5";
+    private static final String KEY_Ingredient6 = "ing6";
+    private static final String KEY_Ingredient7 = "ing7";
+    private static final String KEY_Ingredient8 = "ing8";
+    private static final String KEY_Ingredient9 = "ing9";
+    private static final String KEY_Ingredient10 = "ing10";
+    private static final String KEY_Ingredient11 = "ing11";
+    private static final String KEY_Ingredient12 = "ing12";//when we save data to firebase we need key for them
 
     private FirebaseFirestore database = FirebaseFirestore.getInstance();
 
@@ -50,6 +57,61 @@ public class FridgeFragment extends AppCompatActivity implements View.OnClickLis
     private ImageButton button;
     private String plusName;
     private FragmentAListener listener;
+
+    ImageButton plusButton1;
+    ImageButton plusButton2;
+    ImageButton plusButton3;
+    ImageButton plusButton4;
+    ImageButton plusButton5;
+    ImageButton plusButton6;
+    ImageButton plusButton7;
+    ImageButton plusButton8;
+    ImageButton plusButton9;
+    ImageButton plusButton10;
+    ImageButton plusButton11;
+    ImageButton plusButton12;
+
+    ImageButton minusButton1;
+    ImageButton minusButton2;
+    ImageButton minusButton3;
+    ImageButton minusButton4;
+    ImageButton minusButton5;
+    ImageButton minusButton6;
+    ImageButton minusButton7;
+    ImageButton minusButton8;
+    ImageButton minusButton9;
+    ImageButton minusButton10;
+    ImageButton minusButton11;
+    ImageButton minusButton12;
+
+    ImageButton starLogoButton1;
+    ImageButton starLogoButton2;
+    ImageButton starLogoButton3;
+    ImageButton starLogoButton4;
+    ImageButton starLogoButton5;
+    ImageButton starLogoButton6;
+    ImageButton starLogoButton7;
+    ImageButton starLogoButton8;
+    ImageButton starLogoButton9;
+    ImageButton starLogoButton10;
+    ImageButton starLogoButton11;
+    ImageButton starLogoButton12;
+
+    TextView nameOfIng1;
+    TextView nameOfIng2;
+    TextView nameOfIng3;
+    TextView nameOfIng4;
+    TextView nameOfIng5;
+    TextView nameOfIng6;
+    TextView nameOfIng7;
+    TextView nameOfIng8;
+    TextView nameOfIng9;
+    TextView nameOfIng10;
+    TextView nameOfIng11;
+    TextView nameOfIng12;
+
+
+
 
     /**
      * Use this factory method to create a new instance of
@@ -74,27 +136,19 @@ public class FridgeFragment extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_fridge); //niye bilmiyorum
-    }
-
-
-    @Nullable
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_fridge,container,true); //to make operations on design (another roots will be connected to it)
-
-        ImageButton plusButton1 = rootView.findViewById(R.id.plus1); //to reach to button
-        ImageButton plusButton2 = rootView.findViewById(R.id.plus2);
-        ImageButton plusButton3 = rootView.findViewById(R.id.plus3);
-        ImageButton plusButton4 = rootView.findViewById(R.id.plus4);
-        ImageButton plusButton5 = rootView.findViewById(R.id.plus5);
-        ImageButton plusButton6 = rootView.findViewById(R.id.plus6);
-        ImageButton plusButton7 = rootView.findViewById(R.id.plus7);
-        ImageButton plusButton8= rootView.findViewById(R.id.plus8);
-        ImageButton plusButton9 = rootView.findViewById(R.id.plus9);
-        ImageButton plusButton10 = rootView.findViewById(R.id.plus10);
-        ImageButton plusButton11 = rootView.findViewById(R.id.plus11);
-        ImageButton plusButton12 = rootView.findViewById(R.id.plus12);
+        setContentView(R.layout.fragment_fridge);
+        plusButton1 = (ImageButton)findViewById(R.id.plus1); //to reach to button
+        plusButton2 = (ImageButton)findViewById(R.id.plus2);
+        plusButton3 = (ImageButton)findViewById(R.id.plus3);
+        plusButton1 = (ImageButton)findViewById(R.id.plus4);//to reach to button
+        plusButton2 = (ImageButton)findViewById(R.id.plus5);
+        plusButton3 = (ImageButton)findViewById(R.id.plus6);
+        plusButton1 = (ImageButton)findViewById(R.id.plus7);//to reach to button
+        plusButton2 = (ImageButton)findViewById(R.id.plus8);
+        plusButton3 = (ImageButton)findViewById(R.id.plus9);
+        plusButton1 = (ImageButton)findViewById(R.id.plus10); //to reach to button
+        plusButton2 = (ImageButton)findViewById(R.id.plus11);
+        plusButton3 = (ImageButton)findViewById(R.id.plus12);
 
         plusButton1.setOnClickListener(this);
         plusButton2.setOnClickListener(this);
@@ -109,18 +163,19 @@ public class FridgeFragment extends AppCompatActivity implements View.OnClickLis
         plusButton11.setOnClickListener(this);
         plusButton12.setOnClickListener(this);
 
-        ImageButton minusButton1 = rootView.findViewById(R.id.min1);
-        ImageButton minusButton2 = rootView.findViewById(R.id.min2);
-        ImageButton minusButton3 = rootView.findViewById(R.id.min3);
-        ImageButton minusButton4 = rootView.findViewById(R.id.min4);
-        ImageButton minusButton5 = rootView.findViewById(R.id.min5);
-        ImageButton minusButton6 = rootView.findViewById(R.id.min6);
-        ImageButton minusButton7 = rootView.findViewById(R.id.min7);
-        ImageButton minusButton8 = rootView.findViewById(R.id.min8);
-        ImageButton minusButton9 = rootView.findViewById(R.id.min9);
-        ImageButton minusButton10 = rootView.findViewById(R.id.min10);
-        ImageButton minusButton11 = rootView.findViewById(R.id.min11);
-        ImageButton minusButton12 = rootView.findViewById(R.id.min12);
+
+        minusButton1 = (ImageButton)findViewById(R.id.min1);
+        minusButton2 = (ImageButton)findViewById(R.id.min2);
+        minusButton3 = (ImageButton)findViewById(R.id.min3);
+        minusButton4 = (ImageButton)findViewById(R.id.min4);
+        minusButton5 = (ImageButton)findViewById(R.id.min5);
+        minusButton6 = (ImageButton)findViewById(R.id.min6);
+        minusButton7 = (ImageButton)findViewById(R.id.min7);
+        minusButton8 = (ImageButton)findViewById(R.id.min8);
+        minusButton9 = (ImageButton)findViewById(R.id.min9);
+        minusButton10 = (ImageButton)findViewById(R.id.min10);
+        minusButton11 = (ImageButton)findViewById(R.id.min11);
+        minusButton12 = (ImageButton)findViewById(R.id.min12);
 
         minusButton1.setOnClickListener(this);
         minusButton2.setOnClickListener(this);
@@ -135,18 +190,18 @@ public class FridgeFragment extends AppCompatActivity implements View.OnClickLis
         minusButton11.setOnClickListener(this);
         minusButton12.setOnClickListener(this);
 
-        ImageButton starLogoButton1 = rootView.findViewById(R.id.star_logo3);
-        ImageButton starLogoButton2 = rootView.findViewById(R.id.star_logo4);
-        ImageButton starLogoButton3 = rootView.findViewById(R.id.star_logo5);
-        ImageButton starLogoButton4 = rootView.findViewById(R.id.star_logo6);
-        ImageButton starLogoButton5 = rootView.findViewById(R.id.star_logo7);
-        ImageButton starLogoButton6 = rootView.findViewById(R.id.star_logo8);
-        ImageButton starLogoButton7 = rootView.findViewById(R.id.star_logo9);
-        ImageButton starLogoButton8 = rootView.findViewById(R.id.star_logo10);
-        ImageButton starLogoButton9 = rootView.findViewById(R.id.star_logo11);
-        ImageButton starLogoButton10 = rootView.findViewById(R.id.star_logo12);
-        ImageButton starLogoButton11 = rootView.findViewById(R.id.star_logo13);
-        ImageButton starLogoButton12 = rootView.findViewById(R.id.star_logo14);
+        starLogoButton1 = (ImageButton)findViewById(R.id.star_logo3);
+        starLogoButton2 = (ImageButton)findViewById(R.id.star_logo4);
+        starLogoButton3 = (ImageButton)findViewById(R.id.star_logo5);
+        starLogoButton4 = (ImageButton)findViewById(R.id.star_logo6);
+        starLogoButton5 = (ImageButton)findViewById(R.id.star_logo7);
+        starLogoButton6 = (ImageButton)findViewById(R.id.star_logo8);
+        starLogoButton7 = (ImageButton)findViewById(R.id.star_logo9);
+        starLogoButton8 = (ImageButton)findViewById(R.id.star_logo10);
+        starLogoButton9 = (ImageButton)findViewById(R.id.star_logo11);
+         starLogoButton10 = (ImageButton)findViewById(R.id.star_logo12);
+         starLogoButton11 = (ImageButton)findViewById(R.id.star_logo13);
+         starLogoButton12 = (ImageButton)findViewById(R.id.star_logo14);
 
         starLogoButton1.setOnClickListener(this);
         starLogoButton2.setOnClickListener(this);
@@ -161,23 +216,74 @@ public class FridgeFragment extends AppCompatActivity implements View.OnClickLis
         starLogoButton11.setOnClickListener(this);
         starLogoButton12.setOnClickListener(this);
 
-        TextView nameOfIng1 = rootView.findViewById(R.id.textView6);
-        TextView nameOfIng2 = rootView.findViewById(R.id.textView8);
-        TextView nameOfIng3 = rootView.findViewById(R.id.textView9);
-        TextView nameOfIng4 = rootView.findViewById(R.id.textView2);
-        TextView nameOfIng5 = rootView.findViewById(R.id.textView3);
-        TextView nameOfIng6 = rootView.findViewById(R.id.textView4);
-        TextView nameOfIng7 = rootView.findViewById(R.id.textView5);
-        TextView nameOfIng8 = rootView.findViewById(R.id.textView10);
-        TextView nameOfIng9 = rootView.findViewById(R.id.textView12);
-        TextView nameOfIng10 = rootView.findViewById(R.id.textView13);
-        TextView nameOfIng11 = rootView.findViewById(R.id.textView11);
-        TextView nameOfIng12 = rootView.findViewById(R.id.textView14);
+        nameOfIng1 = findViewById(R.id.textView6);
+        nameOfIng2 = findViewById(R.id.textView8);
+        nameOfIng3 = findViewById(R.id.textView9);
+        nameOfIng4 = findViewById(R.id.textView2);
+        nameOfIng5 = findViewById(R.id.textView3);
+        nameOfIng6 = findViewById(R.id.textView4);
+        nameOfIng7 = findViewById(R.id.textView5);
+        nameOfIng8 = findViewById(R.id.textView10);
+        nameOfIng9 = findViewById(R.id.textView12);
+        nameOfIng10 = findViewById(R.id.textView13);
+        nameOfIng11 = findViewById(R.id.textView11);
+        nameOfIng12 = findViewById(R.id.textView14);
 
 
+
+    }
+
+    public void saveNote(View v){
+        String ing1 = nameOfIng1.getText().toString();
+        String ing2 = nameOfIng1.getText().toString();
+        String ing3 = nameOfIng1.getText().toString();
+        String ing4 = nameOfIng1.getText().toString();
+        String ing5 = nameOfIng1.getText().toString();
+        String ing6 = nameOfIng1.getText().toString();
+        String ing7 = nameOfIng1.getText().toString();
+        String ing8 = nameOfIng1.getText().toString();
+        String ing9 = nameOfIng1.getText().toString();
+        String ing10 = nameOfIng1.getText().toString();
+        String ing11 = nameOfIng1.getText().toString();
+        String ing12= nameOfIng1.getText().toString();
+
+        Map<String,Object> ingredient = new HashMap<>();
+        ingredient.put(KEY_Ingredient1,ing1);
+        ingredient.put(KEY_Ingredient2,ing2);
+        ingredient.put(KEY_Ingredient3,ing3);
+        ingredient.put(KEY_Ingredient4,ing4);
+        ingredient.put(KEY_Ingredient5,ing5);
+        ingredient.put(KEY_Ingredient6,ing6);
+        ingredient.put(KEY_Ingredient7,ing7);
+        ingredient.put(KEY_Ingredient8,ing8);
+        ingredient.put(KEY_Ingredient9,ing9);
+        ingredient.put(KEY_Ingredient10,ing10);
+        ingredient.put(KEY_Ingredient11,ing11);
+        ingredient.put(KEY_Ingredient12,ing12);
+
+        database.collection("Ingredients").document("My first ingredient").set(ingredient).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {//either succsesfull or not
+            Toast.makeText(FridgeFragment.this,"Ingredient saved",Toast.LENGTH_SHORT).show();
+            }
+        })
+        .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(FridgeFragment.this,"Error!",Toast.LENGTH_SHORT).show();
+                Log.d(TAG,e.toString());
+            }
+        });
+    }
+
+
+ /**   @Nullable
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_fridge,container,true); //to make operations on design (another roots will be connected to it)
 
         return rootView;
-    }
+    }**/
 
     @Override
     public void onClick(View v) {
