@@ -21,14 +21,14 @@
     /**
      * A fragment representing a list of Items.
      */
-    public class RecipesFragment extends AppCompatActivity {
+    public class RecipesFragment extends Fragment {
         SearchView searchView;
         ListView listView;
         ArrayList<String> list = new ArrayList<String>();
         RecipeList recipes = new RecipeList();
         ArrayAdapter<String> adapter;
 
-
+        /** TODO change methods according to fragment class
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
 
@@ -48,7 +48,7 @@
             setContentView(R.layout.fragment_recipes_list);
 
 
-            searchView = (SearchView) findViewById(R.id.searchView);
+            searchView = findViewById(R.id.searchView);
             listView = (ListView) findViewById(R.id.lv1);
             listView.setClickable(true);
             adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
@@ -91,13 +91,13 @@
                                  Bundle savedInstanceState) {
             // Inflate the layout for this fragment
             return inflater.inflate(R.layout.fragment_recipes, container, false);
-        }*/
+        }
 
 
         public RecipesFragment() {
             // Required empty public constructor
         }
-
+**/
 
 
     }

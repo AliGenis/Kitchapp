@@ -28,7 +28,7 @@ import java.util.Map;
  * Use the {@link FridgeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FridgeFragment extends AppCompatActivity implements View.OnClickListener{
+public class FridgeFragment extends Fragment implements View.OnClickListener{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -277,15 +277,15 @@ public class FridgeFragment extends AppCompatActivity implements View.OnClickLis
     }
 
 
- /**   @Nullable
+    @Nullable
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_fridge,container,true); //to make operations on design (another roots will be connected to it)
 
         return rootView;
-    }**/
+    }
 
-    @Override
+
     public void onClick(View v) {
 
         if(v.getId() == R.id.star_logo3){

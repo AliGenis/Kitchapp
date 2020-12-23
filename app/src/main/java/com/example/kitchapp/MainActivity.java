@@ -31,46 +31,68 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        ArrayList<Ingredient> Arr = new ArrayList<Ingredient>();
+        System.out.println("KITCHAPP!");
+        //Ingredient deneme = new Ingredient( 200,4,true,"Hıyar");
+        Ingredient deneme1 = new Ingredient(20, 4, true, "Limon");
+        Arr.add(new Ingredient("Egg", 1));
+        Arr.add(new Ingredient("butter", 1));
+        Arr.add(new Ingredient("Hıyar", 2));
+        Recipe rec = new Recipe("Boiled Egg", "Boil the eggs for about 5 to 20 mins according to your preference", Arr, 15, 15, false);
+        //deneme1.setName("Limoon");
+        deneme1.setNumber(10);
+
+        Fridge fridge = new Fridge(Arr);
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FridgeFragment()).commit();
+    }
 
         //setContentView(R.layout.fragment_suggestion_screen);
-        setContentView(R.layout.fragment_recipes_list);
+     //   setContentView(R.layout.fragment_recipes_list);
         //setContentView(R.layout.activity_main);
-        /* TODO: it is activity solution
-        BottomNavigationView navView = findViewById(R.id.bottomNavigationView);
-        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+       //  TODO: it is activity solution
+     private  BottomNavigationView.OnNavigationItemSelectedListener navListener =
+        new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selectedFragment = null;
                 switch (item.getItemId()) {
-
                     case R.id.fridgeFragment:
+                        selectedFragment = new FridgeFragment();
                         break;
 
                     case R.id.shoppingListScreenFragment:
-                        Intent intent1 = new Intent(MainActivity.this, ShoppingListScreenFragment.class);
-                        startActivity(intent1);
+                       // Intent intent1 = new Intent(MainActivity.this, ShoppingListScreenFragment.class);
+                     //   startActivity(intent1);
+                        selectedFragment = new ShoppingListScreenFragment();
                         break;
 
                     case R.id.suggestionScreen:
-                        Intent intent2 = new Intent(MainActivity.this, SuggestionScreen.class);
-                        startActivity(intent2);
+                   //     Intent intent2 = new Intent(MainActivity.this, SuggestionScreen.class);
+                      //  startActivity(intent2);
+                        selectedFragment = new SuggestionScreen();
                         break;
-
                     case R.id.recipesFragment:
-                        Intent intent3 = new Intent(MainActivity.this, RecipesFragment.class);
-                        startActivity(intent3);
+                  //      Intent intent3 = new Intent(MainActivity.this, RecipesFragment.class);
+                   //     startActivity(intent3);
+                        selectedFragment = new RecipesFragment();
                         break;
 
                     case R.id.settingsFragment:
-                        Intent intent4 = new Intent(MainActivity.this, SettingsFragment.class);
-                        startActivity(intent4);
+                        selectedFragment = new SettingsFragment();
+                        //   Intent intent4 = new Intent(MainActivity.this, SettingsFragment.class);
+                     //   startActivity(intent4);
                         break;
                 }
-
-
-                return false;
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
+           return true;
             }
-        });
-        */
+        };
+
 
         //TODO: it is fragment solution
         //BottomNavigationView navView = findViewById(R.id.bottomNavigationView);
@@ -83,18 +105,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         //setContentView(R.layout.fragment_suggestion_screen);
-        ArrayList<Ingredient> Arr = new ArrayList<Ingredient>();
-        System.out.println("KITCHAPP!");
-        //Ingredient deneme = new Ingredient( 200,4,true,"Hıyar");
-        Ingredient deneme1 = new Ingredient( 20,4,true,"Limon");
-        Arr.add(new Ingredient("Egg",1));
-        Arr.add(new Ingredient("butter",1));
-        Arr.add(new Ingredient("Hıyar",2));
-        Recipe rec = new Recipe( "Boiled Egg", "Boil the eggs for about 5 to 20 mins according to your preference", Arr, 15, 15, false );
-        //deneme1.setName("Limoon");
-        deneme1.setNumber(10);
-
-        Fridge fridge = new Fridge(Arr);
 
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
         //DatabaseReference myRef = database.getReference();
@@ -102,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         //myRef.child("Ingredients").child("Hıyar").setValue( new Ingredient( "Hıyar", 2));
 
 
-    }
+
     /*
     @NonNull
     private  NavController getNavController() {
@@ -113,10 +123,10 @@ public class MainActivity extends AppCompatActivity {
         }
         return ((NavHostFragment) fragment).getNavController();
 
-    }*/
+    }
 
     public void openDataInsert(){
         Intent intent = new Intent(this,DataInsert.class);
         startActivity(intent);
-    }
+    }*/
 }
