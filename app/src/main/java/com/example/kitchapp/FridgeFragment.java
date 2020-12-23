@@ -3,6 +3,7 @@ package com.example.kitchapp;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -13,12 +14,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link FridgeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FridgeFragment extends Fragment implements View.OnClickListener{
+public class FridgeFragment extends AppCompatActivity implements View.OnClickListener{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,8 +29,20 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
     private static final String ARG_PARAM2 = "param2";
     private static final String TAG = "FRIDGEFRAGMENT";
 
-    private static final String KEY_TITLE = "Title";//when we save data to firebase we need key for them
+    private static final String KEY_Ingredient1 = "Title";
+    private static final String KEY_Ingredient2 = "Title";
+    private static final String KEY_Ingredient3 = "Title";
+    private static final String KEY_Ingredient4 = "Title";
+    private static final String KEY_Ingredient5 = "Title";
+    private static final String KEY_Ingredient6 = "Title";
+    private static final String KEY_Ingredient7 = "Title";
+    private static final String KEY_Ingredient8 = "Title";
+    private static final String KEY_Ingredient9 = "Title";
+    private static final String KEY_Ingredient10 = "Title";
+    private static final String KEY_Ingredient11 = "Title";
+    private static final String KEY_Ingredient12 = "Title";//when we save data to firebase we need key for them
 
+    private FirebaseFirestore database = FirebaseFirestore.getInstance();
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -35,9 +50,6 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
     private ImageButton button;
     private String plusName;
     private FragmentAListener listener;
-    public FridgeFragment() {
-        // Required empty public constructor
-    }
 
     /**
      * Use this factory method to create a new instance of
@@ -53,7 +65,6 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -63,17 +74,11 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    //    setContentView(R.layout.fragment_fridge); //niye bilmiyorum
+        setContentView(R.layout.fragment_fridge); //niye bilmiyorum
+    }
 
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
- }
-
-        }
 
     @Nullable
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_fridge,container,true); //to make operations on design (another roots will be connected to it)
@@ -168,7 +173,7 @@ public class FridgeFragment extends Fragment implements View.OnClickListener{
         TextView nameOfIng10 = rootView.findViewById(R.id.textView13);
         TextView nameOfIng11 = rootView.findViewById(R.id.textView11);
         TextView nameOfIng12 = rootView.findViewById(R.id.textView14);
-        
+
 
 
         return rootView;
