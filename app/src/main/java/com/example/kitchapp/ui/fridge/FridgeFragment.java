@@ -144,15 +144,15 @@ public class FridgeFragment extends Fragment //implements View.OnClickListener
         plusButton1 = view.findViewById(R.id.plus1); //to reach to button
         plusButton2 = view.findViewById(R.id.plus2);
         plusButton3 = view.findViewById(R.id.plus3);
-        plusButton1 = view.findViewById(R.id.plus4);//to reach to button
-        plusButton2 = view.findViewById(R.id.plus5);
-        plusButton3 = view.findViewById(R.id.plus6);
-        plusButton1 = view.findViewById(R.id.plus7);//to reach to button
-        plusButton2 = view.findViewById(R.id.plus8);
-        plusButton3 = view.findViewById(R.id.plus9);
-        plusButton1 = view.findViewById(R.id.plus10); //to reach to button
-        plusButton2 = view.findViewById(R.id.plus11);
-        plusButton3 = view.findViewById(R.id.plus12);
+        plusButton4 = view.findViewById(R.id.plus4);//to reach to button
+        plusButton5 = view.findViewById(R.id.plus5);
+        plusButton6 = view.findViewById(R.id.plus6);
+        plusButton7 = view.findViewById(R.id.plus7);//to reach to button
+        plusButton8 = view.findViewById(R.id.plus8);
+        plusButton9 = view.findViewById(R.id.plus9);
+        plusButton10 = view.findViewById(R.id.plus10); //to reach to button
+        plusButton11 = view.findViewById(R.id.plus11);
+        plusButton12 = view.findViewById(R.id.plus12);
 
         /*
         plusButton1.setOnClickListener(this);
