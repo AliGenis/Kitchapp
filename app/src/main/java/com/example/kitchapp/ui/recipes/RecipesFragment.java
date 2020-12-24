@@ -12,12 +12,14 @@
     import android.view.ViewGroup;
     import android.widget.AdapterView;
     import android.widget.ArrayAdapter;
+    import android.widget.ListView;
 
     import androidx.annotation.Nullable;
     import androidx.appcompat.widget.SearchView;
     import androidx.fragment.app.Fragment;
 
-    import javax.swing.text.html.ListView;
+    import com.example.kitchapp.R;
+
 
     public class RecipesFragment extends Fragment {
 
@@ -32,8 +34,8 @@
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_recipes_list, container, false);
 
-            searchView = view.findViewById(R.id.searchview);
-            listView = view.findViewById(R.id.listview);
+            searchView = view.findViewById(R.id.searchView);
+            listView = view.findViewById(R.id.lv1);
             arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, android.R.id.text1, nameList);
             listView.setAdapter(arrayAdapter);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -171,5 +173,4 @@
         }
 
 
-
-    }
+*/
