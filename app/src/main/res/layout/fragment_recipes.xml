@@ -28,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:srcCompat="@tools:sample/avatars" />
+    </RelativeLayout>
 
 
 
@@ -42,4 +43,3 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>-->
 
 
-</RelativeLayout>
