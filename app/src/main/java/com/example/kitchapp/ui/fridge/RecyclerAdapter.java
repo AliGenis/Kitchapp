@@ -36,7 +36,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
     public void onBindViewHolder(final FridgeViewHolder holder, int position) {
         holder.ingredient = list.get(position);
         holder.tvName.setText(list.get(position).getName());
-        holder.tvNumber.setText(   Integer.toString(list.get(position).getNumber()) );
+        holder.tvNumber.setText(Integer.toString(list.get(position).getNumber()));
     }
 
     @Override
@@ -93,8 +93,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
             ingredient.setName(name);
             ingredient.setNumber(number);
 
-            switch (v.getId())
-            {
+            switch (v.getId()) {
                 case (R.id.fridgeDeleteButton):
                     MainActivity.roomDatabaseClass.ingredientDao().deleteIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,

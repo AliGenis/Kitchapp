@@ -9,48 +9,50 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kitchapp.Ingredient;
-import com.example.kitchapp.ui.fridge.FridgeFragment;
-
-import com.example.kitchapp.Recipe;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
+import com.example.kitchapp.Recipe;
+import com.example.kitchapp.ui.fridge.FridgeFragment;
 
 import java.util.List;
 
-public class MyRecipeListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerAdapter.FridgeViewHolder> {{
+public class MyRecipeListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerAdapter.FridgeViewHolder> {
+    {
 
         private final List<Recipe> list;
 
-        public RecyclerAdapter(List<Recipe> items) {
-            list = items;
-        }
+        public RecyclerAdapter(List < Recipe > items) {
+        list = items;
+    }
 
         @NonNull
         @Override
-        public FridgeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.fragment_fridge_item, parent, false);
-            FridgeViewHolder fridgeViewHolder = new FridgeViewHolder(view);
-            return fridgeViewHolder;
-        }
+        public FridgeViewHolder onCreateViewHolder (ViewGroup parent,int viewType){
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.fragment_fridge_item, parent, false);
+        FridgeViewHolder fridgeViewHolder = new FridgeViewHolder(view);
+        return fridgeViewHolder;
+    }
 
         @Override
-        public void onBindViewHolder(final FridgeViewHolder holder, int position) {
-            holder.ingredient = list.get(position);
-            holder.tvName.setText(list.get(position).getName());
-            holder.tvNumber.setText(   Integer.toString(list.get(position).getNumber()) );
-        }
+        public void onBindViewHolder ( final FridgeViewHolder holder, int position){
+        holder.ingredient = list.get(position);
+        holder.tvName.setText(list.get(position).getName());
+        holder.tvNumber.setText(Integer.toString(list.get(position).getNumber()));
+    }
 
         @Override
-        public int getItemCount() {
-            return list.size();
-        }
+        public int getItemCount () {
+        return list.size();
+    }
 
         public class FridgeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
             public final TextView tvName;
             public final TextView tvNumber;
             public Ingredient ingredient;
-            public ImageButton btDelete, plusButton, minusButton;
+            public final ImageButton btDelete;
+            public final ImageButton plusButton;
+            public final ImageButton minusButton;
 
             public FridgeViewHolder(View view) {
                 super(view);
@@ -95,8 +97,7 @@ public class MyRecipeListRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
                 ingredient.setName(name);
                 ingredient.setNumber(number);
 
-                switch (v.getId())
-                {
+                switch (v.getId()) {
                     case (R.id.fridgeDeleteButton):
                         MainActivity.roomDatabaseClass.ingredientDao().deleteIngredient(ingredient);
                         MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
@@ -120,8 +121,6 @@ public class MyRecipeListRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
                 }
 
 
-
-
             }
         }
-}
+    }

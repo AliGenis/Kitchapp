@@ -1,13 +1,13 @@
 package com.example.kitchapp.ui.shoppinglist;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
@@ -68,6 +68,7 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
             checkBox.setOnClickListener(this);
 
         }
+
         public void onClick(View v) {
             Ingredient ingredient;
             int ID, number;
@@ -80,8 +81,7 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
             ingredient.setName(name);
             ingredient.setNumber(number);
 
-            switch (v.getId())
-            {
+            switch (v.getId()) {
                 /*case (R.id.fridgeDeleteButton):
                     MainActivity.roomDatabaseClass.shoppingIngredientDao().deleteIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
@@ -105,8 +105,8 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
             }
 
 
-
         }
+
         @Override
         public String toString() {
             return super.toString() + " '" + checkBox.getText() + "'";

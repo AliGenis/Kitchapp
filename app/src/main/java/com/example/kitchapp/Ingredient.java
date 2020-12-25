@@ -1,4 +1,5 @@
 package com.example.kitchapp;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

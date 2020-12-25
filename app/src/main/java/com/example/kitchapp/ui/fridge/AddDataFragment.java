@@ -37,7 +37,7 @@ public class AddDataFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String name = inputName.getText().toString();
-                int number =  Integer.parseInt( inputNumber.getText().toString() );
+                int number = Integer.parseInt(inputNumber.getText().toString());
 
                 Ingredient ingredient = new Ingredient();
                 ingredient.setName(name);

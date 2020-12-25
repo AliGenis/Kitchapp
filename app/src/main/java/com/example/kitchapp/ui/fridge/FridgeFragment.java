@@ -19,10 +19,10 @@ import java.util.List;
 
 public class FridgeFragment extends Fragment implements View.OnClickListener {
 
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
     RecyclerAdapter recyclerAdapter;
     Button btAddData;
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -43,8 +43,7 @@ public class FridgeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case (R.id.addToFridgeButton):
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new AddDataFragment()
                         , null).addToBackStack(null).commit();

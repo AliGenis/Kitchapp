@@ -14,11 +14,11 @@ public interface ShoppingIngredientDao {
     void addShopIngredient(Ingredient ingredient);
 
     @Query("select * from ingredient")
-    public List<Ingredient> getIngredient();
+    List<Ingredient> getIngredient();
 
     @Delete
-    public void deleteShopIngredient(Ingredient ingredient);
+    void deleteShopIngredient(Ingredient ingredient);
 
     @Update
-    public void updateShopIngredient(Ingredient ingredient);
+    void updateShopIngredient(Ingredient ingredient);
 }

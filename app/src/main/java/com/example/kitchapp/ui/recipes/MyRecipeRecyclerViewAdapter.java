@@ -1,11 +1,11 @@
 package com.example.kitchapp.ui.recipes;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kitchapp.R;
 import com.example.kitchapp.dummy.DummyContent.DummyItem;
@@ -34,7 +34,7 @@ public class MyRecipeRecyclerViewAdapter extends RecyclerView.Adapter<MyRecipeRe
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-      //  holder.mIdView.setText(mValues.get(position).id);
+        //  holder.mIdView.setText(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
     }
 
@@ -45,14 +45,14 @@ public class MyRecipeRecyclerViewAdapter extends RecyclerView.Adapter<MyRecipeRe
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-      //  public final TextView mIdView;
+        //  public final TextView mIdView;
         public final TextView mContentView;
         public DummyItem mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-          //  mIdView = (TextView) view.findViewById(R.id.item_number);
+            //  mIdView = (TextView) view.findViewById(R.id.item_number);
             mContentView = (TextView) view.findViewById(R.id.content);
         }
 

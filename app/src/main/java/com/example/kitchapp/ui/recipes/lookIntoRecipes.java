@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +37,7 @@ public class lookIntoRecipes extends Fragment {
             @Override
             public void onClick(View v) {
                 String name = inputName.getText().toString();
-                int number =  Integer.parseInt( inputNumber.getText().toString() );
+                int number = Integer.parseInt(inputNumber.getText().toString());
 
                 Ingredient ingredient = new Ingredient();
                 ingredient.setName(name);
