@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/recipesFragmentConstrarintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context=".ui.recipes.OneRecipeFragment">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="388dp"
+            android:layout_height="194dp"
+            android:layout_marginTop="104dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/recipeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Change Me with Recipe Title..."
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recipeText"
+            android:layout_width="353dp"
+            android:layout_height="206dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="324dp"
+            android:layout_marginEnd="48dp"
+            android:text="RecipeText goes here..."
+            android:textColor="#000000"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/dislikeButton"
+            android:layout_width="89dp"
+            android:layout_height="61dp"
+            android:layout_marginBottom="44dp"
+            android:background="@android:color/background_light"
+            android:src="@drawable/ic_dislike"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="126dp"
+        android:layout_height="37dp"
+        android:drawableStart="@drawable/ic_time_icon"
+        app:layout_constraintBottom_toTopOf="@+id/dislikeButton"
+        app:layout_constraintEnd_toStartOf="@+id/calText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeText" />
+
+    <TextView
+        android:id="@+id/calText"
+        android:layout_width="149dp"
+        android:layout_height="38dp"
+        android:drawableStart="@drawable/ic_calorie_icon"
+        android:text="@string/suggested_calorie"
+        app:layout_constraintBottom_toTopOf="@+id/dislikeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

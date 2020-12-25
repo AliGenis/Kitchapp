@@ -47,6 +47,7 @@ public class AddDataFragment extends Fragment {
                 Toast.makeText(getActivity(), "Succesfully saved.", Toast.LENGTH_LONG).show();
                 inputName.setText("");
                 inputNumber.setText("");
+                getActivity().onBackPressed();
             }
         });
 
