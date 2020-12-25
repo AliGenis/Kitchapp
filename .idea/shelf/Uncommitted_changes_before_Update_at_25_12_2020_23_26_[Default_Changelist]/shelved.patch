@@ -1,0 +1,274 @@
+Index: app/src/main/java/com/example/kitchapp/ui/recipes/lookIntoRecipes.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.kitchapp.ui.recipes;\r\n\r\nimport android.os.Bundle;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.ImageButton;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.fragment.app.Fragment;\r\n\r\nimport com.example.kitchapp.Ingredient;\r\nimport com.example.kitchapp.MainActivity;\r\nimport com.example.kitchapp.R;\r\n\r\npublic class lookIntoRecipes extends Fragment {\r\n\r\n    private TextView recipeName,recipeItself;\r\n    private ImageView photo;\r\n    private Button eat;\r\n\r\n    public lookIntoRecipes() {\r\n        // Required empty public constructor\r\n    }\r\n\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container,\r\n                             Bundle savedInstanceState) {\r\n        // Inflate the layout for this fragment\r\n        View view = inflater.inflate(R.layout.fragment_recipes, container, false);\r\n\r\n        recipeName = view.findViewById(R.id.textView19);\r\n        recipeItself = view.findViewById(R.id.textView20);\r\n        photo = view.findViewById(R.id.imageView2);\r\n        eat = view.findViewById(R.id.button2);\r\n\r\n        /**eat.setOnClickListener(new View.OnClickListener() {\r\n           @Override\r\n            public void onClick(View v) {\r\n                String name = inputName.getText().toString();\r\n                int number =  Integer.parseInt( inputNumber.getText().toString() );\r\n\r\n                Ingredient ingredient = new Ingredient();\r\n                ingredient.setName(name);\r\n                ingredient.setNumber(number);\r\n\r\n                MainActivity.roomDatabaseClass.ingredientDao().addIngredient(ingredient);\r\n                Toast.makeText(getActivity(), \"Succesfully saved.\", Toast.LENGTH_LONG).show();\r\n                inputName.setText(\"\");\r\n                inputNumber.setText(\"\");\r\n            }\r\n        });\r\n**/\r\n        return view;\r\n\r\n        }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/kitchapp/ui/recipes/lookIntoRecipes.java	(revision e43c69eb714028c906d47c691406fa136f31d6db)
++++ app/src/main/java/com/example/kitchapp/ui/recipes/lookIntoRecipes.java	(date 1608911111295)
+@@ -38,10 +38,10 @@
+         photo = view.findViewById(R.id.imageView2);
+         eat = view.findViewById(R.id.button2);
+ 
+-        /**eat.setOnClickListener(new View.OnClickListener() {
++        eat.setOnClickListener(new View.OnClickListener() {
+            @Override
+             public void onClick(View v) {
+-                String name = inputName.getText().toString();
++                String name = recipeName.getText().toString();
+                 int number =  Integer.parseInt( inputNumber.getText().toString() );
+ 
+                 Ingredient ingredient = new Ingredient();
+@@ -54,7 +54,7 @@
+                 inputNumber.setText("");
+             }
+         });
+-**/
++
+         return view;
+ 
+         }
+Index: app/src/main/java/com/example/kitchapp/RoomDatabaseClass.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.kitchapp;\r\n\r\nimport androidx.room.Database;\r\nimport androidx.room.RoomDatabase;\r\n\r\n@Database(entities = {Ingredient.class}, version = 2)\r\npublic abstract class RoomDatabaseClass extends RoomDatabase {\r\n\r\n    public abstract IngredientDao ingredientDao();\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/kitchapp/RoomDatabaseClass.java	(revision e43c69eb714028c906d47c691406fa136f31d6db)
++++ app/src/main/java/com/example/kitchapp/RoomDatabaseClass.java	(date 1608911678398)
+@@ -1,5 +1,6 @@
+ package com.example.kitchapp;
+ 
++import androidx.room.Dao;
+ import androidx.room.Database;
+ import androidx.room.RoomDatabase;
+ 
+@@ -7,5 +8,6 @@
+ public abstract class RoomDatabaseClass extends RoomDatabase {
+ 
+     public abstract IngredientDao ingredientDao();
++    public abstract RecipeDao RecipeDao();
+ 
+ }
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Built application files\r\n*.apk\r\n*.ap_\r\n*.aab\r\n\r\n# Files for the ART/Dalvik VM\r\n*.dex\r\n\r\n# Java class files\r\n*.class\r\n\r\n# Generated files\r\nbin/\r\ngen/\r\nout/\r\n#  Uncomment the following line in case you need and you don't have the release build type files in your app\r\n# release/\r\n\r\n# Gradle files\r\n.gradle/\r\nbuild/\r\n\r\n# Local configuration file (sdk path, etc)\r\nlocal.properties\r\n\r\n# Proguard folder generated by Eclipse\r\nproguard/\r\n\r\n# Log Files\r\n*.log\r\n\r\n# Android Studio Navigation editor temp files\r\n.navigation/\r\n\r\n# Android Studio captures folder\r\ncaptures/\r\n\r\n# IntelliJ\r\n*.iml\r\n.idea/workspace.xml\r\n.idea/tasks.xml\r\n.idea/gradle.xml\r\n.idea/assetWizardSettings.xml\r\n.idea/dictionaries\r\n.idea/libraries\r\n# Android Studio 3 in .gitignore file.\r\n.idea/caches\r\n.idea/modules.xml\r\n# Comment next line if keeping position of elements in Navigation Editor is relevant for you\r\n.idea/navEditor.xml\r\n\r\n# Keystore files\r\n# Uncomment the following lines if you do not want to check your keystore files in.\r\n#*.jks\r\n#*.keystore\r\n\r\n# External native build folder generated in Android Studio 2.2 and later\r\n.externalNativeBuild\r\n\r\n# Google Services (e.g. APIs or Firebase)\r\n# google-services.json\r\n\r\n# Freeline\r\nfreeline.py\r\nfreeline/\r\nfreeline_project_description.json\r\n\r\n# fastlane\r\nfastlane/report.xml\r\nfastlane/Preview.html\r\nfastlane/screenshots\r\nfastlane/test_output\r\nfastlane/readme.md\r\n\r\n# Version control\r\nvcs.xml\r\n\r\n# lint\r\nlint/intermediates/\r\nlint/generated/\r\nlint/outputs/\r\nlint/tmp/\r\n# lint/reports/\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .gitignore	(revision e43c69eb714028c906d47c691406fa136f31d6db)
++++ .gitignore	(date 1608927872022)
+@@ -81,3 +81,8 @@
+ lint/outputs/
+ lint/tmp/
+ # lint/reports/
++app/src/main/java/com/example/kitchapp/RoomDatabaseClass.java
++app/src/main/java/com/example/kitchapp/RecipeList.java
++app/src/main/java/com/example/kitchapp/Recipe.java
++*.java
++app/src/main/java/com/example/kitchapp/ui/recipes/lookIntoRecipes.java
+Index: app/src/main/java/com/example/kitchapp/RecipeList.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.kitchapp;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class RecipeList {\r\n\r\n    private ArrayList<Recipe> recipes = new ArrayList<Recipe>();\r\n    private ArrayList<Ingredient> Ing = new ArrayList<Ingredient>();\r\n\r\n   /** public RecipeList(){\r\n//        Ing.add(new Ingredient(\"Egg\",1));\r\n        recipes.add(new Recipe( \"Boiled Egg\",\r\n                \"Boil the eggs for about 5 to 20 mins according to your preference\",\r\n                Ing,\r\n                15,\r\n                15,\r\n                false ));\r\n    }**/\r\n\r\n    public void addToList( Recipe e ){\r\n        recipes.add( e );\r\n    }\r\n\r\n    public Recipe findByName( String a ){\r\n            for ( int i = 0; i<recipes.size(); i++ ){\r\n                if ( recipes.get(i).getName().equalsIgnoreCase( a ) ) {\r\n                    return recipes.get(i);\r\n                }\r\n            } return null;\r\n    }\r\n\r\n    public ArrayList<String> toArray(){\r\n        ArrayList<String> arr = new ArrayList<String>();\r\n        for ( int i =0; i<recipes.size(); i++ ){\r\n            arr.add( recipes.get(i).getName() );\r\n        }\r\n    return arr;\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/kitchapp/RecipeList.java	(revision e43c69eb714028c906d47c691406fa136f31d6db)
++++ app/src/main/java/com/example/kitchapp/RecipeList.java	(date 1608913090240)
+@@ -7,15 +7,9 @@
+     private ArrayList<Recipe> recipes = new ArrayList<Recipe>();
+     private ArrayList<Ingredient> Ing = new ArrayList<Ingredient>();
+ 
+-   /** public RecipeList(){
+-//        Ing.add(new Ingredient("Egg",1));
+-        recipes.add(new Recipe( "Boiled Egg",
+-                "Boil the eggs for about 5 to 20 mins according to your preference",
+-                Ing,
+-                15,
+-                15,
+-                false ));
+-    }**/
++   public RecipeList(){
++
++    }
+ 
+     public void addToList( Recipe e ){
+         recipes.add( e );
+Index: app/src/main/java/com/example/kitchapp/ui/recipes/MyRecipeListRecyclerViewAdapter.java
+===================================================================
+--- app/src/main/java/com/example/kitchapp/ui/recipes/MyRecipeListRecyclerViewAdapter.java	(revision e43c69eb714028c906d47c691406fa136f31d6db)
++++ app/src/main/java/com/example/kitchapp/ui/recipes/MyRecipeListRecyclerViewAdapter.java	(revision e43c69eb714028c906d47c691406fa136f31d6db)
+@@ -1,129 +0,0 @@
+-package com.example.kitchapp.ui.recipes;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-import android.widget.ImageButton;
+-import android.widget.TextView;
+-
+-import androidx.annotation.NonNull;
+-import androidx.recyclerview.widget.RecyclerView;
+-
+-import com.example.kitchapp.Ingredient;
+-
+-
+-import com.example.kitchapp.Recipe;
+-import com.example.kitchapp.RecipeList;
+-import com.example.kitchapp.MainActivity;
+-import com.example.kitchapp.R;
+-
+-import java.util.List;
+-/**
+-public class MyRecipeListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerAdapter.FridgeViewHolder> {{
+-
+-        private final List<Recipe> list;
+-
+-        public RecyclerAdapter(List<Recipe> items) {
+-            list = items;
+-        }
+-
+-        @NonNull
+-        @Override
+-        public FridgeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+-            View view = LayoutInflater.from(parent.getContext())
+-                    .inflate(R.layout.fragment_fridge_item, parent, false);
+-            FridgeViewHolder fridgeViewHolder = new FridgeViewHolder(view);
+-            return fridgeViewHolder;
+-        }
+-
+-        @Override
+-        public void onBindViewHolder(final FridgeViewHolder holder, int position) {
+-            holder.ingredient = list.get(position);
+-            holder.tvName.setText(list.get(position).getName());
+-            holder.tvNumber.setText(   Integer.toString(list.get(position).getNumber()) );
+-        }
+-
+-        @Override
+-        public int getItemCount() {
+-            return list.size();
+-        }
+-
+-        public class FridgeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+-            public final TextView tvName;
+-            public final TextView tvNumber;
+-            public Ingredient ingredient;
+-            public ImageButton btDelete, plusButton, minusButton;
+-
+-            public FridgeViewHolder(View view) {
+-                super(view);
+-                tvName = (TextView) view.findViewById(R.id.fridge_item_name);
+-                tvNumber = (TextView) view.findViewById(R.id.fridge_item_number);
+-                btDelete = view.findViewById(R.id.fridgeDeleteButton);
+-                plusButton = view.findViewById(R.id.plusButton);
+-                minusButton = view.findViewById(R.id.minusButton);
+-                btDelete.setOnClickListener(this);
+-                plusButton.setOnClickListener(this);
+-                minusButton.setOnClickListener(this);
+-            }
+-
+-            public TextView getTvName() {
+-                return tvName;
+-            }
+-
+-            public TextView getTvNumber() {
+-                return tvNumber;
+-            }
+-
+-            public Ingredient getIngredient() {
+-                return ingredient;
+-            }
+-
+-            @Override
+-            public String toString() {
+-                return super.toString() + "'" + tvName.getText() + "'"
+-                        + " '" + tvNumber.getText() + "'";
+-            }
+-
+-            @Override
+-            public void onClick(View v) {
+-                Ingredient ingredient;
+-                int ID, number;
+-                String name;
+-                ingredient = new Ingredient();
+-                ID = list.get(getAdapterPosition()).getId();
+-                name = list.get(getAdapterPosition()).getName();
+-                number = list.get(getAdapterPosition()).getNumber();
+-                ingredient.setId(ID);
+-                ingredient.setName(name);
+-                ingredient.setNumber(number);
+-
+-                switch (v.getId())
+-                {
+-                    case (R.id.fridgeDeleteButton):
+-                        MainActivity.roomDatabaseClass.ingredientDao().deleteIngredient(ingredient);
+-                        MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
+-                                new FridgeFragment(), null).commit();
+-                        break;
+-                    case (R.id.plusButton):
+-                        number++;
+-                        ingredient.setNumber(number);
+-                        MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
+-                        MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
+-                                new FridgeFragment(), null).commit();
+-                        break;
+-                    case (R.id.minusButton):
+-                        number--;
+-                        ingredient.setNumber(number);
+-                        MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
+-                        MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
+-                                new FridgeFragment(), null).commit();
+-                        break;
+-
+-                }
+-
+-
+-
+-
+-            }
+-        }**/
+-
+Index: app/src/main/java/com/example/kitchapp/Recipe.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.kitchapp;\r\nimport androidx.room.ColumnInfo;\r\nimport androidx.room.Entity;\r\nimport androidx.room.PrimaryKey;\r\nimport java.util.ArrayList;\r\n\r\n/**\r\n * Recipe of a meal\r\n * @author Burak, Ali, Tarik,Şule\r\n * @version 10/12/2020\r\n */\r\npublic class Recipe {\r\n\r\n    //VARIABLES\r\n    @PrimaryKey(autoGenerate = true)\r\n    private int id;\r\n    @ColumnInfo(name = \"name\")\r\n    private String name;\r\n    @ColumnInfo(name= \"recipe\")\r\n    private String recipe;\r\n    @ColumnInfo(name= \"lisOfIngredients\")\r\n    private ArrayList<Ingredient> ingredients;\r\n    @ColumnInfo(name= \"recipe\")\r\n    private double calorie;\r\n    @ColumnInfo(name= \"prepTime\")\r\n    private int prepTime;\r\n    @ColumnInfo(name= \"recipePhotoId\")\r\n    private int recipePhotoId;\r\n\r\n    //DEFAULT CONSTRUCTOR\r\n   /** public Recipe(String name,\r\n                  String recipe,\r\n                  ArrayList<Ingredient> ingredients,\r\n                  double calorie,\r\n                  int prepTime,\r\n                  boolean isVegetarian) {\r\n        this.name = name;\r\n        this.recipe = recipe;\r\n        this.ingredients = ingredients;\r\n        this.calorie = calorie;\r\n        this.prepTime = prepTime;\r\n        this.isVegetarian = isVegetarian;\r\n        myRef.child(name).setValue(this);\r\n    }\r\n\r\n    public Recipe(String name, String recipe, int recipePhotoId)\r\n    {\r\n        this.name = name;\r\n        this.recipe = recipe;\r\n        this.recipePhotoId= recipePhotoId;\r\n        myRef.child(name).setValue(this);\r\n    }**/\r\n\r\n    //GETTERS AND SETTERS\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n        public String getRecipe() {\r\n            return recipe;\r\n        }\r\n\r\n        public void setRecipe(String recipe) {\r\n            this.recipe = recipe;\r\n        }\r\n\r\n    public ArrayList<Ingredient> getIngredients() {\r\n        return ingredients;\r\n    }\r\n\r\n    public void setIngredients(ArrayList<Ingredient> ingredients) {\r\n        this.ingredients = ingredients;\r\n    }\r\n\r\n    public double getCalorie() {\r\n        return calorie;\r\n    }\r\n\r\n    public void setCalorie(double calorie) {\r\n        this.calorie = calorie;\r\n    }\r\n\r\n    public int getPrepTime() {\r\n        return prepTime;\r\n    }\r\n\r\n    public void setPrepTime(int prepTime) {\r\n        this.prepTime = prepTime;\r\n    }\r\n\r\n    public int getRecipePhotoId(){\r\n        return recipePhotoId;}\r\n\r\n    public void setRecipePhotoId( int recipePhotoId){\r\n        this.recipePhotoId =  recipePhotoId;}\r\n\r\n\r\n    //TODO: connection to the database will be established\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/kitchapp/Recipe.java	(revision e43c69eb714028c906d47c691406fa136f31d6db)
++++ app/src/main/java/com/example/kitchapp/Recipe.java	(date 1608911777964)
+@@ -27,30 +27,6 @@
+     @ColumnInfo(name= "recipePhotoId")
+     private int recipePhotoId;
+ 
+-    //DEFAULT CONSTRUCTOR
+-   /** public Recipe(String name,
+-                  String recipe,
+-                  ArrayList<Ingredient> ingredients,
+-                  double calorie,
+-                  int prepTime,
+-                  boolean isVegetarian) {
+-        this.name = name;
+-        this.recipe = recipe;
+-        this.ingredients = ingredients;
+-        this.calorie = calorie;
+-        this.prepTime = prepTime;
+-        this.isVegetarian = isVegetarian;
+-        myRef.child(name).setValue(this);
+-    }
+-
+-    public Recipe(String name, String recipe, int recipePhotoId)
+-    {
+-        this.name = name;
+-        this.recipe = recipe;
+-        this.recipePhotoId= recipePhotoId;
+-        myRef.child(name).setValue(this);
+-    }**/
+-
+     //GETTERS AND SETTERS
+     public String getName() {
+         return name;
