@@ -19,7 +19,6 @@ import com.google.android.material.tabs.TabLayout;
 
 public class SuggestionFragment extends Fragment {
 
-    private SuggestionViewModel suggestionViewModel;
     View myFragment;
 
     ViewPager viewPager;
@@ -36,18 +35,8 @@ public class SuggestionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View myFragment = inflater.inflate(R.layout.fragment_suggestion, container, false);
-
         viewPager = myFragment.findViewById(R.id.viewPager);
         tabLayout = myFragment.findViewById(R.id.tabLayout);
-
-        suggestionViewModel = new ViewModelProvider(this).get(SuggestionViewModel.class);
-        final TextView textView = myFragment.findViewById(R.id.text_suggestion);
-        suggestionViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                textView.setText(s);
-            }
-        });
         return myFragment;
     }
 
