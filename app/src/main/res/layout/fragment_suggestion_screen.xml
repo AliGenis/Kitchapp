@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="660dp"
-    tools:context=".ui.suggestion.SuggestionScreen">
+    tools:context=".ui.suggestion.tabs.SuggestionScreen">
 
 
     <TabHost
@@ -55,8 +56,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/suggested_meal_name"
-        tools:layout_marginTop="25dp" />
+        tools:layout_marginTop="25dp"
+        android:text="@string/suggested_meal_name" />
 
     <ImageButton
         android:id="@+id/suggestion_research_button"
@@ -78,19 +79,19 @@
 
     <TextView
         android:id="@+id/timeText"
+        android:drawableStart="@drawable/ic_time_icon"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="545dp"
-        android:drawableStart="@drawable/ic_time_icon" />
+        android:layout_marginTop="545dp" />
 
     <TextView
         android:id="@+id/calText"
+        android:drawableStart="@drawable/ic_calorie_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="230dp"
         android:layout_marginTop="545dp"
-        android:drawableStart="@drawable/ic_calorie_icon"
         android:text="@string/suggested_calorie" />
 
 </FrameLayout>

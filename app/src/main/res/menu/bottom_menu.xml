@@ -2,7 +2,7 @@
     <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
         <item
-            android:id="@+id/dislikeButton"
+            android:id="@+id/fridgeFragment"
             android:title="Fridge"
             android:icon="@drawable/ic_fridge"/>
         <item
