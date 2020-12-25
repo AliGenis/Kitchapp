@@ -8,7 +8,7 @@ public class RecipeList {
     private ArrayList<Ingredient> Ing = new ArrayList<Ingredient>();
 
     public RecipeList(){
-        Ing.add(new Ingredient("Egg",1));
+//        Ing.add(new Ingredient("Egg",1));
         recipes.add(new Recipe( "Boiled Egg",
                 "Boil the eggs for about 5 to 20 mins according to your preference",
                 Ing,

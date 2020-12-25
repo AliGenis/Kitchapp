@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.room.Room;
 
 import com.example.kitchapp.ui.fridge.FridgeFragment;
 import com.example.kitchapp.ui.recipes.RecipesFragment;
@@ -18,24 +20,18 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static FragmentManager fragmentManager;
+    public static RoomDatabaseClass roomDatabaseClass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-       ArrayList<Ingredient> Arr = new ArrayList<Ingredient>();
-        System.out.println("KITCHAPP!");
-        //Ingredient deneme = new Ingredient( 200,4,true,"Hıyar");
-        Ingredient deneme1 = new Ingredient(20, 4, "Limon");
-        Arr.add(new Ingredient("Egg", 1));
-        Arr.add(new Ingredient("butter", 1));
-        Arr.add(new Ingredient("Hıyar", 2));
-        Recipe rec = new Recipe("Boiled Egg", "Boil the eggs for about 5 to 20 mins according to your preference", Arr, 15, 15, false);
-        //deneme1.setName("Limoon");
-        deneme1.setNumber(10);
-
-        Fridge fridge = new Fridge(Arr);
+        fragmentManager = getSupportFragmentManager();
+        roomDatabaseClass = Room.databaseBuilder(getApplicationContext(), RoomDatabaseClass.class
+                , "mydb").allowMainThreadQueries().build();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);

@@ -100,7 +100,7 @@ public class ShoppingList extends IngredientList{
      * @return newIngredient will be used for adding new item to database purposes.
      */
     public Ingredient addNew( String name, int number ){
-        Ingredient newIngredient = new Ingredient( name, number );
+        Ingredient newIngredient = new Ingredient();
         list.add( newIngredient );
         return newIngredient; //
     }

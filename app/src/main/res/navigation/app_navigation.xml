@@ -9,7 +9,7 @@
         android:id="@+id/fridgeFragment"
         android:name="com.example.kitchapp.ui.fridge.FridgeFragment"
         android:label="fragment_fridge"
-        tools:layout="@layout/fragment_fridge" />
+        tools:layout="@layout/fragment_fridge_new" />
     <fragment
         android:id="@+id/shoppingListScreenFragment"
         android:name="com.example.kitchapp.ui.shoppinglist.ShoppingListScreenFragment"

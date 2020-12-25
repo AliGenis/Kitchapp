@@ -10,6 +10,7 @@ import java.util.List;
 
 @Dao
 public interface IngredientDao {
+
     @Insert
     void addIngredient(Ingredient ingredient);
 
