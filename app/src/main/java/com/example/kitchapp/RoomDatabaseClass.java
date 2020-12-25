@@ -9,4 +9,6 @@ public abstract class RoomDatabaseClass extends RoomDatabase {
     public abstract ShoppingIngredientDao shoppingIngredientDao();
 
     public abstract IngredientDao ingredientDao();
+
+    public abstract FridgeItemDao fridgeItemDao();
 }

@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.kitchapp.FridgeItem;
 import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
@@ -39,11 +40,11 @@ public class AddDataFragment extends Fragment {
                 String name = inputName.getText().toString();
                 int number =  Integer.parseInt( inputNumber.getText().toString() );
 
-                Ingredient ingredient = new Ingredient();
-                ingredient.setName(name);
-                ingredient.setNumber(number);
+                FridgeItem fridgeItem = new FridgeItem();
+                fridgeItem.setName(name);
+                fridgeItem.setNumber(number);
 
-                MainActivity.roomDatabaseClass.ingredientDao().addIngredient(ingredient);
+                MainActivity.roomDatabaseClass.fridgeItemDao().addFridgeItem(fridgeItem);
                 Toast.makeText(getActivity(), "Succesfully saved.", Toast.LENGTH_LONG).show();
                 inputName.setText("");
                 inputNumber.setText("");

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kitchapp.FridgeItem;
 import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
@@ -31,8 +32,8 @@ public class FridgeFragment extends Fragment implements View.OnClickListener {
         recyclerView = view.findViewById(R.id.fridgeRecyclerView);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        List<Ingredient> ingredientList = MainActivity.roomDatabaseClass.ingredientDao().getIngredient();
-        recyclerAdapter = new RecyclerAdapter(ingredientList);
+        List<FridgeItem> list = MainActivity.roomDatabaseClass.fridgeItemDao().getFridgeItem();
+        recyclerAdapter = new RecyclerAdapter(list);
         recyclerView.setAdapter(recyclerAdapter);
 
         btAddData = view.findViewById(R.id.addToFridgeButton);
