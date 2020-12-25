@@ -21,5 +21,4 @@ public class IngredientsFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_suggestion_tab_ingredients, container, false);
         return root;
     }
-
 }

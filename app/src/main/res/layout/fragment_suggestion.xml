@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/text_suggestion"
+            android:id="@+id/suggestionTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -109,6 +109,7 @@
         tools:layout_editor_absoluteX="16dp">
 
         <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/acceptButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
@@ -118,7 +119,7 @@
             android:src="@drawable/suggestion_tick_button" />
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/rejectButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
