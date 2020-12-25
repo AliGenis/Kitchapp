@@ -20,27 +20,18 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static FragmentManager fragmentManager;
     public static RoomDatabaseClass roomDatabaseClass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        fragmentManager = getSupportFragmentManager();
         roomDatabaseClass = Room.databaseBuilder(getApplicationContext(), RoomDatabaseClass.class
                 , "mydb").allowMainThreadQueries().build();
-
-       ArrayList<Ingredient> Arr = new ArrayList<Ingredient>();
-        System.out.println("KITCHAPP!");
-        //Ingredient deneme = new Ingredient( 200,4,true,"Hıyar");
-        Ingredient deneme1 = new Ingredient(20, 4, "Limon");
-        Arr.add(new Ingredient("Egg", 1));
-        Arr.add(new Ingredient("butter", 1));
-        Arr.add(new Ingredient("Hıyar", 2));
-        Recipe rec = new Recipe("Boiled Egg", "Boil the eggs for about 5 to 20 mins according to your preference", Arr, 15, 15, false);
-        //deneme1.setName("Limoon");
-        deneme1.setNumber(10);
-
-        Fridge fridge = new Fridge(Arr);
 
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
