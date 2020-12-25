@@ -14,10 +14,8 @@ import com.example.kitchapp.ui.fridge.FridgeFragment;
 import com.example.kitchapp.ui.recipes.RecipesFragment;
 import com.example.kitchapp.ui.settings.SettingsFragment;
 import com.example.kitchapp.ui.shoppinglist.ShoppingListFragment;
-import com.example.kitchapp.ui.suggestion.tabs.SuggestionScreen;
+import com.example.kitchapp.ui.suggestion.SuggestionScreen;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 

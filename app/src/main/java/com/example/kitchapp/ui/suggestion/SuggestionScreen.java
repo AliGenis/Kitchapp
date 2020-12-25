@@ -1,4 +1,4 @@
-package com.example.kitchapp.ui.suggestion.tabs;
+package com.example.kitchapp.ui.suggestion;
 
 import android.os.Bundle;
 
