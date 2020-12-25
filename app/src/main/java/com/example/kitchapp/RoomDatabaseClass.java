@@ -7,4 +7,6 @@ import androidx.room.RoomDatabase;
 public abstract class RoomDatabaseClass extends RoomDatabase {
 
     public abstract ShoppingIngredientDao shoppingIngredientDao();
+
+    public abstract IngredientDao ingredientDao();
 }

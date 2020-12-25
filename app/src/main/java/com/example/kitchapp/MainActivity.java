@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     public static RoomDatabaseClass roomDatabaseClass;
 
-    public static FragmentManager fragmentManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

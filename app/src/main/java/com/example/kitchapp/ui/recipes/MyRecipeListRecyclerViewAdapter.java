@@ -2,7 +2,6 @@ package com.example.kitchapp.ui.recipes;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -13,7 +12,6 @@ import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.ui.fridge.FridgeFragment;
 
 import com.example.kitchapp.Recipe;
-import com.example.kitchapp.RecipeList;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 
