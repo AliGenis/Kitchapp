@@ -9,18 +9,16 @@ import androidx.room.Update;
 import java.util.List;
 
 @Dao
-public interface IngredientDao {
-
+public interface ShoppingIngredientDao {
     @Insert
-    void addIngredient(Ingredient ingredient);
+    void addShopIngredient(Ingredient ingredient);
 
     @Query("select * from ingredient")
     List<Ingredient> getIngredient();
 
     @Delete
-    void deleteIngredient(Ingredient ingredient);
+    void deleteShopIngredient(Ingredient ingredient);
 
     @Update
-    void updateIngredient(Ingredient ingredient);
-
+    void updateShopIngredient(Ingredient ingredient);
 }

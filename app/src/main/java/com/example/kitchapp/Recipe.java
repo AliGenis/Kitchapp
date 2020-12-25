@@ -1,57 +1,41 @@
 package com.example.kitchapp;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
 import java.util.ArrayList;
 
 /**
  * Recipe of a meal
+ *
  * @author Burak, Ali, Tarik,Şule
  * @version 10/12/2020
  */
+@Entity
 public class Recipe {
 
-    //VARIABLES
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    private int recipeID;
     @ColumnInfo(name = "name")
     private String name;
-    @ColumnInfo(name= "recipe")
+    @ColumnInfo(name = "recipeName")
     private String recipe;
-    @ColumnInfo(name= "lisOfIngredients")
-    private ArrayList<Ingredient> ingredients;
-    @ColumnInfo(name= "recipe")
+    @ColumnInfo(name = "recipeInfo")
     private double calorie;
-    @ColumnInfo(name= "prepTime")
+    @ColumnInfo(name = "prepTime")
     private int prepTime;
-    @ColumnInfo(name= "recipePhotoId")
+    @ColumnInfo(name = "recipePhotoId")
     private int recipePhotoId;
 
-    //DEFAULT CONSTRUCTOR
-   /** public Recipe(String name,
-                  String recipe,
-                  ArrayList<Ingredient> ingredients,
-                  double calorie,
-                  int prepTime,
-                  boolean isVegetarian) {
-        this.name = name;
-        this.recipe = recipe;
-        this.ingredients = ingredients;
-        this.calorie = calorie;
-        this.prepTime = prepTime;
-        this.isVegetarian = isVegetarian;
-        myRef.child(name).setValue(this);
+    public int getRecipeID() {
+        return recipeID;
     }
 
-    public Recipe(String name, String recipe, int recipePhotoId)
-    {
-        this.name = name;
-        this.recipe = recipe;
-        this.recipePhotoId= recipePhotoId;
-        myRef.child(name).setValue(this);
-    }**/
+    public void setRecipeID(int recipeID) {
+        this.recipeID = recipeID;
+    }
 
-    //GETTERS AND SETTERS
     public String getName() {
         return name;
     }
@@ -59,20 +43,13 @@ public class Recipe {
     public void setName(String name) {
         this.name = name;
     }
-        public String getRecipe() {
-            return recipe;
-        }
 
-        public void setRecipe(String recipe) {
-            this.recipe = recipe;
-        }
-
-    public ArrayList<Ingredient> getIngredients() {
-        return ingredients;
+    public String getRecipe() {
+        return recipe;
     }
 
-    public void setIngredients(ArrayList<Ingredient> ingredients) {
-        this.ingredients = ingredients;
+    public void setRecipe(String recipe) {
+        this.recipe = recipe;
     }
 
     public double getCalorie() {
@@ -91,12 +68,11 @@ public class Recipe {
         this.prepTime = prepTime;
     }
 
-    public int getRecipePhotoId(){
-        return recipePhotoId;}
+    public int getRecipePhotoId() {
+        return recipePhotoId;
+    }
 
-    public void setRecipePhotoId( int recipePhotoId){
-        this.recipePhotoId =  recipePhotoId;}
-
-
-    //TODO: connection to the database will be established
+    public void setRecipePhotoId(int recipePhotoId) {
+        this.recipePhotoId = recipePhotoId;
+    }
 }
