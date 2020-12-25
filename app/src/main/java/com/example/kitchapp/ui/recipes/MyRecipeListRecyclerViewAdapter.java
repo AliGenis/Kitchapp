@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kitchapp.Ingredient;
-import com.example.kitchapp.ui.fridge.FridgeFragment;
+
 
 import com.example.kitchapp.Recipe;
 import com.example.kitchapp.RecipeList;
@@ -18,7 +18,7 @@ import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 
 import java.util.List;
-
+/**
 public class MyRecipeListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerAdapter.FridgeViewHolder> {{
 
         private final List<Recipe> list;
@@ -125,5 +125,5 @@ public class MyRecipeListRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
 
 
             }
-        }
-}
+        }**/
+

@@ -29,7 +29,7 @@
     import java.util.List;
 
 
-    public class RecipesFragment extends Fragment {
+   /** public class RecipesFragment extends Fragment {
 
         private RecyclerView recyclerView;
         private RecyclerView.LayoutManager layoutManager;
@@ -64,6 +64,6 @@
             }
         }
     }
-
+**/
 
 
