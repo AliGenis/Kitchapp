@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.kitchapp.FridgeItem;
 import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
@@ -18,9 +17,9 @@ import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.FridgeViewHolder> {
 
-    private final List<FridgeItem> list;
+    private final List<Ingredient> list;
 
-    public RecyclerAdapter(List<FridgeItem> items) {
+    public RecyclerAdapter(List<Ingredient> items) {
         list = items;
     }
 
@@ -35,7 +34,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
 
     @Override
     public void onBindViewHolder(final FridgeViewHolder holder, int position) {
-        holder.fridgeItem = list.get(position);
+        holder.ingredient = list.get(position);
         holder.tvName.setText(list.get(position).getName());
         holder.tvNumber.setText(   Integer.toString(list.get(position).getNumber()) );
     }
@@ -48,7 +47,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
     public class FridgeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public final TextView tvName;
         public final TextView tvNumber;
-        public FridgeItem fridgeItem;
+        public Ingredient ingredient;
         public ImageButton btDelete, plusButton, minusButton;
 
         public FridgeViewHolder(View view) {
@@ -71,8 +70,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
             return tvNumber;
         }
 
-        public FridgeItem getFridgeItem() {
-            return fridgeItem;
+        public Ingredient getIngredient() {
+            return ingredient;
         }
 
         @Override
@@ -83,35 +82,35 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
 
         @Override
         public void onClick(View v) {
-            FridgeItem fridgeItem;
+            Ingredient ingredient;
             int ID, number;
             String name;
-            fridgeItem = new FridgeItem();
+            ingredient = new Ingredient();
             ID = list.get(getAdapterPosition()).getId();
             name = list.get(getAdapterPosition()).getName();
             number = list.get(getAdapterPosition()).getNumber();
-            fridgeItem.setId(ID);
-            fridgeItem.setName(name);
-            fridgeItem.setNumber(number);
+            ingredient.setId(ID);
+            ingredient.setName(name);
+            ingredient.setNumber(number);
 
             switch (v.getId())
             {
                 case (R.id.fridgeDeleteButton):
-                    MainActivity.roomDatabaseClass.fridgeItemDao().deleteFridgeItem(fridgeItem);
+                    MainActivity.roomDatabaseClass.ingredientDao().deleteIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new FridgeFragment(), null).commit();
                     break;
                 case (R.id.plusButton):
                     number++;
-                    fridgeItem.setNumber(number);
-                    MainActivity.roomDatabaseClass.fridgeItemDao().updateFridgeItem(fridgeItem);
+                    ingredient.setNumber(number);
+                    MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new FridgeFragment(), null).commit();
                     break;
                 case (R.id.minusButton):
                     number--;
-                    fridgeItem.setNumber(number);
-                    MainActivity.roomDatabaseClass.fridgeItemDao().updateFridgeItem(fridgeItem);
+                    ingredient.setNumber(number);
+                    MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new FridgeFragment(), null).commit();
                     break;
