@@ -19,6 +19,12 @@ public class Ingredient {
     @ColumnInfo(name = "defaultBuyValue", defaultValue = "0")
     private int defaultBuyValue;
 
+    @ColumnInfo(name = "isInFridge", defaultValue = "false")
+    private boolean isInFridge;
+
+    @ColumnInfo(name = "isInShoppingList", defaultValue = "false")
+    private boolean isInShoppingList;
+
     public int getId() {
         return id;
     }
@@ -49,5 +55,21 @@ public class Ingredient {
 
     public void setDefaultBuyValue(int defaultBuyValue) {
         this.defaultBuyValue = defaultBuyValue;
+    }
+
+    public boolean isInFridge() {
+        return isInFridge;
+    }
+
+    public void setInFridge(boolean inFridge) {
+        isInFridge = inFridge;
+    }
+
+    public boolean isInShoppingList() {
+        return isInShoppingList;
+    }
+
+    public void setInShoppingList(boolean inShoppingList) {
+        isInShoppingList = inShoppingList;
     }
 }

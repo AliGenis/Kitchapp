@@ -1,3 +1,4 @@
+//TODO: Şimdilik işe yaramıyor. Çözmek için hepsini seç + (CTRL + /) ya bas.
 //package com.example.kitchapp;
 //
 //import java.util.ArrayList;

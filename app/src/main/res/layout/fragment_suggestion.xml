@@ -21,10 +21,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
             android:gravity="center_horizontal"
+            android:text="Recipe name goes here..."
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -53,13 +55,13 @@
     <LinearLayout
         android:id="@+id/timeAndCalorieLayout"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_marginLeft="16dp"
+        android:layout_height="40dp"
         android:layout_marginTop="12dp"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="12dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/suggestionLinearLayout">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@id/suggestionLinearLayout"
+        tools:layout_editor_absoluteX="16dp">
 
 
         <ImageView
@@ -74,10 +76,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:gravity="center_horizontal"
-            android:text="Calorie..."
+            android:gravity="center"
+            android:text="Calorie"
             android:textAlignment="center"
-            android:textSize="12sp" />
+            android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/prepTimeIcon"
@@ -91,32 +93,38 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:gravity="center_horizontal"
-            android:text="Prep Time..."
+            android:gravity="center"
+            android:text="Prep Time"
             android:textAlignment="center"
-            android:textSize="12sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginBottom="32dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/timeAndCalorieLayout">
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp">
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
             android:layout_weight="1"
+            android:background="@color/design_default_color_background"
             android:src="@drawable/suggestion_tick_button" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/imageButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
             android:layout_weight="1"
+            android:background="@color/design_default_color_background"
             android:src="@drawable/suggestion_research_button" />
 
     </LinearLayout>

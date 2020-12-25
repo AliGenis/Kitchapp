@@ -13,7 +13,7 @@ import com.example.kitchapp.ui.fridge.FridgeFragment;
 import com.example.kitchapp.ui.recipes.RecipesFragment;
 import com.example.kitchapp.ui.settings.SettingsFragment;
 import com.example.kitchapp.ui.shoppinglist.ShoppingListFragment;
-import com.example.kitchapp.ui.suggestion.SuggestionScreen;
+import com.example.kitchapp.ui.suggestion.SuggestionFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.suggestionScreen:
                             //     Intent intent2 = new Intent(MainActivity.this, SuggestionScreen.class);
                             //  startActivity(intent2);
-                            selectedFragment = new SuggestionScreen();
+                            selectedFragment = new SuggestionFragment();
                             break;
                         case R.id.recipesFragment:
                             //      Intent intent3 = new Intent(MainActivity.this, RecipesFragment.class);

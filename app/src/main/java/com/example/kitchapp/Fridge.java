@@ -1,3 +1,4 @@
+//TODO: Şimdilik işe yaramıyor. Çözmek için hepsini seç + (CTRL + /) ya bas.
 //package com.example.kitchapp;
 //
 //import com.google.firebase.database.DatabaseReference;
@@ -145,4 +146,4 @@
 //    }
 //
 //}
-//TODO: Şimdilik işe yaramıyor.
+//TODO: Şimdilik işe yaramıyor. Çözmek için hepsini seç + (CTRL + /) ya bas.
