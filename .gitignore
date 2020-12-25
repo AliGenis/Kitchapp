@@ -81,3 +81,9 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+app/src/main/java/com/example/kitchapp/RoomDatabaseClass.java
+app/src/main/java/com/example/kitchapp/RecipeList.java
+app/src/main/java/com/example/kitchapp/Recipe.java
+*.java
+app/src/main/java/com/example/kitchapp/ui/recipes/lookIntoRecipes.java
+*.patch
