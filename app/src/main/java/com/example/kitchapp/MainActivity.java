@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -29,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
        ArrayList<Ingredient> Arr = new ArrayList<Ingredient>();
         System.out.println("KITCHAPP!");
         //Ingredient deneme = new Ingredient( 200,4,true,"Hıyar");
-        Ingredient deneme1 = new Ingredient(20, 4, true, "Limon");
+        Ingredient deneme1 = new Ingredient(20, 4, "Limon");
         Arr.add(new Ingredient("Egg", 1));
         Arr.add(new Ingredient("butter", 1));
         Arr.add(new Ingredient("Hıyar", 2));
