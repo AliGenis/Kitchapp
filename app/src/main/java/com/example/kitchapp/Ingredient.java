@@ -10,13 +10,13 @@ public class Ingredient {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    @ColumnInfo(name = "ingredientName")
+    @ColumnInfo(name = "ingredientName", defaultValue = "empty")
     private String name;
 
-    @ColumnInfo(name = "ingredientQuantity")
+    @ColumnInfo(name = "ingredientQuantity", defaultValue = "0")
     private int number;
 
-    @ColumnInfo(name = "defaultBuyValue")
+    @ColumnInfo(name = "defaultBuyValue", defaultValue = "0")
     private int defaultBuyValue;
 
     public int getId() {
