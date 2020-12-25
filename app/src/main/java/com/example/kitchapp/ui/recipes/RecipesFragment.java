@@ -13,10 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 import com.example.kitchapp.Recipe;
-import com.example.kitchapp.ui.recipes.RecyclerAdapter;
 
 import java.util.List;
-
 
 public class RecipesFragment extends Fragment {
 
