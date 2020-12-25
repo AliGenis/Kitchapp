@@ -16,6 +16,9 @@ public class Ingredient {
     @ColumnInfo(name = "ingredientQuantity")
     private int number;
 
+    @ColumnInfo(name = "defaultBuyValue")
+    private int defaultBuyValue;
+
     public int getId() {
         return id;
     }
@@ -38,5 +41,13 @@ public class Ingredient {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public int getDefaultBuyValue() {
+        return defaultBuyValue;
+    }
+
+    public void setDefaultBuyValue(int defaultBuyValue) {
+        this.defaultBuyValue = defaultBuyValue;
     }
 }

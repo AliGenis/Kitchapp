@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
                     switch (item.getItemId()) {
-                        case R.id.fridgeFragment:
+                        case R.id.dislikeButton:
                             selectedFragment = new FridgeFragment();
                             break;
 
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                             //   startActivity(intent4);
                             break;
                     }
-                    fragmentManager.beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+                    fragmentManager.beginTransaction().replace(R.id.Container, selectedFragment).commit();
                     return true;
                 }
             };
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
-        fragmentManager.beginTransaction().replace(R.id.fragment_container, new FridgeFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.Container, new FridgeFragment()).commit();
     }
 
 

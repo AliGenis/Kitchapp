@@ -12,14 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
-import com.example.kitchapp.dummy.DummyContent.DummyItem;
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MyShoppingListRecyclerViewAdapter.ViewHolder> {
 
     private final List<Ingredient> list;
@@ -82,23 +77,20 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
             ingredient.setNumber(number);
 
             switch (v.getId()) {
-                /*case (R.id.fridgeDeleteButton):
-                    MainActivity.roomDatabaseClass.shoppingIngredientDao().deleteIngredient(ingredient);
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
-                            new FridgeFragment(), null).commit();
-                    break;*/
+
                 case (R.id.plus_in_shopping):
                     number++;
                     ingredient.setNumber(number);
-                    MainActivity.roomDatabaseClass.shoppingIngredientDao().updateShopIngredient(ingredient);
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,
+                    MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new ShoppingListFragment(), null).commit();
                     break;
+
                 case (R.id.minus_in_shopping):
                     number--;
                     ingredient.setNumber(number);
-                    MainActivity.roomDatabaseClass.shoppingIngredientDao().updateShopIngredient(ingredient);
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,
+                    MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new ShoppingListFragment(), null).commit();
                     break;
 

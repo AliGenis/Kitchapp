@@ -52,8 +52,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
 
         public FridgeViewHolder(View view) {
             super(view);
-            tvName = (TextView) view.findViewById(R.id.fridge_item_name);
-            tvNumber = (TextView) view.findViewById(R.id.fridge_item_number);
+            tvName = (TextView) view.findViewById(R.id.fridgeItemName);
+            tvNumber = (TextView) view.findViewById(R.id.fridgeItemNumber);
             btDelete = view.findViewById(R.id.fridgeDeleteButton);
             plusButton = view.findViewById(R.id.plusButton);
             minusButton = view.findViewById(R.id.minusButton);

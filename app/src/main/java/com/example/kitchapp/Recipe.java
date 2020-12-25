@@ -15,23 +15,27 @@ import java.util.ArrayList;
 @Entity
 public class Recipe {
 
-    //VARIABLES
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    private int recipeID;
     @ColumnInfo(name = "name")
     private String name;
-    @ColumnInfo(name = "recipe")
+    @ColumnInfo(name = "recipeName")
     private String recipe;
-    @ColumnInfo(name = "lisOfIngredients")
-    private ArrayList<Ingredient> ingredients;
-    @ColumnInfo(name = "recipe")
+    @ColumnInfo(name = "recipeInfo")
     private double calorie;
     @ColumnInfo(name = "prepTime")
     private int prepTime;
     @ColumnInfo(name = "recipePhotoId")
     private int recipePhotoId;
 
-    //GETTERS AND SETTERS
+    public int getRecipeID() {
+        return recipeID;
+    }
+
+    public void setRecipeID(int recipeID) {
+        this.recipeID = recipeID;
+    }
+
     public String getName() {
         return name;
     }
@@ -46,14 +50,6 @@ public class Recipe {
 
     public void setRecipe(String recipe) {
         this.recipe = recipe;
-    }
-
-    public ArrayList<Ingredient> getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(ArrayList<Ingredient> ingredients) {
-        this.ingredients = ingredients;
     }
 
     public double getCalorie() {
@@ -79,6 +75,4 @@ public class Recipe {
     public void setRecipePhotoId(int recipePhotoId) {
         this.recipePhotoId = recipePhotoId;
     }
-
-    //TODO: connection to the database will be established
 }
