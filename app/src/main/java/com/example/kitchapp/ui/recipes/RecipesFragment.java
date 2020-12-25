@@ -12,57 +12,56 @@
     import android.view.ViewGroup;
     import android.widget.AdapterView;
     import android.widget.ArrayAdapter;
+    import android.widget.Button;
     import android.widget.ListView;
 
+    import androidx.annotation.NonNull;
     import androidx.annotation.Nullable;
     import androidx.appcompat.widget.SearchView;
     import androidx.fragment.app.Fragment;
+    import androidx.recyclerview.widget.LinearLayoutManager;
+    import androidx.recyclerview.widget.RecyclerView;
 
+    import com.example.kitchapp.Ingredient;
+    import com.example.kitchapp.MainActivity;
     import com.example.kitchapp.R;
+
+    import java.util.List;
 
 
     public class RecipesFragment extends Fragment {
 
-        SearchView searchView;
-        ListView listView;
-        String[] nameList = {"Recipe1", "Recipe2", "Recipe3", "Recipe4", "Recipe5"};
-        ArrayAdapter<String> arrayAdapter;
+        private RecyclerView recyclerView;
+        private RecyclerView.LayoutManager layoutManager;
+        RecyclerAdapter recyclerAdapter;
+        Button btAddData;
 
-        @SuppressLint("NewApi")
-        @Nullable
-        @Override
-        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.fragment_recipes_list, container, false);
+        public View onCreateView(@NonNull LayoutInflater inflater,
+                                 ViewGroup container, Bundle savedInstanceState) {
+            View view = inflater.inflate(R.layout.fragment_fridge, container, false);
 
-            searchView = view.findViewById(R.id.searchView);
-            listView = view.findViewById(R.id.lv1);
-            arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, android.R.id.text1, nameList);
-            listView.setAdapter(arrayAdapter);
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent i = new Intent(getActivity().getApplicationContext(),RecipeScreen.class);
-                    startActivity(i);
+            recyclerView = view.findViewById(R.id.fridgeRecyclerView);
+            layoutManager = new LinearLayoutManager(getActivity());
+            recyclerView.setLayoutManager(layoutManager);
+            List<Ingredient> ingredientList = MainActivity.roomDatabaseClass.ingredientDao().getIngredient();
+            recyclerAdapter = new RecyclerAdapter(ingredientList);
+            recyclerView.setAdapter(recyclerAdapter);
 
-                }
-            });
-
-            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-                    arrayAdapter.getFilter().filter(query);
-                    return false;
-                }
-
-                @Override
-                public boolean onQueryTextChange(String newText) {
-                    arrayAdapter.getFilter().filter(newText);
-
-                    return false;
-                }
-            });
+            btAddData = view.findViewById(R.id.addToFridgeButton);
+            btAddData.setOnClickListener(this);
 
             return view;
+        }
+
+        @Override
+        public void onClick(View v) {
+            switch (v.getId())
+            {
+                case (R.id.addToFridgeButton):
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new AddDataFragment()
+                            , null).addToBackStack(null).commit();
+                    break;
+            }
         }
     }
 
