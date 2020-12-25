@@ -13,7 +13,7 @@ import androidx.room.Room;
 import com.example.kitchapp.ui.fridge.FridgeFragment;
 import com.example.kitchapp.ui.recipes.RecipesFragment;
 import com.example.kitchapp.ui.settings.SettingsFragment;
-import com.example.kitchapp.ui.shoppinglist.ShoppingListScreenFragment;
+import com.example.kitchapp.ui.shoppinglist.ShoppingListFragment;
 import com.example.kitchapp.ui.suggestion.tabs.SuggestionScreen;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     public static RoomDatabaseClass roomDatabaseClass;
 
+    public static FragmentManager fragmentManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +33,11 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
         roomDatabaseClass = Room.databaseBuilder(getApplicationContext(), RoomDatabaseClass.class
                 , "mydb").allowMainThreadQueries().build();
+        fragmentManager = getSupportFragmentManager();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FridgeFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.fragment_container,new FridgeFragment()).commit();
     }
 
 
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.shoppingListScreenFragment:
                        // Intent intent1 = new Intent(MainActivity.this, ShoppingListScreenFragment.class);
                      //   startActivity(intent1);
-                        selectedFragment = new ShoppingListScreenFragment();
+                        selectedFragment = new ShoppingListFragment();
                         break;
 
                     case R.id.suggestionScreen:
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                      //   startActivity(intent4);
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
+                fragmentManager.beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
            return true;
             }
         };
