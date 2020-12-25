@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.room.Room;
 
 import com.example.kitchapp.ui.fridge.FridgeFragment;
 import com.example.kitchapp.ui.recipes.RecipesFragment;
@@ -18,11 +20,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    public static RoomDatabaseClass roomDatabaseClass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        roomDatabaseClass = Room.databaseBuilder(getApplicationContext(), RoomDatabaseClass.class
+                , "mydb").allowMainThreadQueries().build();
 
        ArrayList<Ingredient> Arr = new ArrayList<Ingredient>();
         System.out.println("KITCHAPP!");
