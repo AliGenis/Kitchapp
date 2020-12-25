@@ -7,8 +7,9 @@
         android:id="@+id/recipeText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="24dp"
+        android:layout_gravity="center"
+        android:text="Recipe info goes here..."
         android:textAlignment="center"
-        android:layout_gravity="center" />
+        android:textSize="24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
