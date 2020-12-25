@@ -15,18 +15,18 @@ import java.util.List;
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyRecipeItemRecyclerViewAdapter extends RecyclerView.Adapter<MyRecipeItemRecyclerViewAdapter.ViewHolder> {
+public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MyShoppingListRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
 
-    public MyRecipeItemRecyclerViewAdapter(List<DummyItem> items) {
+    public MyShoppingListRecyclerViewAdapter(List<DummyItem> items) {
         mValues = items;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_item, parent, false);
+                .inflate(R.layout.fragment_shopping_item, parent, false);
         return new ViewHolder(view);
     }
 

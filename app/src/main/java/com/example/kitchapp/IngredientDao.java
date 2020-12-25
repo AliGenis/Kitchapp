@@ -15,12 +15,11 @@ public interface IngredientDao {
     void addIngredient(Ingredient ingredient);
 
     @Query("select * from ingredient")
-    List<Ingredient> getIngredient();
+    public List<Ingredient> getIngredient();
 
     @Delete
-    void deleteIngredient(Ingredient ingredient);
+    public void deleteIngredient(Ingredient ingredient);
 
     @Update
-    void updateIngredient(Ingredient ingredient);
-
+    public void updateIngredient(Ingredient ingredient);
 }

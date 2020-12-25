@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.suggestion.tabs.IngredientsFragment">
+    tools:context=".ui.suggestion.tabs.RecipeFragment">
 
     <TextView
-        android:id="@+id/ingredientsText"
+        android:id="@+id/recipeText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textSize="24dp"
         android:textAlignment="center"
-        android:gravity="center_horizontal" />
+        android:layout_gravity="center" />
 
 </FrameLayout>
