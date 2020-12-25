@@ -1,4 +1,4 @@
-package com.example.kitchapp.ui.recipes;
+package com.example.kitchapp.ui.shoppinglist;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,32 +10,29 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
-import com.example.kitchapp.Recipe;
 
 import java.util.List;
 
-public class RecipesFragment extends Fragment {
+public class ShoppingListFragment extends Fragment {
 
-    RecyclerAdapter recyclerAdapter;
+    MyShoppingListRecyclerViewAdapter recyclerAdapter;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_recipes, container, false);
+        View view = inflater.inflate(R.layout.fragment_shopping_item_list, container, false);
 
-        recyclerView = view.findViewById(R.id.recipesRecyclerView);
+        recyclerView = view.findViewById(R.id.list);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        List<Recipe> recipeList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
-        recyclerAdapter = new RecyclerAdapter(recipeList);
+        List<Ingredient> ingredientList = MainActivity.roomDatabaseClass.ingredientDao().getIngredient();
+        recyclerAdapter = new MyShoppingListRecyclerViewAdapter(ingredientList);
         recyclerView.setAdapter(recyclerAdapter);
 
         return view;
     }
 }
-
-
-

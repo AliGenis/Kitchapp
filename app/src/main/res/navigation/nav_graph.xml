@@ -25,4 +25,9 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/recipesFragment2"
+        android:name="com.example.kitchapp.RecipesFragment"
+        android:label="fragment_recipes_list2"
+        tools:layout="@layout/fragment_recipes_list2" />
 </navigation>

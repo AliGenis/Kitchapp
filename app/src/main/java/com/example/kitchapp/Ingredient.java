@@ -1,4 +1,5 @@
 package com.example.kitchapp;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -15,6 +16,9 @@ public class Ingredient {
     @ColumnInfo(name = "ingredientQuantity")
     private int number;
 
+    @ColumnInfo(name = "defaultBuyValue")
+    private int defaultBuyValue;
+
     public int getId() {
         return id;
     }
@@ -23,18 +27,27 @@ public class Ingredient {
         this.id = id;
     }
 
-    public String getName(){ return name; }
-
-    public void setName(String newName){
-        this.name = newName;
+    public String getName() {
+        return name;
     }
 
-    public int getNumber(){
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getNumber() {
         return number;
     }
 
-    public void setNumber(int number){
+    public void setNumber(int number) {
         this.number = number;
     }
 
+    public int getDefaultBuyValue() {
+        return defaultBuyValue;
+    }
+
+    public void setDefaultBuyValue(int defaultBuyValue) {
+        this.defaultBuyValue = defaultBuyValue;
+    }
 }
