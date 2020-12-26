@@ -49,6 +49,10 @@ public class AddShoppingFragment extends Fragment {
                 ingredient.setName(name);
                 ingredient.setDefaultBuyValue(number);
                 ingredient.setNumber(0);
+<<<<<<< HEAD
+=======
+                ingredient.setInShoppingList(true);
+>>>>>>> parent of c80ee10... suggestion and fridge full coordination
                 if(number > 0) {
                     MainActivity.roomDatabaseClass.ingredientDao().addIngredient(ingredient);
                 }

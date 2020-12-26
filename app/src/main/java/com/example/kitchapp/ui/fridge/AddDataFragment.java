@@ -46,6 +46,10 @@ public class AddDataFragment extends Fragment {
                 Ingredient ingredient = new Ingredient();
                 ingredient.setName(name);
                 ingredient.setNumber(number);
+<<<<<<< HEAD
+=======
+                ingredient.setInFridge(true);
+>>>>>>> parent of c80ee10... suggestion and fridge full coordination
                 if(number > 0) {
                     MainActivity.roomDatabaseClass.ingredientDao().addIngredient(ingredient);
                 }

@@ -14,6 +14,15 @@ public interface IngredientDao {
     @Insert
     void addIngredient(Ingredient ingredient);
 
+<<<<<<< HEAD
+=======
+    @Query("SELECT * FROM ingredient WHERE isInFridge = 1 ")
+    List<Ingredient> getInFridge();
+
+    @Query("SELECT * FROM ingredient WHERE isInShoppingList = 1 ")
+    List<Ingredient> getInShoppingList();
+
+>>>>>>> parent of c80ee10... suggestion and fridge full coordination
     @Query("select * from ingredient")
     List<Ingredient> getIngredient();
 

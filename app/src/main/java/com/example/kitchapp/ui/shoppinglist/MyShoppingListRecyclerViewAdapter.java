@@ -73,15 +73,27 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
                     //int newValue;// = Integer.parseInt(number.getText().toString().trim());
                     Ingredient ingredient;
                     int ID, amount;
+<<<<<<< HEAD
+=======
+                    boolean isInShoppinglist;
+>>>>>>> parent of c80ee10... suggestion and fridge full coordination
                     String name;
                     ingredient = new Ingredient();
                     ID = list.get(getAdapterPosition()).getId();
                     name = list.get(getAdapterPosition()).getName();
                     amount = list.get(getAdapterPosition()).getNumber();
+<<<<<<< HEAD
+=======
+                    isInShoppinglist = list.get(getAdapterPosition()).isInShoppingList();
+>>>>>>> parent of c80ee10... suggestion and fridge full coordination
 
                     ingredient.setId(ID);
                     ingredient.setName(name);
                     ingredient.setNumber(amount);
+<<<<<<< HEAD
+=======
+                    ingredient.setInShoppingList(isInShoppinglist);
+>>>>>>> parent of c80ee10... suggestion and fridge full coordination
                     try {
                         if (number.getText().toString() != "")
                             ingredient.setDefaultBuyValue(Integer.parseInt(number.getText().toString()));
@@ -106,16 +118,29 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
         public void onClick(View v) {
             Ingredient ingredient;
             int ID, number, defBuyValue;
+<<<<<<< HEAD
+=======
+            boolean isInShoppingList;
+>>>>>>> parent of c80ee10... suggestion and fridge full coordination
             String name;
             ingredient = new Ingredient();
             ID = list.get(getAdapterPosition()).getId();
             name = list.get(getAdapterPosition()).getName();
             number = list.get(getAdapterPosition()).getNumber();
             defBuyValue = list.get(getAdapterPosition()).getDefaultBuyValue();
+<<<<<<< HEAD
+=======
+            isInShoppingList = list.get(getAdapterPosition()).isInShoppingList();
+
+>>>>>>> parent of c80ee10... suggestion and fridge full coordination
             ingredient.setId(ID);
             ingredient.setName(name);
             ingredient.setNumber(number);
             ingredient.setDefaultBuyValue(defBuyValue);
+<<<<<<< HEAD
+=======
+            ingredient.setInShoppingList(isInShoppingList);
+>>>>>>> parent of c80ee10... suggestion and fridge full coordination
 
             switch (v.getId()) {
 

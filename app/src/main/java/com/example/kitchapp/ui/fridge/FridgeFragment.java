@@ -31,7 +31,11 @@ public class FridgeFragment extends Fragment implements View.OnClickListener {
         recyclerView = view.findViewById(R.id.fridgeRecyclerView);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
+<<<<<<< HEAD
         List<Ingredient> list = MainActivity.roomDatabaseClass.ingredientDao().getIngredient();
+=======
+        List<Ingredient> list = MainActivity.roomDatabaseClass.ingredientDao().getInFridge();
+>>>>>>> parent of c80ee10... suggestion and fridge full coordination
         recyclerAdapter = new RecyclerAdapter(list);
         recyclerView.setAdapter(recyclerAdapter);
 
