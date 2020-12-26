@@ -3,7 +3,86 @@
 Below is a record of our project group meetings.
 
 **
-### Meeting ~ (27/11/2020)
+### Meeting ~ (18/09/2020)
+**
+2 hours
+*Discussion:* 
+We meet for the first time and discussed about the project topic.
+
+*ToDo:*                              
+1.The project should be selected.          
+**
+
+### Meeting ~ (24/09/2020)
+**
+2 hours
+*Discussion:* 
+Discussed last time before the project selection and decided on project before the meeting with Ozcan Hoca.
+
+*ToDo:*                              
+1.The project selection..          
+**
+
+### Meeting ~ (28/09/2020)
+**
+2 hours
+*Discussion:* 
+Discussed about the presentation about project selection.
+
+*ToDo:*                              
+1.The project selection presentation..          
+**
+
+### Meeting ~ (01/10/2020)
+**
+3 hours
+*Discussion:* 
+First distribution of tasks related to presentation.
+
+*ToDo:*                              
+1.The project selection presentation..          
+**
+
+### Meeting ~ (10/10/2020)
+**
+5 hours
+*Discussion:* 
+We prepared the presentation.
+
+*ToDo:*                              
+1.The project selection presentation..          
+**
+
+### Meeting ~ (25/10/2020)
+**
+2 hours
+*Discussion:* 
+Revised report for the project selection.
+
+*ToDo:*                              
+1.The project selection report..          
+**
+
+### Meeting ~ (29/10/2020)
+**
+with extra 2 members meetings: 5 hours
+*Discussion:* 
+UI Design parts are distributed to members of team.
+
+*ToDo:*                              
+1.UI design..          
+**
+
+### Meeting ~ (25/11/2020)
+**
+2 hours
+*Discussion:* 
+Revised UI design is done
+*ToDo:*                              
+1.revised UI deisgn         
+**
+
+### Meeting ~ (25/11/2020)
 **
 *Discussion:* 
 We learned how to test our app via, how to manage github and classes' implementation are distributed to group members.
