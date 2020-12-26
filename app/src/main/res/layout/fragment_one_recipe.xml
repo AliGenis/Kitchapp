@@ -13,7 +13,7 @@
 
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageOfRecipe"
             android:layout_width="388dp"
             android:layout_height="194dp"
             android:layout_marginTop="104dp"
