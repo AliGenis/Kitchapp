@@ -1,59 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fridge.FridgeFragment">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="408dp"
-        android:layout_height="464dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list"
-            android:name="com.example.kitchapp.ShoppingListFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="LinearLayoutManager"
-            tools:context=".ui.shoppinglist.ShoppingListFragment"
-            tools:listitem="@layout/fragment_shoppinglist" />
-    </ScrollView>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_light"
-        android:text="BUY"
-        android:textColor="@android:color/holo_red_dark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_shoppinglist"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <CheckBox
+        android:id="@+id/shop_checkbox"
+        android:layout_width="169dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="CheckBox" />
 
     <ImageButton
-        android:id="@+id/shop_add_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/plus_in_shopping"
+        android:layout_width="13dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        app:srcCompat="@drawable/ic_baseline_add_circle_24" />
+
+    <EditText
+        android:id="@+id/number_in_shopping"
+        android:layout_width="13dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_shoplist_add_24"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <ImageButton
+        android:id="@+id/minus_in_shopping"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        app:srcCompat="@drawable/ic_baseline_remove_circle_24" />
+
+
+</LinearLayout>
