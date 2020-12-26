@@ -7,29 +7,41 @@
 
     <TextView
         android:id="@+id/recipeName"
-        android:layout_width="wrap_content"
+        android:layout_width="163dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="15dp"
-        android:text="Recipe Name Goes H"
         android:layout_marginBottom="10dp"
         android:gravity="center"
-        android:textSize="24sp" />
+        android:text="Recipe Name Goes H"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/recipes_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="15dp"
+        android:layout_height="36dp"
         android:layout_weight="1"
         android:drawableStart="@drawable/ic_time_icon"
         android:text="Time" />
 
     <Button
         android:id="@+id/recipe_details_button"
-        android:layout_width="wrap_content"
+        android:layout_width="37dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Details" />
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="37dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="48dp"
+        android:background="@android:color/background_dark"
+        android:src="@drawable/ic_baseline_delete_forever_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </LinearLayout>
