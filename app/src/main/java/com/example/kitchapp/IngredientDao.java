@@ -14,6 +14,9 @@ public interface IngredientDao {
     @Insert
     void addIngredient(Ingredient ingredient);
 
+    @Query("SELECT * FROM ingredient WHERE ingredientName LIKE (:name) ")
+    List<Ingredient> getByName(String name);
+
     @Query("SELECT * FROM ingredient WHERE isInFridge = 1 ")
     List<Ingredient> getInFridge();
 

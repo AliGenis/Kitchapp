@@ -73,27 +73,28 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
                     //int newValue;// = Integer.parseInt(number.getText().toString().trim());
                     Ingredient ingredient;
                     int ID, amount;
-                    boolean isInShoppinglist;
+                    boolean isInShoppinglist, isInFridge;
                     String name;
                     ingredient = new Ingredient();
                     ID = list.get(getAdapterPosition()).getId();
                     name = list.get(getAdapterPosition()).getName();
                     amount = list.get(getAdapterPosition()).getNumber();
                     isInShoppinglist = list.get(getAdapterPosition()).isInShoppingList();
+                    isInFridge = list.get(getAdapterPosition()).isInFridge();
 
                     ingredient.setId(ID);
                     ingredient.setName(name);
                     ingredient.setNumber(amount);
                     ingredient.setInShoppingList(isInShoppinglist);
+                    ingredient.setInFridge(isInFridge);
                     try {
                         if (number.getText().toString() != "")
                             ingredient.setDefaultBuyValue(Integer.parseInt(number.getText().toString()));
                         else
                             ingredient.setDefaultBuyValue(0);
                     }catch (NumberFormatException numberFormatException){
-                        System.out.println("Invalid İnput!");
+                        System.out.println("Invalid Input!");
                     }
-
                     MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
                 }
 
@@ -110,7 +111,7 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
 
             Ingredient ingredient;
             int ID, number, defBuyValue;
-            boolean isInShoppingList;
+            boolean isInShoppingList, isInFridge;
             String name;
 
             ingredient = new Ingredient();
@@ -119,12 +120,14 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
             number = list.get(getAdapterPosition()).getNumber();
             defBuyValue = list.get(getAdapterPosition()).getDefaultBuyValue();
             isInShoppingList = list.get(getAdapterPosition()).isInShoppingList();
+            isInFridge = list.get(getAdapterPosition()).isInFridge();
 
             ingredient.setId(ID);
             ingredient.setName(name);
             ingredient.setNumber(number);
             ingredient.setDefaultBuyValue(defBuyValue);
             ingredient.setInShoppingList(isInShoppingList);
+            ingredient.setInFridge(isInFridge);
 
             switch (v.getId()) {
 

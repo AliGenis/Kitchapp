@@ -14,6 +14,8 @@ import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 
+import java.util.List;
+
 public class AddDataFragment extends Fragment {
 
     private EditText inputName, inputNumber;
@@ -37,18 +39,34 @@ public class AddDataFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 int number = 0;
+                List<Ingredient> sameName;
+
                 String name = inputName.getText().toString();
                 try {
                     number = Integer.parseInt(inputNumber.getText().toString());
                 }catch(NumberFormatException nfe){
                     System.out.println("Invalid number");
                 }
-                Ingredient ingredient = new Ingredient();
-                ingredient.setName(name);
-                ingredient.setNumber(number);
-                ingredient.setInFridge(true);
-                if(number > 0) {
-                    MainActivity.roomDatabaseClass.ingredientDao().addIngredient(ingredient);
+
+                sameName = MainActivity.roomDatabaseClass.ingredientDao().getByName(name);
+
+                if( sameName.isEmpty() )
+                {
+                    Ingredient ingredient = new Ingredient();
+                    ingredient.setName(name);
+                    ingredient.setNumber(number);
+                    ingredient.setInShoppingList(false);
+                    ingredient.setInFridge(true);
+                    if(number > 0) {
+                        MainActivity.roomDatabaseClass.ingredientDao().addIngredient(ingredient);
+                    }
+                } else {
+                    Ingredient ingredient = sameName.get(0);
+                    ingredient.setNumber(number);
+                    ingredient.setInFridge(true);
+                    if(number > 0) {
+                        MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
+                    }
                 }
                 Toast.makeText(getActivity(), "Succesfully saved.", Toast.LENGTH_LONG).show();
                 inputName.setText("");
