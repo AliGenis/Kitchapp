@@ -27,44 +27,24 @@ import java.util.List;
  */
 public class OneRecipeFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     private ImageView imageOfRecipe;
     private TextView recipeTitle;
     private TextView recipeWindow;
     private TextView timeText;
     private TextView calText;
-
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
-    RecyclerAdapter recyclerAdapter;
+    private int recipeID;
+    private Recipe recipe;
 
     public OneRecipeFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment OneRecipeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static OneRecipeFragment newInstance(String param1, String param2) {
+    public static OneRecipeFragment newInstance(int id) {
         OneRecipeFragment fragment = new OneRecipeFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putInt("idOfRecipe", id);
         fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -72,10 +52,6 @@ public class OneRecipeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -83,6 +59,12 @@ public class OneRecipeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_one_recipe, container, false);
+        recipeID = getArguments().getInt("idOfRecipe",0);
+        List<Recipe> recipes = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
+        for(int i = 0; i < recipes.size();i++) {
+            if(recipeID == recipes.get(i).getRecipeID() )
+                recipe = recipes.get(i);
+        }
 
         recipeTitle = view.findViewById(R.id.recipeTitle);
         recipeWindow = view.findViewById(R.id.recipeText);
@@ -90,13 +72,10 @@ public class OneRecipeFragment extends Fragment {
         imageOfRecipe = view.findViewById(R.id.imageOfRecipe);
         timeText = view.findViewById(R.id.timeText);
 
-        recyclerView = view.findViewById(R.id.recipesRecyclerView);
-        layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
-
-        List<Recipe> list2 = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
-       // recyclerAdapter = new com.example.kitchapp.ui.recipes.RecyclerAdapter(list2);
-        recyclerView.setAdapter(recyclerAdapter);
+        recipeTitle.setText(recipe.getName());
+        recipeWindow.setText(recipe.getRecipe());
+        calText.setText(Double.toString(recipe.getCalorie()));
+        timeText.setText(Integer.toString(recipe.getPrepTime()));
 
         return view;
     }
