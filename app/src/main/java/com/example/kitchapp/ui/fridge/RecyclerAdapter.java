@@ -84,29 +84,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
         public void onClick(View v) {
             Ingredient ingredient;
             int ID, number, defBuyValue;
-<<<<<<< HEAD
-=======
-            boolean isInFridge;
->>>>>>> parent of c80ee10... suggestion and fridge full coordination
+            boolean isInShoppingList, isInFridge;
             String name;
             ingredient = new Ingredient();
             ID = list.get(getAdapterPosition()).getId();
             name = list.get(getAdapterPosition()).getName();
             number = list.get(getAdapterPosition()).getNumber();
             defBuyValue = list.get(getAdapterPosition()).getDefaultBuyValue();
-<<<<<<< HEAD
-=======
+            isInShoppingList = list.get(getAdapterPosition()).isInShoppingList();
             isInFridge = list.get(getAdapterPosition()).isInFridge();
 
->>>>>>> parent of c80ee10... suggestion and fridge full coordination
             ingredient.setId(ID);
             ingredient.setName(name);
             ingredient.setNumber(number);
             ingredient.setDefaultBuyValue(defBuyValue);
-<<<<<<< HEAD
-=======
+            ingredient.setInShoppingList(isInShoppingList);
             ingredient.setInFridge(isInFridge);
->>>>>>> parent of c80ee10... suggestion and fridge full coordination
 
             switch (v.getId()) {
                 case (R.id.fridgeDeleteButton):

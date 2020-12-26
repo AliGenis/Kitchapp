@@ -23,6 +23,7 @@ public class FridgeFragment extends Fragment implements View.OnClickListener {
     Button btAddData;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
+    List<Ingredient> list;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -31,11 +32,10 @@ public class FridgeFragment extends Fragment implements View.OnClickListener {
         recyclerView = view.findViewById(R.id.fridgeRecyclerView);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-<<<<<<< HEAD
-        List<Ingredient> list = MainActivity.roomDatabaseClass.ingredientDao().getIngredient();
-=======
-        List<Ingredient> list = MainActivity.roomDatabaseClass.ingredientDao().getInFridge();
->>>>>>> parent of c80ee10... suggestion and fridge full coordination
+
+        list = MainActivity.roomDatabaseClass.ingredientDao().getInFridge();
+        System.out.println(list.size());
+
         recyclerAdapter = new RecyclerAdapter(list);
         recyclerView.setAdapter(recyclerAdapter);
 
