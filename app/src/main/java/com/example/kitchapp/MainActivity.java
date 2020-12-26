@@ -58,24 +58,6 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        fragmentManager = getSupportFragmentManager();
-        roomDatabaseClass = Room.databaseBuilder(getApplicationContext(), RoomDatabaseClass.class
-                , "mydb").allowMainThreadQueries().build();
-        fragmentManager = getSupportFragmentManager();
-
-        addRecipesToDatabase();
-
-        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
-        fragmentManager.beginTransaction().replace(R.id.Container, new FridgeFragment()).commit();
-    }
-
     public void addRecipesToDatabase(){
         //adding recipes to the database manually
         Recipe recipe = new Recipe();
@@ -101,4 +83,21 @@ public class MainActivity extends AppCompatActivity {
         recipe3.setCalorie( 95 );
         roomDatabaseClass.recipeDao().addRecipe(recipe3);
     }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        fragmentManager = getSupportFragmentManager();
+        roomDatabaseClass = Room.databaseBuilder(getApplicationContext(), RoomDatabaseClass.class
+                , "mydb").allowMainThreadQueries().build();
+        fragmentManager = getSupportFragmentManager();
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        fragmentManager.beginTransaction().replace(R.id.Container, new FridgeFragment()).commit();
+    //    addRecipesToDatabase();
+    //    roomDatabaseClass.clearAllTables();
+    }
+
+
 }
