@@ -49,7 +49,7 @@ public class FridgeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case (R.id.addToFridgeButton):
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new AddDataFragment()
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new AddItemFragment()
                         , null).addToBackStack(null).commit();
                 break;
         }

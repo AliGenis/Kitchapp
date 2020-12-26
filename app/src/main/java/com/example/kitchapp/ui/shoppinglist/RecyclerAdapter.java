@@ -2,6 +2,7 @@ package com.example.kitchapp.ui.shoppinglist;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +18,18 @@ import com.example.kitchapp.R;
 
 import java.util.List;
 
-public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MyShoppingListRecyclerViewAdapter.ViewHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     private final List<Ingredient> list;
+    boolean[] itemStateArray;
 
-    public MyShoppingListRecyclerViewAdapter(List<Ingredient> items) {
+    public RecyclerAdapter(List<Ingredient> items) {
         list = items;
+        itemStateArray = new boolean[items.size()];
+    }
+
+    public boolean[] getItemStateArray() {
+        return itemStateArray;
     }
 
     @Override
@@ -52,7 +59,9 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
         public CheckBox checkBox;
 
         public ViewHolder(View view) {
+
             super(view);
+
             mView = view;
             plusButton = view.findViewById(R.id.plus_in_shopping);
             minusButton = view.findViewById(R.id.minus_in_shopping);
@@ -61,7 +70,18 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
 
             plusButton.setOnClickListener(this);
             minusButton.setOnClickListener(this);
-            //number.setOnClickListener(this);
+            checkBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (checkBox.isChecked())
+                    {
+                        itemStateArray[getAdapterPosition()] = true;
+                    } else {
+                        itemStateArray[getAdapterPosition()] = false;
+                    }
+                }
+            });
+
             number.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -105,8 +125,6 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
 
                 }
             });
-            checkBox.setOnClickListener(this);
-
         }
 
         public void onClick(View v) {

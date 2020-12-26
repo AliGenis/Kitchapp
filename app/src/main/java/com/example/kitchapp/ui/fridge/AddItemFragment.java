@@ -1,9 +1,6 @@
-package com.example.kitchapp.ui.shoppinglist;
+package com.example.kitchapp.ui.fridge;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,19 +8,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 
 import java.util.List;
 
-
-public class AddShoppingFragment extends Fragment {
+public class AddItemFragment extends Fragment {
 
     private EditText inputName, inputNumber;
     private Button btSave;
 
-    public AddShoppingFragment() {
+    public AddItemFragment() {
         // Required empty public constructor
     }
 
@@ -31,7 +29,7 @@ public class AddShoppingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_add_shopping, container, false);
+        View view = inflater.inflate(R.layout.fragment_add_fridge, container, false);
 
         inputName = view.findViewById(R.id.inputName);
         inputNumber = view.findViewById(R.id.inputNumber);
@@ -55,16 +53,16 @@ public class AddShoppingFragment extends Fragment {
                 {
                     Ingredient ingredient = new Ingredient();
                     ingredient.setName(name);
-                    ingredient.setDefaultBuyValue(number);
-                    ingredient.setNumber(0);
-                    ingredient.setInShoppingList(true);
+                    ingredient.setNumber(number);
+                    ingredient.setInShoppingList(false);
+                    ingredient.setInFridge(true);
                     if(number > 0) {
                         MainActivity.roomDatabaseClass.ingredientDao().addIngredient(ingredient);
                     }
                 } else {
                     Ingredient ingredient = sameName.get(0);
-                    ingredient.setDefaultBuyValue(number);
-                    ingredient.setInShoppingList(true);
+                    ingredient.setNumber(number);
+                    ingredient.setInFridge(true);
                     if(number > 0) {
                         MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
                     }
