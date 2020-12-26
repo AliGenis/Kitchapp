@@ -13,7 +13,7 @@ public class Ingredient {
     @ColumnInfo(name = "ingredientName", defaultValue = "empty")
     private String name;
 
-    @ColumnInfo(name = "ingredientQuantity")
+    @ColumnInfo(name = "ingredientQuantity", defaultValue = "0")
     private int number;
 
     @ColumnInfo(name = "defaultBuyValue", defaultValue = "0")
