@@ -9,11 +9,14 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 import com.example.kitchapp.Recipe;
+import com.example.kitchapp.ui.recipes.OneRecipeFragment;
 import com.example.kitchapp.ui.suggestion.tabs.IngredientsFragment;
 import com.example.kitchapp.ui.suggestion.tabs.RecipeFragment;
 import com.google.android.material.tabs.TabLayout;
@@ -49,7 +52,7 @@ public class SuggestionFragment extends Fragment {
         calorieInfo = view.findViewById(R.id.calorieInfo);
         prepTime = view.findViewById(R.id.prepTimeInfo);
 
-        btAccept.setOnClickListener(new View.OnClickListener() {
+        btReject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Recipe suggestion;
@@ -57,11 +60,26 @@ public class SuggestionFragment extends Fragment {
                     suggestion = suggestionList.get(0);
                     suggestionList.remove(0);
                     recipeTitle.setText(suggestion.getName());
+                    calorieInfo.setText(Double.toString(suggestion.getCalorie()));
+                    prepTime.setText(Integer.toString(suggestion.getPrepTime()));
+                    calorieInfo.setText(Double.toString(suggestion.getCalorie()));
+                    prepTime.setText(Integer.toString(suggestion.getPrepTime()));
                 } else{
                     recipeTitle.setText("No suggestion.");
                 }
             }
         });
+        btAccept.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                         public void onClick(View v) {
+                          switch (v.getId()) {
+                          case (R.id.acceptButton):
+                              MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new OneRecipeFragment(), null).addToBackStack(null).commit();
+                                                    break;
+                                            }
+                                        }
+                                    }
+        );
 
         suggestionList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
 

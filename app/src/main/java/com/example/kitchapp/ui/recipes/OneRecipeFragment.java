@@ -1,5 +1,6 @@
 package com.example.kitchapp.ui.recipes;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -19,6 +20,7 @@ import com.example.kitchapp.Recipe;
 import com.example.kitchapp.ui.fridge.RecyclerAdapter;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,12 +56,15 @@ public class OneRecipeFragment extends Fragment {
 
     }
 
+    @SuppressLint("UseRequireInsteadOfGet")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_one_recipe, container, false);
-        recipeID = getArguments().getInt("idOfRecipe",0);
+
+       recipeID = getArguments().getInt("idOfRecipe",0);
+      //  recipeID = Objects.requireNonNull(getArguments()).getInt("idOfRecipe",0);
         List<Recipe> recipes = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
         for(int i = 0; i < recipes.size();i++) {
             if(recipeID == recipes.get(i).getRecipeID() )
