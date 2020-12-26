@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 import com.example.kitchapp.Recipe;
 import com.example.kitchapp.ui.fridge.FridgeFragment;
+import com.example.kitchapp.ui.suggestion.tabs.RecipeFragment;
 
 import java.util.List;
 
@@ -49,6 +51,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recipe
     public class RecipesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public final TextView tvName;
         public Recipe recipe;
+        public ImageButton deleteButton;
         public Button detailsButton;
         public TextView tvTime;
 
@@ -59,6 +62,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recipe
             tvTime = (TextView) view.findViewById(R.id.recipes_time);
             detailsButton = (Button) view.findViewById(R.id.recipe_details_button);
             detailsButton.setOnClickListener(this);
+            deleteButton = view.findViewById(R.id.deleteButton);
+            deleteButton.setOnClickListener(this);
 
         }
         public void onClick(View v) {
@@ -79,6 +84,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recipe
 
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             OneRecipeFragment.newInstance(ID), null).commit();
+                    break;
+                case (R.id.deleteButton):
+                    MainActivity.roomDatabaseClass.recipeDao().deleteRecipe(recipe);
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
+                            new RecipeFragment(), null).commit();
                     break;
 
             }
