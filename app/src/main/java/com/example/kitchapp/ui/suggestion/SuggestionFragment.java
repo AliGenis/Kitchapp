@@ -23,13 +23,15 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
 
-public class SuggestionFragment extends Fragment {
+public class SuggestionFragment extends Fragment implements View.OnClickListener{
 
     ViewPager viewPager;
     TabLayout tabLayout;
     ImageButton btAccept, btReject;
     TextView recipeTitle, recipeInfo, calorieInfo, prepTime;
-    List<Recipe> suggestionList;
+    List<Recipe> suggestionList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();;
+    Recipe suggestion;
+    int recipeID;
 
     public SuggestionFragment() {
     }
@@ -52,36 +54,22 @@ public class SuggestionFragment extends Fragment {
         calorieInfo = view.findViewById(R.id.calorieInfo);
         prepTime = view.findViewById(R.id.prepTimeInfo);
 
-        btReject.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Recipe suggestion;
-                if( !suggestionList.isEmpty() ){
-                    suggestion = suggestionList.get(0);
-                    suggestionList.remove(0);
-                    recipeTitle.setText(suggestion.getName());
-                    calorieInfo.setText(Double.toString(suggestion.getCalorie()));
-                    prepTime.setText(Integer.toString(suggestion.getPrepTime()));
-                    calorieInfo.setText(Double.toString(suggestion.getCalorie()));
-                    prepTime.setText(Integer.toString(suggestion.getPrepTime()));
-                } else{
-                    recipeTitle.setText("No suggestion.");
-                }
-            }
-        });
-        btAccept.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                         public void onClick(View v) {
-                          switch (v.getId()) {
-                          case (R.id.acceptButton):
-                              MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new OneRecipeFragment(), null).addToBackStack(null).commit();
-                                                    break;
-                                            }
-                                        }
-                                    }
-        );
-
-        suggestionList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
+        btReject.setOnClickListener(this);
+        btAccept.setOnClickListener(this);
+        
+        if( !suggestionList.isEmpty() ){
+            suggestion = suggestionList.get(0);
+            suggestionList.remove(0);
+            recipeTitle.setText(suggestion.getName());
+            calorieInfo.setText(Double.toString(suggestion.getCalorie()));
+            prepTime.setText(Integer.toString(suggestion.getPrepTime()));
+            calorieInfo.setText(Double.toString(suggestion.getCalorie()));
+            prepTime.setText(Integer.toString(suggestion.getPrepTime()));
+            recipeID = suggestion.getRecipeID();
+        }
+        else{
+            recipeTitle.setText("No suggestion.");
+        }
 
         return view;
     }
@@ -118,5 +106,27 @@ public class SuggestionFragment extends Fragment {
         adapter.addFragment(new RecipeFragment(), "Recipe");
 
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case(R.id.acceptButton):
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, OneRecipeFragment.newInstance(recipeID), null).addToBackStack(null).commit();
+                break;
+            case(R.id.rejectButton):
+                if( !suggestionList.isEmpty() ){
+                    suggestion = suggestionList.get(0);
+                    suggestionList.remove(0);
+                    recipeTitle.setText(suggestion.getName());
+                    calorieInfo.setText(Double.toString(suggestion.getCalorie()));
+                    prepTime.setText(Integer.toString(suggestion.getPrepTime()));
+                    calorieInfo.setText(Double.toString(suggestion.getCalorie()));
+                    prepTime.setText(Integer.toString(suggestion.getPrepTime()));
+                    recipeID = suggestion.getRecipeID();
+                } else{
+                    recipeTitle.setText("No suggestion.");
+                }
+        }
     }
 }
