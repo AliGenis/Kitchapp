@@ -31,7 +31,7 @@ public class ShoppingListFragment extends Fragment implements View.OnClickListen
         recyclerView = view.findViewById(R.id.list);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        List<Ingredient> ingredientList = MainActivity.roomDatabaseClass.ingredientDao().getIngredient();
+        List<Ingredient> ingredientList = MainActivity.roomDatabaseClass.ingredientDao().getInShoppingList();
         recyclerAdapter = new MyShoppingListRecyclerViewAdapter(ingredientList);
         recyclerView.setAdapter(recyclerAdapter);
 

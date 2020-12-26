@@ -31,7 +31,7 @@ public class FridgeFragment extends Fragment implements View.OnClickListener {
         recyclerView = view.findViewById(R.id.fridgeRecyclerView);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        List<Ingredient> list = MainActivity.roomDatabaseClass.ingredientDao().getIngredient();
+        List<Ingredient> list = MainActivity.roomDatabaseClass.ingredientDao().getInFridge();
         recyclerAdapter = new RecyclerAdapter(list);
         recyclerView.setAdapter(recyclerAdapter);
 

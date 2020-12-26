@@ -46,6 +46,7 @@ public class AddDataFragment extends Fragment {
                 Ingredient ingredient = new Ingredient();
                 ingredient.setName(name);
                 ingredient.setNumber(number);
+                ingredient.setInFridge(true);
                 if(number > 0) {
                     MainActivity.roomDatabaseClass.ingredientDao().addIngredient(ingredient);
                 }

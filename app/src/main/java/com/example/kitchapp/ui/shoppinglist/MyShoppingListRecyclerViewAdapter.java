@@ -73,15 +73,18 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
                     //int newValue;// = Integer.parseInt(number.getText().toString().trim());
                     Ingredient ingredient;
                     int ID, amount;
+                    boolean isInShoppinglist;
                     String name;
                     ingredient = new Ingredient();
                     ID = list.get(getAdapterPosition()).getId();
                     name = list.get(getAdapterPosition()).getName();
                     amount = list.get(getAdapterPosition()).getNumber();
+                    isInShoppinglist = list.get(getAdapterPosition()).isInShoppingList();
 
                     ingredient.setId(ID);
                     ingredient.setName(name);
                     ingredient.setNumber(amount);
+                    ingredient.setInShoppingList(isInShoppinglist);
                     try {
                         if (number.getText().toString() != "")
                             ingredient.setDefaultBuyValue(Integer.parseInt(number.getText().toString()));
@@ -104,18 +107,24 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
         }
 
         public void onClick(View v) {
+
             Ingredient ingredient;
             int ID, number, defBuyValue;
+            boolean isInShoppingList;
             String name;
+
             ingredient = new Ingredient();
             ID = list.get(getAdapterPosition()).getId();
             name = list.get(getAdapterPosition()).getName();
             number = list.get(getAdapterPosition()).getNumber();
             defBuyValue = list.get(getAdapterPosition()).getDefaultBuyValue();
+            isInShoppingList = list.get(getAdapterPosition()).isInShoppingList();
+
             ingredient.setId(ID);
             ingredient.setName(name);
             ingredient.setNumber(number);
             ingredient.setDefaultBuyValue(defBuyValue);
+            ingredient.setInShoppingList(isInShoppingList);
 
             switch (v.getId()) {
 
@@ -136,8 +145,6 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
                     break;
 
             }
-
-
         }
 
         @Override
