@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             app:layoutManager="LinearLayoutManager"
             tools:context=".ui.shoppinglist.ShoppingListFragment"
-            tools:listitem="@layout/fragment_shopping_item" />
+            tools:listitem="@layout/fragment_shoppinglist" />
     </ScrollView>
 
     <Button

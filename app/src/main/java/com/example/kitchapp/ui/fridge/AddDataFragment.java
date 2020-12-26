@@ -27,7 +27,7 @@ public class AddDataFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_add_data, container, false);
+        View view = inflater.inflate(R.layout.fragment_add_fridge, container, false);
 
         inputName = view.findViewById(R.id.inputName);
         inputNumber = view.findViewById(R.id.inputNumber);

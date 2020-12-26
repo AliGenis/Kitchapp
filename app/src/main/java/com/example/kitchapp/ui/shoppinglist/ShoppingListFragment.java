@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
-import com.example.kitchapp.ui.fridge.AddDataFragment;
 
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class ShoppingListFragment extends Fragment implements View.OnClickListen
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_shopping_item_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_shoppinglist_item, container, false);
 
         recyclerView = view.findViewById(R.id.list);
         layoutManager = new LinearLayoutManager(getActivity());
