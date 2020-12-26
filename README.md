@@ -15,7 +15,7 @@ By using this application, we hope that people can easily control their kitchen 
 + **Implementation:** incompleted
 + **Reflections:** incompleted 
 
-[Group Meetings Log](group/meetingslog.md)
+[Group Meetings Log](group/meetings_log.md)
 - On 15/12/2020
    We've completed our Detailed Design Stage.
    We shared our experiences with Android Studio.
