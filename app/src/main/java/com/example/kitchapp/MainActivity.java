@@ -62,16 +62,22 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
     public void addRecipesToDatabase(){
+        List<Ingredient> ingredients = new ArrayList<Ingredient>();
+        Recipe recipe;
+
         //adding recipes to the database manually
-        ArrayList<Ingredient> ingredients = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            ingredients.add(new Ingredient("ingredient" + i, i*5));
-        }
-        Recipe recipe = new Recipe();
-        recipe.setName( "Boiled Eggs" );
-        recipe.setRecipe( "Boil your eggs in the tap water for about 5-10 mins" );
+        recipe = new Recipe();
+        ingredients = new ArrayList<Ingredient>();
+
+        recipe.setName( "Ingredient Name" );
+        recipe.setRecipe( "Recipe info goes here..." );
         recipe.setPrepTime( 10 );
         recipe.setCalorie( 100 );
+
+        ingredients.add(new Ingredient( "ingredient1" , 5)); //change 5 with required number
+        ingredients.add(new Ingredient( "ingredient1" , 5)); //change names
+        ingredients.add(new Ingredient( "ingredient1" , 5));
+
         recipe.setIngredientList(ingredients);
         roomDatabaseClass.recipeDao().addRecipe(recipe);
 

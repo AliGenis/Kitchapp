@@ -43,13 +43,13 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
-    public ArrayList<Ingredient> getIngredientList() {
+    public List<Ingredient> getIngredientList() {
         Type listType = new TypeToken<ArrayList<Ingredient>>(){}.getType();
-        ArrayList<Ingredient> list = new Gson().fromJson(ingredients, listType);
+        List<Ingredient> list = new Gson().fromJson(ingredients, listType);
         return list;
     }
 
-    public void setIngredientList(ArrayList<Ingredient> ingredients) {
+    public void setIngredientList(List<Ingredient> ingredients) {
         Gson gson = new Gson();
         String jsonString = gson.toJson(ingredients);
         this.ingredients = jsonString;
