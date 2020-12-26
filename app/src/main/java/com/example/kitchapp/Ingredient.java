@@ -2,6 +2,7 @@ package com.example.kitchapp;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -24,6 +25,14 @@ public class Ingredient {
 
     @ColumnInfo(name = "isInShoppingList", defaultValue = "false")
     private boolean isInShoppingList;
+
+    public Ingredient(){}
+
+    @Ignore
+    public Ingredient(String name, int number){
+        this.name = name;
+        this.number = number;
+    }
 
     public int getId() {
         return id;

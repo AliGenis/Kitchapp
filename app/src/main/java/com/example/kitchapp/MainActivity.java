@@ -16,6 +16,9 @@ import com.example.kitchapp.ui.shoppinglist.ShoppingListFragment;
 import com.example.kitchapp.ui.suggestion.SuggestionFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     public static FragmentManager fragmentManager;
@@ -60,11 +63,16 @@ public class MainActivity extends AppCompatActivity {
             };
     public void addRecipesToDatabase(){
         //adding recipes to the database manually
+        ArrayList<Ingredient> ingredients = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            ingredients.add(new Ingredient("ingredient" + i, i*5));
+        }
         Recipe recipe = new Recipe();
         recipe.setName( "Boiled Eggs" );
         recipe.setRecipe( "Boil your eggs in the tap water for about 5-10 mins" );
         recipe.setPrepTime( 10 );
         recipe.setCalorie( 100 );
+        recipe.setIngredientList(ingredients);
         roomDatabaseClass.recipeDao().addRecipe(recipe);
 
         Recipe recipe2 = new Recipe();
@@ -73,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 "becomes crispy" );
         recipe2.setPrepTime( 10 );
         recipe2.setCalorie( 115 );
+        recipe.setIngredientList(ingredients);
         roomDatabaseClass.recipeDao().addRecipe(recipe2);
 
         Recipe recipe3 = new Recipe();
@@ -81,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 "Wait for 5 to 10 mins and then you are finished." );
         recipe3.setPrepTime( 10 );
         recipe3.setCalorie( 95 );
+        recipe.setIngredientList(ingredients);
         roomDatabaseClass.recipeDao().addRecipe(recipe3);
 
         Recipe recipe4 = new Recipe();
@@ -244,9 +254,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         fragmentManager.beginTransaction().replace(R.id.Container, new FridgeFragment()).commit();
-    //    addRecipesToDatabase();
-    //    roomDatabaseClass.clearAllTables();
+//        addRecipesToDatabase();
+//        roomDatabaseClass.clearAllTables();
     }
-
-
 }
