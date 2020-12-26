@@ -107,7 +107,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
                             new FridgeFragment(), null).commit();
                     break;
                 case (R.id.minusButton):
-                    number--;
+                    if(number>0) {
+                        number--;
+                    }
                     ingredient.setNumber(number);
                     MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,

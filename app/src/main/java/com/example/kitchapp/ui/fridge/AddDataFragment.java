@@ -36,14 +36,19 @@ public class AddDataFragment extends Fragment {
         btSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int number = 0;
                 String name = inputName.getText().toString();
-                int number = Integer.parseInt(inputNumber.getText().toString());
-
+                try {
+                    number = Integer.parseInt(inputNumber.getText().toString());
+                }catch(NumberFormatException nfe){
+                    System.out.println("Invalid number");
+                }
                 Ingredient ingredient = new Ingredient();
                 ingredient.setName(name);
                 ingredient.setNumber(number);
-
-                MainActivity.roomDatabaseClass.ingredientDao().addIngredient(ingredient);
+                if(number > 0) {
+                    MainActivity.roomDatabaseClass.ingredientDao().addIngredient(ingredient);
+                }
                 Toast.makeText(getActivity(), "Succesfully saved.", Toast.LENGTH_LONG).show();
                 inputName.setText("");
                 inputNumber.setText("");
