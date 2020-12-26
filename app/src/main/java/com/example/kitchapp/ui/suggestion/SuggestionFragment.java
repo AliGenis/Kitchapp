@@ -21,6 +21,8 @@ import com.example.kitchapp.ui.suggestion.tabs.IngredientsFragment;
 import com.example.kitchapp.ui.suggestion.tabs.RecipeFragment;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SuggestionFragment extends Fragment implements View.OnClickListener{
@@ -29,7 +31,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     TabLayout tabLayout;
     ImageButton btAccept, btReject;
     TextView recipeTitle, recipeInfo, calorieInfo, prepTime;
-    List<Recipe> suggestionList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();;
+    List<Recipe> suggestionList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
     Recipe suggestion;
     int recipeID;
 
@@ -40,6 +42,21 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
         return new SuggestionFragment();
     }
 
+    public static SuggestionFragment newInstance(List<Recipe> recList) {
+        SuggestionFragment fragment = new SuggestionFragment();
+        Bundle args = new Bundle();
+        ArrayList<Integer> recIDs = new ArrayList<Integer>();
+        for(int i=0; i < recList.size();i++)
+        {
+            recIDs.add(recList.get(i).getRecipeID());
+        }
+
+        args.putIntegerArrayList("recIDs", recIDs);
+
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -47,19 +64,32 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
 
         viewPager = view.findViewById(R.id.viewPager);
         tabLayout = view.findViewById(R.id.tabLayout);
-
+        ArrayList<Integer> recIDList = new ArrayList<>();
+        List<Recipe> testList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
+        List<Recipe> suggestedList = null;
         btAccept = view.findViewById(R.id.acceptButton);
         btReject = view.findViewById(R.id.rejectButton);
         recipeTitle = view.findViewById(R.id.suggestionTitle);
         calorieInfo = view.findViewById(R.id.calorieInfo);
         prepTime = view.findViewById(R.id.prepTimeInfo);
 
+        if(getArguments() != null) {
+            if (testList.get(0).getRecipe().equalsIgnoreCase(suggestionList.get(0).getName())) {
+                recIDList = getArguments().getIntegerArrayList("recIDs");
+
+                suggestedList = MainActivity.roomDatabaseClass.recipeDao().getRecipeByID(recIDList);
+            }
+            if (suggestedList != null)
+                suggestionList = suggestedList;
+        }
+
         btReject.setOnClickListener(this);
         btAccept.setOnClickListener(this);
-        
+
         if( !suggestionList.isEmpty() ){
+            Collections.shuffle(suggestionList);
             suggestion = suggestionList.get(0);
-            suggestionList.remove(0);
+
             recipeTitle.setText(suggestion.getName());
             calorieInfo.setText(Double.toString(suggestion.getCalorie()));
             prepTime.setText(Integer.toString(suggestion.getPrepTime()));
@@ -69,6 +99,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
         }
         else{
             recipeTitle.setText("No suggestion.");
+            btAccept.setOnClickListener(null);
         }
 
         return view;
@@ -81,29 +112,14 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
         setUpViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-            }
-
-        });
     }
 
     private void setUpViewPager(ViewPager viewPager) {
 
         SectionPagerAdapter adapter = new SectionPagerAdapter(getChildFragmentManager());
 
-        adapter.addFragment(new IngredientsFragment(), "Ingredients");
-        adapter.addFragment(new RecipeFragment(), "Recipe");
+        adapter.addFragment(RecipeFragment.newInstance(recipeID), "Ingredients");
+        adapter.addFragment(RecipeFragment.newInstance(recipeID), "Recipe");
 
         viewPager.setAdapter(adapter);
     }
@@ -118,12 +134,9 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
                 if( !suggestionList.isEmpty() ){
                     suggestion = suggestionList.get(0);
                     suggestionList.remove(0);
-                    recipeTitle.setText(suggestion.getName());
-                    calorieInfo.setText(Double.toString(suggestion.getCalorie()));
-                    prepTime.setText(Integer.toString(suggestion.getPrepTime()));
-                    calorieInfo.setText(Double.toString(suggestion.getCalorie()));
-                    prepTime.setText(Integer.toString(suggestion.getPrepTime()));
-                    recipeID = suggestion.getRecipeID();
+                    Collections.shuffle(suggestionList);
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, SuggestionFragment.newInstance(suggestionList), null).addToBackStack(null).commit();
+
                 } else{
                     recipeTitle.setText("No suggestion.");
                 }

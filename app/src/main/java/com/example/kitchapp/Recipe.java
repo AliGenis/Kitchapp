@@ -33,7 +33,7 @@ public class Recipe {
     @ColumnInfo(name = "recipePhotoId")
     private int recipePhotoId;
     @ColumnInfo(name = "ingredients")
-    private String ingredients;
+    public String ingredients;
 
     public String getIngredients() {
         return ingredients;
