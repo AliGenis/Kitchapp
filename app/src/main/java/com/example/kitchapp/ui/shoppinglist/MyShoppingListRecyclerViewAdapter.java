@@ -47,7 +47,7 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public final View mView;
         public Ingredient ingredient;
-        public ImageButton plusButton, minusButton;
+        public ImageButton plusButton, minusButton, deleteButton;
         public EditText number;
         public CheckBox checkBox;
 
@@ -56,6 +56,8 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
             mView = view;
             plusButton = view.findViewById(R.id.plus_in_shopping);
             minusButton = view.findViewById(R.id.minus_in_shopping);
+            deleteButton = view.findViewById(R.id.deleteButton);
+            deleteButton.setOnClickListener(this);
             number = view.findViewById(R.id.number_in_shopping);
             checkBox = view.findViewById(R.id.shop_checkbox);
 
@@ -130,6 +132,12 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
             ingredient.setInFridge(isInFridge);
 
             switch (v.getId()) {
+
+                case (R.id.deleteButton):
+                    MainActivity.roomDatabaseClass.ingredientDao().deleteIngredient(ingredient);
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
+                            new ShoppingListFragment(), null).commit();
+                    break;
 
                 case (R.id.plus_in_shopping):
                     defBuyValue++;
