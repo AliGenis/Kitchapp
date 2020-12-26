@@ -128,7 +128,9 @@ public class MyShoppingListRecyclerViewAdapter extends RecyclerView.Adapter<MySh
                     break;
 
                 case (R.id.minus_in_shopping):
-                    defBuyValue--;
+                    if(defBuyValue>0) {
+                        defBuyValue--;
+                    }
                     ingredient.setDefaultBuyValue(defBuyValue);
                     MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
