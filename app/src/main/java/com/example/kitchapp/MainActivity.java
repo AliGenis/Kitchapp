@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     public static RoomDatabaseClass roomDatabaseClass;
     public static Fridge fridge;
+    public static ShoppingList shoppingList;
 
     // Navigation listener
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -614,6 +615,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager.beginTransaction().replace(R.id.Container, new FridgeFragment()).commit();
 
         fridge = new Fridge(MainActivity.roomDatabaseClass.ingredientDao().getInFridge());
+        shoppingList = new ShoppingList(MainActivity.roomDatabaseClass.ingredientDao().getInShoppingList());
         addRecipesToDatabase();
 //        roomDatabaseClass.clearAllTables();
     }

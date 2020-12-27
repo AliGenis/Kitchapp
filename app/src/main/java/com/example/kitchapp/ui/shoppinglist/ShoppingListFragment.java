@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -42,17 +43,10 @@ public class ShoppingListFragment extends Fragment implements View.OnClickListen
             @Override
             public void onClick(View v) {
                 boolean[] checkedItems = recyclerAdapter.getItemStateArray();
+                List<Ingredient> ingredients = ingredientList;
                 System.out.println(checkedItems.length);
-                for (int i = 0; i < checkedItems.length; i++) {
-                    if(checkedItems[i]){
-                        System.out.println(checkedItems.length);
-                        Ingredient ingredient = ingredientList.get(i);
-                        ingredient.setNumber( ingredient.getNumber() + ingredient.getBuyValue() );
-                        ingredient.setInFridge(true);
-                        ingredient.setInShoppingList(false);
-                        MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
-                    }
-                }
+                MainActivity.shoppingList.buy(checkedItems, ingredients);
+                Toast.makeText(getActivity(), "Money brings you food, but not appetite-Henrik Ibsen But Kitchapp brings you appetite", Toast.LENGTH_LONG).show();
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new ShoppingListFragment()
                         , null).addToBackStack(null).commit();
             }
