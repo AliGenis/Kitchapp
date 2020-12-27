@@ -13,66 +13,26 @@ import static com.example.kitchapp.MainActivity.fridge;
  */
 public class ShoppingList extends IngredientList {
 
-    //VARIABLES
-    private ArrayList<Boolean> isInTheCart;
-    private ArrayList<Integer> buyValue;
-    //private int numOfIngredients;
-
-    //CONSTRUCTORS
-
-    //Fridge is not specified. It must be set to buy things.
-    public ShoppingList(List<Ingredient> shoppingList) {
-        super();
-        list = shoppingList;
+    public void addToShoppingList(String name, int buyValue) {
+        add(name, 0);
+        Ingredient ingredient = findByName(name);
+        ingredient.setInShoppingList(true);
+        ingredient.setBuyValue(buyValue);
+        MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
     }
 
-    //GETTERS AND SETTERS
-    public ArrayList<Boolean> getIsInTheCart() {
-        return isInTheCart;
-    }
-
-    public void setIsInTheCart(ArrayList<Boolean> isInTheCart) {
-        this.isInTheCart = isInTheCart;
-    }
-
-    public ArrayList<Integer> getBuyValue() {
-        return buyValue;
-    }
-
-    public void setBuyValue(ArrayList<Integer> buyValue) {
-        this.buyValue = buyValue;
-    }
-/*
-    public int getNumOfIngredients() {
-        return numOfIngredients;
-    }
-
-    public void setNumOfIngredients(int numOfIngredients) {
-        this.numOfIngredients = numOfIngredients;
-    }
-*/
-
-    //METHODS
     /**
      * Sets how many of this ingredient will be added to cart.
      *
-     * @param ingredient The ingredient whose +/- button pressed
-     * @param number     Number of Ingredient that will be added to cart
+     * @param name      The ingredient whose +/- button pressed
+     * @param number    Number of Ingredient that will be added to cart
      */
-    public void setBuyValue(Ingredient ingredient, int number) {
-        int index = list.indexOf(ingredient);
-        buyValue.set(index, number);
-    }
-
-    /**
-     * @param name   Name of the new ingredient
-     * @param number Number of new Ingredient that will be added to cart
-     * @return newIngredient will be used for adding new item to database purposes.
-     */
-    public Ingredient addNew(String name, int number) {
-        Ingredient newIngredient = new Ingredient();
-        list.add(newIngredient);
-        return newIngredient; //
+    public void setBuyValue(String name, int number) {
+        add(name,0);
+        Ingredient ingredient = findByName(name);
+        ingredient.setInShoppingList(true);
+        ingredient.setBuyValue(number);
+        MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
     }
 
     public void buy(boolean[] checkedItems, List<Ingredient> ingredientList) {
@@ -86,5 +46,15 @@ public class ShoppingList extends IngredientList {
                 MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
             }
         }
+    }
+
+    public List<Ingredient> getInShoppingList() {
+        return MainActivity.roomDatabaseClass.ingredientDao().getInShoppingList();
+    }
+
+    public void removeFromShoppingList(String name) {
+        Ingredient ingredient = findByName(name);
+        ingredient.setInShoppingList(false);
+        MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
     }
 }

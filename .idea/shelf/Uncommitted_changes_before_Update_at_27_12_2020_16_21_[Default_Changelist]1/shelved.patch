@@ -1,0 +1,30 @@
+Index: app/src/main/java/com/example/kitchapp/Fridge.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.kitchapp;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Collections;\r\nimport java.util.List;\r\n\r\n/**\r\n * Fridge\r\n *\r\n * @author Burak, Emre, Gülçin\r\n * @version 12/12/2020\r\n */\r\npublic class Fridge extends IngredientList {\r\n\r\n    //constructor\r\n    public Fridge(List<Ingredient> list) {\r\n        super();\r\n        this.list = list;\r\n    }\r\n\r\n    public Fridge() {\r\n        super();\r\n    }\r\n\r\n    /**\r\n     * adds just one to ingredient number\r\n     *\r\n     * @param ingredient\r\n     */\r\n    public void addByOne(Ingredient ingredient) {\r\n        add(ingredient, 1);\r\n    }\r\n\r\n    /**\r\n     * eats just one from the amount of ingredient\r\n     *\r\n     * @param ingredient\r\n     */\r\n    public void eatByOne(Ingredient ingredient) { //same as above\r\n        eat(ingredient, 1);\r\n    }\r\n\r\n    /**\r\n     * -Burak ~ We can change return type to an IngredientList ???\r\n     * // tried to do the return type Ingredientlist but as it is abstract there were errors (deleted) -Emre\r\n     *\r\n     * @param user The user who requested a suggestion.\r\n     * @return A specific ArrayList of Ingredient that will be used by suggestion.\r\n     */\r\n    public ArrayList<Ingredient> ingredientsSpecificToUser(User user) {\r\n\r\n//        ArrayList<Ingredient> allergiesList = user.getAllergiesList();\r\n//        ArrayList<Ingredient> specificIngredients = (ArrayList<Ingredient>) list.clone();\r\n//\r\n//        for (int i = 0; i < allergiesList.size(); i++) {\r\n//            if (findByName(allergiesList.get(i).getName()) != null)\r\n//                specificIngredients.remove(findByName(allergiesList.get(i).getName()));\r\n//        }\r\n//\r\n//        return specificIngredients;\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * -Burak ~ We can make a new RecipeList class ???\r\n     *\r\n     * @param user The user who requested a suggestion.\r\n     * @return A specific ArrayList of Recipe that will be used by suggestion.\r\n     */\r\n    public ArrayList<Recipe> recipesSpecificToUser(User user) {\r\n        //TODO: We need to get the full recipe list from database...\r\n\r\n        ArrayList<Recipe> recipes; //Assume that we got the full recipe list.\r\n        recipes = new ArrayList<Recipe>();\r\n        ArrayList<Recipe> undesired = user.getUndesiredMeals();\r\n\r\n        for (int i = 0; i < undesired.size(); i++) {\r\n            recipes.remove(undesired.get(i));\r\n        }\r\n        return recipes;\r\n    }\r\n\r\n    /**\r\n     * -Burak, Emre ~ Please read FIXME and TODO entries.\r\n     *\r\n     * @param user The user who requested a suggestion.\r\n     * @return A specific ArrayList of Recipe that will be used by suggestion.\r\n     */\r\n    public ArrayList<Recipe> suggest(User user) {\r\n        //FIXME: This method is not completed and not true. I implemented to show an algorithm.\r\n        //TODO: We should return a randomized Recipe ArrayList and suggest sequentially in case\r\n        // user rejects meal.\r\n        // I think we should find another way to store number of Ingredient because it gives trouble\r\n        // when comparing fridge ingredients and recipe ingredients. Or it's fine if you can find\r\n        // another way to solve this :) -Burak\r\n        // maybe fixed :) -Emre\r\n\r\n        ArrayList<Ingredient> usableIngredients;\r\n        ArrayList<Recipe> usableRecipes;\r\n\r\n        usableIngredients = ingredientsSpecificToUser(user);\r\n        usableRecipes = recipesSpecificToUser(user);\r\n\r\n        for (int i = 0; i < usableRecipes.size(); i++) {\r\n            if (!fridgeContains(usableRecipes.get(i), usableIngredients))\r\n                usableRecipes.remove(i);\r\n        }\r\n\r\n        Collections.shuffle(usableRecipes);\r\n\r\n        return usableRecipes;\r\n    }\r\n\r\n    private boolean fridgeContains(Recipe recipe, ArrayList<Ingredient> usableIngredients) {\r\n        List<Ingredient> recipeIngredient;\r\n        recipeIngredient = recipe.getIngredientList();\r\n\r\n        for (int i = 0; i < recipeIngredient.size(); i++) {\r\n\r\n            if (this.findByName(recipeIngredient.get(i).getName()) != null) {\r\n                if (this.findByName(recipeIngredient.get(i).getName()).getNumber()\r\n                        < recipeIngredient.get(i).getNumber())\r\n                    return false;\r\n            } else\r\n                return false;\r\n\r\n        }\r\n        return true;\r\n    }\r\n\r\n    /**\r\n     * -Burak, Emre ~ TODO: We need another method that connects suggest and eat functions. //maybe it is fixed (?)\r\n     * When user accepts a recipe, the ingredients will be remove from fridge.\r\n     */\r\n    public void eatMeal(Recipe meal) {\r\n        List<Ingredient> recipeIngredients;\r\n        recipeIngredients = meal.getIngredientList();\r\n\r\n        for (int i = 0; i < recipeIngredients.size(); i++) {\r\n            eat(recipeIngredients.get(i), recipeIngredients.get(i).getNumber());\r\n        }\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/kitchapp/Fridge.java	(revision 4620040b828e77e9d3daf100262259b2930576e0)
++++ app/src/main/java/com/example/kitchapp/Fridge.java	(date 1609075057455)
+@@ -12,14 +12,14 @@
+  */
+ public class Fridge extends IngredientList {
+ 
+-    //constructor
+-    public Fridge(List<Ingredient> list) {
+-        super();
+-        this.list = list;
+-    }
+-
++    //Constructor
+     public Fridge() {
+         super();
++        this.list = MainActivity.roomDatabaseClass.ingredientDao().getInFridge();
++    }
++
++    public void updateFridge() {
++        this.list = MainActivity.roomDatabaseClass.ingredientDao().getInFridge();
+     }
+ 
+     /**

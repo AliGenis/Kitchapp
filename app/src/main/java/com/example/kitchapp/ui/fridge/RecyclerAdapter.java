@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kitchapp.Fridge;
 import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
@@ -19,6 +20,7 @@ import java.util.List;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.FridgeViewHolder> {
 
     private final List<Ingredient> list;
+    private final Fridge fridge = MainActivity.fridge;
 
     public RecyclerAdapter(List<Ingredient> items) {
         list = items;
@@ -49,18 +51,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
         public final TextView tvName;
         public final TextView tvNumber;
         public Ingredient ingredient;
-        public ImageButton btDelete, plusButton, minusButton;
+        public ImageButton btDelete, btPlus, btMinus;
 
         public FridgeViewHolder(View view) {
             super(view);
             tvName = (TextView) view.findViewById(R.id.fridgeItemName);
+
             tvNumber = (TextView) view.findViewById(R.id.fridgeItemNumber);
             btDelete = view.findViewById(R.id.fridgeDeleteButton);
-            plusButton = view.findViewById(R.id.plusButton);
-            minusButton = view.findViewById(R.id.minusButton);
+            btPlus = view.findViewById(R.id.plusButton);
+            btMinus = view.findViewById(R.id.minusButton);
+
             btDelete.setOnClickListener(this);
-            plusButton.setOnClickListener(this);
-            minusButton.setOnClickListener(this);
+            btPlus.setOnClickListener(this);
+            btMinus.setOnClickListener(this);
         }
 
         public Ingredient getIngredient() {
@@ -75,48 +79,31 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
 
         @Override
         public void onClick(View v) {
-            Ingredient ingredient;
-            int ID, number, defBuyValue;
-            boolean isInShoppingList, isInFridge;
-            String name;
-            ingredient = new Ingredient();
-            ID = list.get(getAdapterPosition()).getId();
-            name = list.get(getAdapterPosition()).getName();
-            number = list.get(getAdapterPosition()).getNumber();
-            defBuyValue = list.get(getAdapterPosition()).getBuyValue();
-            isInShoppingList = list.get(getAdapterPosition()).isInShoppingList();
-            isInFridge = list.get(getAdapterPosition()).isInFridge();
 
-            ingredient.setId(ID);
-            ingredient.setName(name);
-            ingredient.setNumber(number);
-            ingredient.setBuyValue(defBuyValue);
-            ingredient.setInShoppingList(isInShoppingList);
-            ingredient.setInFridge(isInFridge);
+            String name = list.get(getAdapterPosition()).getName();
+            Ingredient ingredient = fridge.findByName(name);
 
             switch (v.getId()) {
+
                 case (R.id.fridgeDeleteButton):
                     MainActivity.roomDatabaseClass.ingredientDao().deleteIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new FridgeFragment(), null).commit();
                     break;
+
                 case (R.id.plusButton):
-                    number++;
-                    ingredient.setNumber(number);
-                    MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
-                            new FridgeFragment(), null).commit();
-                    break;
-                case (R.id.minusButton):
-                    if(number>0) {
-                        number--;
-                    }
-                    ingredient.setNumber(number);
+                    ingredient.setNumber( ingredient.getNumber() + 1 );
                     MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new FridgeFragment(), null).commit();
                     break;
 
+                case (R.id.minusButton):
+                    ingredient.setNumber( ingredient.getNumber() - 1 );
+                    MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
+                            new FridgeFragment(), null).commit();
+                    break;
             }
         }
     }

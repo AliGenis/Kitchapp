@@ -16,13 +16,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
+import com.example.kitchapp.ShoppingList;
 
 import java.util.List;
 
 public class ShoppingListFragment extends Fragment implements View.OnClickListener{
 
     RecyclerAdapter recyclerAdapter;
-    private List<Ingredient> ingredientList;
+    private List<Ingredient> list;
+    private final ShoppingList shoppingList = MainActivity.shoppingList;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -31,24 +33,33 @@ public class ShoppingListFragment extends Fragment implements View.OnClickListen
         RecyclerView recyclerView = view.findViewById(R.id.list);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        ingredientList = MainActivity.roomDatabaseClass.ingredientDao().getInShoppingList();
-        System.out.println(ingredientList.size());
-        recyclerAdapter = new RecyclerAdapter(ingredientList);
+
+        list = shoppingList.getInShoppingList();
+        System.out.println(list.size());
+
+        recyclerAdapter = new RecyclerAdapter(list);
         recyclerView.setAdapter(recyclerAdapter);
 
         ImageButton addButton = view.findViewById(R.id.shoppingListAddDataButton);
         Button buyButton = view.findViewById(R.id.buyButton);
+
         addButton.setOnClickListener(this);
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 boolean[] checkedItems = recyclerAdapter.getItemStateArray();
-                List<Ingredient> ingredients = ingredientList;
-                System.out.println(checkedItems.length);
-                MainActivity.shoppingList.buy(checkedItems, ingredients);
-                Toast.makeText(getActivity(), "Money brings you food, but not appetite-Henrik Ibsen But Kitchapp brings you appetite", Toast.LENGTH_LONG).show();
+
+                System.out.println(checkedItems.length); //test case
+
+                shoppingList.buy(checkedItems, list);
+
+                Toast.makeText(getActivity(), "Money brings you food, but not appetite " +
+                        "(Henrik Ibsen). But Kitchapp brings you appetite.", Toast.LENGTH_LONG).show();
+
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new ShoppingListFragment()
                         , null).addToBackStack(null).commit();
+
             }
         });
 

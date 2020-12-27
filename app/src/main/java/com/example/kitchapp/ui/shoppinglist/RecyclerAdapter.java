@@ -17,12 +17,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
+import com.example.kitchapp.ShoppingList;
 
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     private final List<Ingredient> list;
+    private final ShoppingList shoppingList = MainActivity.shoppingList;
     boolean[] itemStateArray;
 
     public RecyclerAdapter(List<Ingredient> items) {
@@ -96,84 +98,46 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     //int newValue;// = Integer.parseInt(number.getText().toString().trim());
-                    Ingredient ingredient;
-                    int ID, amount;
-                    boolean isInShoppinglist, isInFridge;
-                    String name;
-                    ingredient = new Ingredient();
-                    ID = list.get(getAdapterPosition()).getId();
-                    name = list.get(getAdapterPosition()).getName();
-                    amount = list.get(getAdapterPosition()).getNumber();
-                    isInShoppinglist = list.get(getAdapterPosition()).isInShoppingList();
-                    isInFridge = list.get(getAdapterPosition()).isInFridge();
-
-                    ingredient.setId(ID);
-                    ingredient.setName(name);
-                    ingredient.setNumber(amount);
-                    ingredient.setInShoppingList(isInShoppinglist);
-                    ingredient.setInFridge(isInFridge);
+                    String name = list.get(getAdapterPosition()).getName();
+                    int buyValue = 0;
 
                     try {
                         if (!number.getText().toString().equals(""))
-                            ingredient.setBuyValue(Integer.parseInt(number.getText().toString()));
+                            buyValue = Integer.parseInt( number.getText().toString() );
                         else
-                            ingredient.setBuyValue(0);
+                            buyValue = 0;
                     }catch (NumberFormatException numberFormatException){
-                        System.out.println("Invalid İnput!");
+                        System.out.println("Invalid Input!");
                     }
-
-                    MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
+                    shoppingList.setBuyValue(name, buyValue);
                 }
 
                 @Override
                 public void afterTextChanged(Editable s) {
-
                 }
             });
         }
 
         public void onClick(View v) {
-            Ingredient ingredient;
-            int ID, number, defBuyValue;
-            boolean isInShoppingList, isInFridge;
-            String name;
-            ingredient = new Ingredient();
-            ID = list.get(getAdapterPosition()).getId();
-            name = list.get(getAdapterPosition()).getName();
-            number = list.get(getAdapterPosition()).getNumber();
-            defBuyValue = list.get(getAdapterPosition()).getBuyValue();
-            isInShoppingList = list.get(getAdapterPosition()).isInShoppingList();
-            isInFridge = list.get(getAdapterPosition()).isInFridge();
-
-            ingredient.setId(ID);
-            ingredient.setName(name);
-            ingredient.setNumber(number);
-            ingredient.setBuyValue(defBuyValue);
-            ingredient.setInShoppingList(isInShoppingList);
-            ingredient.setInFridge(isInFridge);
+            String name = list.get(getAdapterPosition()).getName();
+            Ingredient ingredient = shoppingList.findByName(name);
 
             switch (v.getId()) {
 
                 case (R.id.deleteButton):
-                    MainActivity.roomDatabaseClass.ingredientDao().deleteIngredient(ingredient);
+                    shoppingList.removeFromShoppingList(name);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new ShoppingListFragment(), null).commit();
                     break;
 
                 case (R.id.plus_in_shopping):
-                    defBuyValue++;
-                    ingredient.setBuyValue(defBuyValue);
-                    MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
+                    shoppingList.setBuyValue(name, ingredient.getBuyValue() + 1 );
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new ShoppingListFragment(), null).commit();
                     break;
 
                 case (R.id.minus_in_shopping):
-                    if(defBuyValue>0) {
-                        defBuyValue--;
-                    }
-                    ingredient.setBuyValue(defBuyValue);
-                    MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
+                    shoppingList.setBuyValue(name, ingredient.getBuyValue() - 1 );
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new ShoppingListFragment(), null).commit();
                     break;

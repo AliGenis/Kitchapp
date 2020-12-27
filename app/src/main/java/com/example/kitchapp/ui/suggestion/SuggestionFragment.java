@@ -58,16 +58,19 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
 
     public static SuggestionFragment newInstance(List<Recipe> recList) {
         SuggestionFragment fragment = new SuggestionFragment();
-        Bundle args = new Bundle();
-        ArrayList<Integer> recIDs = new ArrayList<>();
-        for(int i=0; i < recList.size();i++)
-        {
-            recIDs.add(recList.get(i).getRecipeID());
+        if( !recList.isEmpty() ){
+            Bundle args = new Bundle();
+            ArrayList<Integer> recIDs = new ArrayList<>();
+            for(int i=0; i < recList.size();i++)
+            {
+                recIDs.add(recList.get(i).getRecipeID());
+            }
+
+            args.putIntegerArrayList("recIDs", recIDs);
+
+            fragment.setArguments(args);
         }
 
-        args.putIntegerArrayList("recIDs", recIDs);
-
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -90,7 +93,6 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
         if(getArguments() != null) {
             if (testList.get(0).getRecipe().equalsIgnoreCase(suggestionList.get(0).getName())) {
                 ArrayList<Integer> recIDList = getArguments().getIntegerArrayList("recIDs");
-
                 suggestedList = MainActivity.roomDatabaseClass.recipeDao().getRecipeByID(recIDList);
             }
             if (suggestedList != null)

@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.suggestionScreen:
                             //     Intent intent2 = new Intent(MainActivity.this, SuggestionScreen.class);
                             //  startActivity(intent2);
-                            selectedFragment = new SuggestionFragment();
+                            selectedFragment = SuggestionFragment.newInstance( fridge.suggest() );
                             break;
                         case R.id.recipesFragment:
                             //      Intent intent3 = new Intent(MainActivity.this, RecipesFragment.class);
@@ -646,6 +646,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fridge = new Fridge();
+        shoppingList = new ShoppingList();
 
         fragmentManager = getSupportFragmentManager();
         roomDatabaseClass = Room.databaseBuilder(getApplicationContext(), RoomDatabaseClass.class
@@ -654,9 +656,6 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         fragmentManager.beginTransaction().replace(R.id.Container, new FridgeFragment()).commit();
-
-        fridge = new Fridge(MainActivity.roomDatabaseClass.ingredientDao().getInFridge());
-        shoppingList = new ShoppingList(MainActivity.roomDatabaseClass.ingredientDao().getInShoppingList());
         addRecipesToDatabase();
 //        roomDatabaseClass.clearAllTables();
     }

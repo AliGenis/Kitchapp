@@ -1,41 +1,51 @@
 package com.example.kitchapp;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class IngredientList {
-    protected List<Ingredient> list;
 
-    public IngredientList() {
-        list = new ArrayList<>();
-    }
+    public void add(String name, int number) {
 
-    public boolean add(Ingredient ingredient, int number) {
-        //If there is already this ingredient
-        for (int i = 0; i <= list.size() - 1; i++) {
-            if (list.get(i).getName().equalsIgnoreCase(ingredient.getName())) {
-                list.get(i).setNumber(list.get(i).getNumber() + number);
-                return true;
-            }
+        Ingredient ingredient = new Ingredient();
+
+        if( findByName(name) == null )
+        {
+            ingredient.setName(name);
+            ingredient.setNumber(number);
+            ingredient.setInFridge(false);
+            ingredient.setInShoppingList(false);
+            MainActivity.roomDatabaseClass.ingredientDao().addIngredient(ingredient);
         }
-        //If there is not this ingredient
-        ingredient.setNumber(number);
-        list.add(ingredient);
-        return true;
+        else {
+            ingredient = findByName(name);
+            ingredient.setNumber( ingredient.getNumber() + number );
+            MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
+        }
     }
 
-    public void eat(Ingredient ingredient, int number) {
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getName().equalsIgnoreCase(ingredient.getName())) {
-                //If there isn't any left after eat
-                // fixed error -Emre
-                if (list.get(i).getNumber() == 0)
-                    list.remove(i);
-                else
-                    list.get(i).setNumber(list.get(i).getNumber() - number);
-                Ingredient updatedIngredient = list.get(i);
-                MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(updatedIngredient);
-            }
+    public void eat(String name, int number) {
+
+        Ingredient ingredient = new Ingredient();
+
+        if( findByName(name) == null )
+        {
+            ingredient.setName(name);
+            ingredient.setNumber(0);
+            MainActivity.roomDatabaseClass.ingredientDao().addIngredient(ingredient);
+        }
+        else {
+            ingredient = findByName(name);
+            ingredient.setNumber( ingredient.getNumber() - number );
+            MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
+        }
+    }
+
+    public void removeFromDb (String name) {
+
+        Ingredient ingredient = findByName(name);
+
+        if(findByName(name) != null) {
+            MainActivity.roomDatabaseClass.ingredientDao().deleteIngredient(ingredient);
         }
     }
 
@@ -43,15 +53,14 @@ public abstract class IngredientList {
      * -Burak~ It helps when you do not want to mess with number.
      *
      * @param name Name of the Ingredient that will be searched.
-     * @return Ingredient if it finded, null vice-versa.
+     * @return Ingredient if it found, null vice-versa.
      */
     public Ingredient findByName(String name) {
-
-        for (int i = 0; i < list.size(); i++) {
-            if (name.equals(list.get(i).getName()))
-                return list.get(i);
-        }
-
-        return null;
+        List<Ingredient> list
+                = MainActivity.roomDatabaseClass.ingredientDao().getByName(name);
+        if(list.isEmpty())
+            return null;
+        else
+            return list.get(0);
     }
 }
