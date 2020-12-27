@@ -25,7 +25,13 @@ I changed some variables from database by coding.
 I fixed the emulator killed error.
 
 ### ~ 21/12/2020 - 27/12/2020 ~
-.
+Finally,poject has finished by me and my friends.
+I worked a lot this week.
+I worked on the GUI's.
+I worked on fixing the errors in the main.
+I added some images to needed places.
+I worked on other parts with my friends and fixed last bugs.
+
 .
 .
 
