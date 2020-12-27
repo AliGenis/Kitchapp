@@ -2,6 +2,7 @@ package com.example.kitchapp;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -65,13 +66,17 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Ingredient> ingredients;
         ingredients = new ArrayList<Ingredient>();
         Recipe recipe = new Recipe();
+        /**
         ingredients.add(new Ingredient( "egg" , 1)); //change 5 with required number
+        ImageView myImageView = (ImageView) findViewById(R.id.imageOfRecipe);
+        myImageView.setImageResource(R.drawable.egg3new);
         recipe.setName( "Boiled Eggs" );
         recipe.setRecipe( "Boil your eggs in the tap water for about 5-10 mins" );
         recipe.setPrepTime( 10 );
         recipe.setCalorie( 100 );
         recipe.setIngredientList(ingredients);
         roomDatabaseClass.recipeDao().addRecipe(recipe);
+         **/
 
         ArrayList<Ingredient> ingredients1;
         ingredients1 = new ArrayList<Ingredient>();
@@ -657,7 +662,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         fragmentManager.beginTransaction().replace(R.id.Container, new FridgeFragment()).commit();
-//        addRecipesToDatabase();
+        addRecipesToDatabase();
 //        roomDatabaseClass.clearAllTables();
     }
 }
