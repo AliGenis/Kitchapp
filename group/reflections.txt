@@ -1,0 +1,23 @@
+1. What ways have you found the project a useful learning experience?
+
+  	  We found this project useful because we think that this project has developed us in various ways. For example our project helped us in a way that we had an opportunity to make a collaboration while writing the code. We experience creating an application from the scratch as a team.  Other than that, we all learned how to work as a team; we had a chance to learn more about Android Studio, and databases. Learning completely new things helped us to develop our research skills.
+
+2. What did you dislike about project work?
+
+At first, it was hard to communicate properly inside the group. We all were trying to help but things sometimes worked out differently than we thought.
+
+3. What was the most difficult aspect of it?
+
+  	  Working as a team is certainly harder especially if the people are studying on massive projects where workload distribution is a must and there is a huge workload to cope with by just one programmer. 
+
+4. What would you do differently if you had to start over again?
+
+We certainly would start sooner. Even now we wished that we started sooner because we could not implement some things we initially said we would.
+
+5. How much time did you spend on it?
+
+At the first time we did not spend much time on it. We just wrote a couple lines of codes day by day. But as the work started to accumulate we thought to ourselves that we need to start working harder on this. In the last week, we were working on the project constantly. On average, we each spent 6-7 hours each day of the last week.
+
+6. Are you proud of what you have achieved?
+
+	We are! We believe that this is a crucial experience we had to experience. We learned how to write an android app. How cool is that! (even though it does not look even near professional). We experienced how it is like to implement smart ideas with smart colleagues.
