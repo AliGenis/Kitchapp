@@ -330,11 +330,11 @@ public class MainActivity extends AppCompatActivity {
         ingredients13 = new ArrayList<Ingredient>();
         Recipe recipe14 = new Recipe();
         ingredients13.add(new Ingredient( "yogurt" , 1)); //change 5 with required number
-        ingredients13.add(new Ingredient( "butter" , 1);
+        ingredients13.add(new Ingredient( "butter" , 1));
         ingredients13.add(new Ingredient( "pepper" , 1));
-        ingredients13.add(new Ingredient( "garlic" , 1);
+        ingredients13.add(new Ingredient( "garlic" , 1));
         ingredients13.add(new Ingredient( "egg" , 4));
-        ingredients13.add(new Ingredient( "salt" , 1);
+        ingredients13.add(new Ingredient( "salt" , 1));
 
 
         recipe14.setName( "Turkish Cilbir" );
