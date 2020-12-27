@@ -13,4 +13,5 @@ I have try to learn gui for Android. Learned layouts and how to add buttons, ima
 I mainly fixed bugs this week. App crashes when it was runned I make the app runable again but I couldn't make navigation functional still working on it. Also, I started to make connections between project and database.
 
 ### ~ 21/12/2020 - 27/12/2020 ~
+We decided that local database is a right descion for us so I changed realtime data base to Room(local) database with my friends. Finished shopping list & suggestion UIs with Burak. Helped OneRecipe fragment. Established connections & data changes between fragments. Added images and messages with my friends to make app more user friendly and funny.
 ****
