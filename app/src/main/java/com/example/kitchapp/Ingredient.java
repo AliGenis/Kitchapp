@@ -17,8 +17,8 @@ public class Ingredient {
     @ColumnInfo(name = "ingredientQuantity", defaultValue = "0")
     private int number;
 
-    @ColumnInfo(name = "defaultBuyValue", defaultValue = "0")
-    private int defaultBuyValue;
+    @ColumnInfo(name = "buyValue", defaultValue = "0")
+    private int buyValue;
 
     @ColumnInfo(name = "isInFridge", defaultValue = "false")
     private boolean isInFridge;
@@ -82,19 +82,19 @@ public class Ingredient {
     }
 
     /**
-     * get method for defaultBuyValue property
-     * @return int defaultBuyValue
+     * get method for buyValue property
+     * @return int buyValue;
      */
-    public int getDefaultBuyValue() {
-        return defaultBuyValue;
+    public int getBuyValue() {
+        return buyValue;
     }
 
     /**
-     * set method for defaultBuyValue property
-     * @param defaultBuyValue takes an int value from outside and sets the defaultBuyValue to it.
+     * set method for buyValue property
+     * @param buyValue takes an int value from outside and sets the buyValue; to it.
      */
-    public void setDefaultBuyValue(int defaultBuyValue) {
-        this.defaultBuyValue = defaultBuyValue;
+    public void setBuyValue(int buyValue) {
+        this.buyValue = buyValue;
     }
 
     /**

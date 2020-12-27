@@ -16,6 +16,7 @@ import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 import com.example.kitchapp.Recipe;
 import com.example.kitchapp.ui.recipes.OneRecipeFragment;
+import com.example.kitchapp.ui.suggestion.tabs.IngredientsFragment;
 import com.example.kitchapp.ui.suggestion.tabs.RecipeFragment;
 import com.google.android.material.tabs.TabLayout;
 
