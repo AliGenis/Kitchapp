@@ -1,6 +1,7 @@
 package com.example.kitchapp.ui.shoppinglist;
 
 import android.annotation.SuppressLint;
+import android.graphics.Paint;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -79,6 +80,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 @Override
                 public void onClick(View v) {
                     itemStateArray[getAdapterPosition()] = checkBox.isChecked();
+                    if(!checkBox.isChecked())
+                        checkBox.setPaintFlags(checkBox.getPaintFlags() ^ Paint.STRIKE_THRU_TEXT_FLAG);
+                    else
+                        checkBox.setPaintFlags(checkBox.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                 }
             });
 

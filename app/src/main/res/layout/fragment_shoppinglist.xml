@@ -9,6 +9,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:name="com.example.kitchapp.ShoppingListFragment"
+        android:background="@drawable/shopping_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"

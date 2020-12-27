@@ -51,7 +51,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
             ,"どうもありがとう!!!"
             ,"haha je vois que tu as aimé"
             ,"Bu gezek boldy!"
-            ,"ti amo tanto \uD83D\uDC4C"};
+            ,"ti amo tanto ♥️\uD83D\uDC4C"};
 
     public SuggestionFragment() {
     }
@@ -143,7 +143,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case(R.id.acceptButton):
-                Toast.makeText(getActivity(), listOfQuotes2[random.nextInt(8)], Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), listOfQuotes2[random.nextInt(7)], Toast.LENGTH_LONG).show();
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, OneRecipeFragment.newInstance(recipeID), null).addToBackStack(null).commit();
                 break;
             case(R.id.rejectButton):
@@ -151,7 +151,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
                     suggestion = suggestionList.get(0);
                     suggestionList.remove(0);
                     Collections.shuffle(suggestionList);
-                    Toast.makeText(getActivity(), listOfQuotes[random.nextInt(8)], Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), listOfQuotes[random.nextInt(7)], Toast.LENGTH_LONG).show();
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, SuggestionFragment.newInstance(suggestionList), null).addToBackStack(null).commit();
 
                 } else{

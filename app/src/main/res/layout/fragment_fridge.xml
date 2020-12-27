@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fridge.FridgeFragment">
+    tools:context=".ui.fridge.FridgeFragment"
+    android:background="@drawable/fridge_background">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fridgeRecyclerView"
@@ -40,4 +41,5 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
