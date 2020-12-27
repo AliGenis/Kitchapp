@@ -87,7 +87,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recipe
                 case (R.id.deleteButton):
                     MainActivity.roomDatabaseClass.recipeDao().deleteRecipe(recipe);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
-                            new RecipeFragment(), null).commit();
+                            new RecipesFragment(), null).commit();
                     break;
 
             }

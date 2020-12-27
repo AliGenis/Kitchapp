@@ -37,7 +37,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
                 .inflate(R.layout.fragment_fridge_item, parent, false);
         return new FridgeViewHolder(view);
     }
-
+    /**
+     * onBindViewHolder recycle the old view data
+     * @parameter holder,position
+     *
+     */
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(final FridgeViewHolder holder, int position) {
