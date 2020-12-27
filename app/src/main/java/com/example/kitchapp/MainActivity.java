@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         ingredients.add(new Ingredient( "Egg" , 1));
         ingredients.add(new Ingredient( "Garlic" , 1));
         ingredients.add(new Ingredient( "Onion" , 1));
-        ingredients.add(new Ingredient( "Tomatoes" , 2));
+        ingredients.add(new Ingredient( "Tomato" , 2));
 
         recipe.setName( "Spaghetti and meatballs" );
         recipe.setRecipe( "In a large pot of boiling salted water, cook spaghetti according to package instructions. Drain."+
@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
         
         ingredients = new ArrayList<>();
         recipe = new Recipe();
-        ingredients.add(new Ingredient( "Tomatoes" , 2)); //change 5 with required number
+        ingredients.add(new Ingredient( "Tomato" , 2)); //change 5 with required number
         ingredients.add(new Ingredient( "Cucumber" , 1));
         ingredients.add(new Ingredient( "Olive" , 5));
         ingredients.add(new Ingredient( "Olive oil" , 30));
@@ -243,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
         ingredients.add(new Ingredient( "Garlic" , 1));
         ingredients.add(new Ingredient( "Flour" , 150));
         ingredients.add(new Ingredient( "Chicken" , 1));
-        ingredients.add(new Ingredient( "Potatoes" , 2));
+        ingredients.add(new Ingredient( "Potato" , 2));
 
         recipe.setName( "Chicken Strew" );
         recipe.setRecipe( "In a large pot over medium heat, melt butter." +
@@ -329,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
         
         ingredients = new ArrayList<>();
         recipe = new Recipe();
-        ingredients.add(new Ingredient( "Potatoes" , 3)); //change 5 with required number
+        ingredients.add(new Ingredient( "Potato" , 3)); //change 5 with required number
         ingredients.add(new Ingredient( "Olive oil" , 50));
         //ingredients.add(new Ingredient( "salt" , 1));
         //ingredients.add(new Ingredient( "pepper" , 1));
@@ -353,7 +353,7 @@ public class MainActivity extends AppCompatActivity {
         ingredients.add(new Ingredient( "Tortilla" , 6));
         //ingredients.add(new Ingredient( "sour cream" , 1));
         ingredients.add(new Ingredient( "Cheese" , 150));
-        ingredients.add(new Ingredient( "Tomatoes" , 3));
+        ingredients.add(new Ingredient( "Tomato" , 3));
         recipe.setName( "Mexican Pizza" );
         recipe.setRecipe( "Preheat the oven to 375° and line a medium baking sheet with parchment paper." +
                 " Heat a large skillet over medium heat." +
