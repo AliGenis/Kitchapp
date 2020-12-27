@@ -120,10 +120,12 @@ public class OneRecipeFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case(R.id.eatIt):
-                fridge.eatMeal(recipe);
-                Toast.makeText(getActivity(), "Bon appatit!", Toast.LENGTH_LONG).show();
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new FridgeFragment()
-                        , null).addToBackStack(null).commit();
+                if(recipe.getIngredientList() != null) {
+                    fridge.eatMeal(recipe);
+                    Toast.makeText(getActivity(), "Bon appatit!", Toast.LENGTH_LONG).show();
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new FridgeFragment()
+                            , null).addToBackStack(null).commit();
+                }
                 break;
         }
     }

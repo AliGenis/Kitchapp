@@ -54,12 +54,13 @@ public class IngredientsFragment extends Fragment {
             RecyclerView recyclerView = root.findViewById(R.id.recipe_list_of_ingredients);
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
             recyclerView.setLayoutManager(layoutManager);
+            if(recipe.getIngredientList() != null) {
+                List<Ingredient> ingredientList = new ArrayList<>(recipe.getIngredientList());
+                System.out.println(ingredientList.size());
+                recyclerAdapter = new RecyclerAdapter(ingredientList);
+                recyclerView.setAdapter(recyclerAdapter);
+            }
 
-            List<Ingredient> ingredientList = new ArrayList<>(recipe.getIngredientList());
-
-            System.out.println(ingredientList.size());
-            recyclerAdapter = new RecyclerAdapter(ingredientList);
-            recyclerView.setAdapter(recyclerAdapter);
         }
 
         return root;

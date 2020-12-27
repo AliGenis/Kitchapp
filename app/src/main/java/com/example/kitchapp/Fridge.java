@@ -125,7 +125,7 @@ public class Fridge extends IngredientList {
 //    }
 
     /**
-     * -Burak, Emre ~ TODO: We need another method that connects suggest and eat functions. //maybe it is fixed (?)
+     * -Burak, Emre
      * When user accepts a recipe, the ingredients will be remove from fridge.
      */
     public void eatMeal(Recipe meal) {
