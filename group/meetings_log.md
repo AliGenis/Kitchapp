@@ -150,4 +150,15 @@ The way of adding ingredients is changed to make implementation more explicit. F
 **
 *Discussion:*
 We talked about what left to complete our application and shared tasks.
+*ToDo*
+1.Suggestion algorithm should be improved
+2.The Bug appeared when the settings is clicked should be solved
+3.Some graphics should be added
+### Meeting ~ (27/12/2020)
+**
+*Discussion:*
+We have recorded the project demo video
+We have created reflection text and committed it to github.
+We rearranged the detailed design report.
+
 
