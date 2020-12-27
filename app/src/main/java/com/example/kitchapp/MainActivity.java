@@ -504,7 +504,7 @@ public class MainActivity extends AppCompatActivity {
         ingredients19.add(new Ingredient( "salt" , 1));
         ingredients19.add(new Ingredient( "sugar" , 1));
         ingredients19.add(new Ingredient( "flour" , 1));
-        recipe20.setName( "French Crossian" );
+        recipe20.setName( "French Croissant" );
         recipe20.setRecipe( "Sprinkle 2 tablespoons of flour over the butter and mix it together with your hands in a mixing bowl or on a work surface." +
                 " Transfer the butter to a length of foil or parchment paper and pat it into a 6 inch square. Fold up the foil to make a packet and refrigerate until chilled, about 2 hours." +
                 "Combine 2 cups of the flour with the salt and sugar in a mixing bowl." +
@@ -607,7 +607,7 @@ public class MainActivity extends AppCompatActivity {
                 " Sprinkle with dill. Repeat with remaining ingredients." );
         recipe23.setPrepTime( 15 );
         recipe23.setCalorie( 247 );
-        recipe23.setIngredientList(ingredients21);
+        recipe23.setIngredientList(ingredients22);
         roomDatabaseClass.recipeDao().addRecipe(recipe23);
 
         ArrayList<Ingredient> ingredients23;
