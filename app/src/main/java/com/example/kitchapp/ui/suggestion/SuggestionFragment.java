@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -23,6 +24,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class SuggestionFragment extends Fragment implements View.OnClickListener{
 
@@ -35,6 +37,21 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     List<Recipe> suggestionList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
     Recipe suggestion;
     int recipeID;
+    Random random = new Random();
+    private String[] listOfQuotes = {"So, you do not like it, ha?!"
+            +"How could you dare to not like it!"
+            +"Dammit Jacob, You are very hard to please!"
+            +"私はこれが嫌いです!!!"
+            +"Comment me rejetez-vous"
+            +"Bu gezek bolmady!"
+            +"Come puoi rifiutarmi \uD83D\uDC4C"};
+    private String[] listOfQuotes2 = {"I see you liked it."
+            +"I love you too!"
+            +"Dammit Jacob, You are very easy to please!"
+            +"どうもありがとう!!!"
+            +"haha je vois que tu as aimé"
+            +"Bu gezek boldy!"
+            +"ti amo tanto \uD83D\uDC4C"};
 
     public SuggestionFragment() {
     }
@@ -126,6 +143,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case(R.id.acceptButton):
+                Toast.makeText(getActivity(), listOfQuotes2[random.nextInt(8)], Toast.LENGTH_LONG).show();
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, OneRecipeFragment.newInstance(recipeID), null).addToBackStack(null).commit();
                 break;
             case(R.id.rejectButton):
@@ -133,6 +151,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
                     suggestion = suggestionList.get(0);
                     suggestionList.remove(0);
                     Collections.shuffle(suggestionList);
+                    Toast.makeText(getActivity(), listOfQuotes[random.nextInt(8)], Toast.LENGTH_LONG).show();
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, SuggestionFragment.newInstance(suggestionList), null).addToBackStack(null).commit();
 
                 } else{
