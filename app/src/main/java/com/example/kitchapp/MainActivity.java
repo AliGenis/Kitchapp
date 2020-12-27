@@ -115,10 +115,10 @@ public class MainActivity extends AppCompatActivity {
         
         ingredients = new ArrayList<>();
         recipe = new Recipe();
-        ingredients.add(new Ingredient( "Butter" , 1)); //change 5 with required number
-        ingredients.add(new Ingredient( "Olive oil" , 1));
+        ingredients.add(new Ingredient( "Butter" , 50)); //change 5 with required number
+        ingredients.add(new Ingredient( "Olive oil" , 50));
         ingredients.add(new Ingredient( "Onion" , 1));
-        ingredients.add(new Ingredient( "Rice" , 1));
+        ingredients.add(new Ingredient( "Rice" , 200));
         ingredients.add(new Ingredient( "Chicken" , 1));
         //ingredients.add(new Ingredient( "salt" , 1));
         recipe.setName( "Classic Rice Pilaf" );
@@ -143,9 +143,9 @@ public class MainActivity extends AppCompatActivity {
         recipe = new Recipe();
         ingredients.add(new Ingredient( "Egg" , 2)); //change 5 with required number
         ingredients.add(new Ingredient( "Lemon" , 1));
-        ingredients.add(new Ingredient( "Cheese" , 1));
+        ingredients.add(new Ingredient( "Cheese" , 150));
         ingredients.add(new Ingredient( "Tuna" , 1));
-        ingredients.add(new Ingredient( "Olive oil" , 1));
+        ingredients.add(new Ingredient( "Olive oil" , 50));
         recipe.setName( "Easy Tuna Patties" );
         recipe.setRecipe( "Beat eggs and lemon juice in a bowl; stir in cheese and bread crumbs to make a paste." +
                 " Fold in tuna and onion until well-mixed. " +
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         //ingredients.add(new Ingredient( "salt" , 1));
         ingredients.add(new Ingredient( "Beef" , 1));
         ingredients.add(new Ingredient( "Parsley" , 1)); //change 5 with required number
-        ingredients.add(new Ingredient( "Cheese" , 1));
+        ingredients.add(new Ingredient( "Cheese" , 150));
         ingredients.add(new Ingredient( "Egg" , 1));
         ingredients.add(new Ingredient( "Garlic" , 1));
         ingredients.add(new Ingredient( "Onion" , 1));
@@ -182,12 +182,12 @@ public class MainActivity extends AppCompatActivity {
         
         ingredients = new ArrayList<>();
         recipe = new Recipe();
-        ingredients.add(new Ingredient( "Flour" , 1)); //change 5 with required number
-        ingredients.add(new Ingredient( "Baking powder" , 1));
+        ingredients.add(new Ingredient( "Flour" , 200)); //change 5 with required number
+        ingredients.add(new Ingredient( "Baking powder" , 10));
         //ingredients.add(new Ingredient( "salt" , 1));
-        ingredients.add(new Ingredient( "Milk" , 1));
+        ingredients.add(new Ingredient( "Milk" , 250));
         ingredients.add(new Ingredient( "Egg" , 1));
-        ingredients.add(new Ingredient( "Butter" , 1));
+        ingredients.add(new Ingredient( "Butter" , 30));
         recipe.setName( "Pancake" );
         recipe.setRecipe( "In a large bowl, sift together the flour, baking powder, salt and sugar." +
                 " Make a well in the center and pour in the milk, egg and melted butter; mix until smooth." +
@@ -203,8 +203,8 @@ public class MainActivity extends AppCompatActivity {
         ingredients.add(new Ingredient( "Tomatoes" , 2)); //change 5 with required number
         ingredients.add(new Ingredient( "Cucumber" , 1));
         ingredients.add(new Ingredient( "Olive" , 5));
-        ingredients.add(new Ingredient( "Olive oil" , 1));
-        ingredients.add(new Ingredient( "Vinegar" , 1));
+        ingredients.add(new Ingredient( "Olive oil" , 30));
+        ingredients.add(new Ingredient( "Vinegar" , 20));
         ingredients.add(new Ingredient( "Lemon" , 1));
         //ingredients.add(new Ingredient( "salt" , 5));
         //ingredients.add(new Ingredient( "pepper" , 1));
@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
         ingredients = new ArrayList<>();
         recipe = new Recipe();
         ingredients.add(new Ingredient( "Broccoli" , 5)); //change 5 with required number
-        ingredients.add(new Ingredient( "Olive oil" , 1));
+        ingredients.add(new Ingredient( "Olive oil" , 20));
         //ingredients.add(new Ingredient( "salt" , 5));
         //ingredients.add(new Ingredient( "papper" , 1));
 
@@ -241,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
         //ingredients.add(new Ingredient( "salt" , 1));
         //ingredients.add(new Ingredient( "pepper" , 1));
         ingredients.add(new Ingredient( "Garlic" , 1));
-        ingredients.add(new Ingredient( "Flour" , 1));
+        ingredients.add(new Ingredient( "Flour" , 150));
         ingredients.add(new Ingredient( "Chicken" , 1));
         ingredients.add(new Ingredient( "Potatoes" , 2));
 
@@ -262,9 +262,9 @@ public class MainActivity extends AppCompatActivity {
         
         ingredients = new ArrayList<>();
         recipe = new Recipe();
-        ingredients.add(new Ingredient( "Sugar" , 1)); //change 5 with required number
-        ingredients.add(new Ingredient( "Oil" , 1));
-        ingredients.add(new Ingredient( "Flour" , 1));
+        ingredients.add(new Ingredient( "Sugar" , 25)); //change 5 with required number
+        ingredients.add(new Ingredient( "Oil" , 70));
+        ingredients.add(new Ingredient( "Flour" , 150));
 
         recipe.setName( "Pizza Crust" );
         recipe.setRecipe("Preheat oven to 450 degrees F (230 degrees C)." +
@@ -286,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
         ingredients.add(new Ingredient( "Beef" , 1)); //change 5 with required number
         ingredients.add(new Ingredient( "Egg" , 1));
         ingredients.add(new Ingredient( "Onion" , 1));
-        ingredients.add(new Ingredient( "Milk" , 1));
+        ingredients.add(new Ingredient( "Milk" , 250));
         ingredients.add(new Ingredient( "Bread" , 1));
         //ingredients.add(new Ingredient( "salt" , 1));
         //ingredients.add(new Ingredient( "pepper" , 1));
@@ -306,8 +306,8 @@ public class MainActivity extends AppCompatActivity {
         
         ingredients = new ArrayList<>();
         recipe = new Recipe();
-        ingredients.add(new Ingredient( "Yogurt" , 1)); //change 5 with required number
-        ingredients.add(new Ingredient( "Butter" , 1));
+        ingredients.add(new Ingredient( "Yogurt" , 150)); //change 5 with required number
+        ingredients.add(new Ingredient( "Butter" , 50));
         //ingredients.add(new Ingredient( "pepper" , 1));
         ingredients.add(new Ingredient( "Garlic" , 1));
         ingredients.add(new Ingredient( "Egg" , 4));
@@ -330,7 +330,7 @@ public class MainActivity extends AppCompatActivity {
         ingredients = new ArrayList<>();
         recipe = new Recipe();
         ingredients.add(new Ingredient( "Potatoes" , 3)); //change 5 with required number
-        ingredients.add(new Ingredient( "Olive oil" , 1));
+        ingredients.add(new Ingredient( "Olive oil" , 50));
         //ingredients.add(new Ingredient( "salt" , 1));
         //ingredients.add(new Ingredient( "pepper" , 1));
         recipe.setName( "Grilled Potatoes" );
@@ -352,7 +352,7 @@ public class MainActivity extends AppCompatActivity {
         //ingredients.add(new Ingredient( "pepper" , 1));
         ingredients.add(new Ingredient( "Tortilla" , 6));
         //ingredients.add(new Ingredient( "sour cream" , 1));
-        ingredients.add(new Ingredient( "Cheese" , 1));
+        ingredients.add(new Ingredient( "Cheese" , 150));
         ingredients.add(new Ingredient( "Tomatoes" , 3));
         recipe.setName( "Mexican Pizza" );
         recipe.setRecipe( "Preheat the oven to 375° and line a medium baking sheet with parchment paper." +
@@ -374,15 +374,15 @@ public class MainActivity extends AppCompatActivity {
         
         ingredients = new ArrayList<>();
         recipe = new Recipe();
-        ingredients.add(new Ingredient( "Butter" , 1)); //change 5 with required number
-        ingredients.add(new Ingredient( "Yogurt" , 1));
+        ingredients.add(new Ingredient( "Butter" , 30)); //change 5 with required number
+        ingredients.add(new Ingredient( "Yogurt" , 150));
         ingredients.add(new Ingredient( "Egg" , 5));
-        ingredients.add(new Ingredient( "Sugar" , 1));
+        ingredients.add(new Ingredient( "Sugar" , 20));
         //ingredients.add(new Ingredient( "salt" , 1));
         //ingredients.add(new Ingredient( "flour" , 1));
-        ingredients.add(new Ingredient( "Cheese" , 1));
+        ingredients.add(new Ingredient( "Cheese" , 100));
         ingredients.add(new Ingredient( "Parsley" , 1));
-        ingredients.add(new Ingredient( "Olive oil" , 1));
+        ingredients.add(new Ingredient( "Olive oil" , 50));
         recipe.setName( "Pogacha" );
         recipe.setRecipe( "Preheat oven to 375 degrees F (190 degrees C). Line a baking sheet with parchment paper. " +
                 "Mix the flour with baking soda in a bowl; set aside." +
@@ -407,8 +407,8 @@ public class MainActivity extends AppCompatActivity {
         recipe = new Recipe();
         ingredients.add(new Ingredient( "Beef" , 1)); //change 5 with required number
         ingredients.add(new Ingredient( "Onion" , 1));
-        ingredients.add(new Ingredient( "Cheese" , 1));
-        ingredients.add(new Ingredient( "Soy sauce" , 1));
+        ingredients.add(new Ingredient( "Cheese" , 50));
+        ingredients.add(new Ingredient( "Soy sauce" , 30));
         ingredients.add(new Ingredient( "Parsley" , 1));
         ingredients.add(new Ingredient( "Egg" , 1));
         ingredients.add(new Ingredient( "Garlic" , 1));
@@ -427,7 +427,7 @@ public class MainActivity extends AppCompatActivity {
         
         ingredients = new ArrayList<>();
         recipe = new Recipe();
-        ingredients.add(new Ingredient( "Flour" , 1)); //change 5 with required number
+        ingredients.add(new Ingredient( "Flour" , 300)); //change 5 with required number
         ingredients.add(new Ingredient( "Onion" , 1));
         ingredients.add(new Ingredient( "Beef" , 1));
         //ingredients.add(new Ingredient( "salt" , 1));
@@ -457,12 +457,12 @@ public class MainActivity extends AppCompatActivity {
         
         ingredients = new ArrayList<>();
         recipe = new Recipe();
-        ingredients.add(new Ingredient( "Butter" , 1)); //change 5 with required number
-        ingredients.add(new Ingredient( "Milk" , 1));
-        ingredients.add(new Ingredient( "Cream" , 1));
+        ingredients.add(new Ingredient( "Butter" , 30)); //change 5 with required number
+        ingredients.add(new Ingredient( "Milk" , 200));
+        ingredients.add(new Ingredient( "Cream" , 20));
         //ingredients.add(new Ingredient( "salt" , 1));
-        ingredients.add(new Ingredient( "Sugar" , 1));
-        ingredients.add(new Ingredient( "Flour" , 1));
+        ingredients.add(new Ingredient( "Sugar" , 50));
+        ingredients.add(new Ingredient( "Flour" , 250));
         recipe.setName( "French Croissant" );
         recipe.setRecipe( "Sprinkle 2 tablespoons of flour over the butter and mix it together with your hands in a mixing bowl or on a work surface." +
                 " Transfer the butter to a length of foil or parchment paper and pat it into a 6 inch square. Fold up the foil to make a packet and refrigerate until chilled, about 2 hours." +
@@ -516,7 +516,7 @@ public class MainActivity extends AppCompatActivity {
         recipe = new Recipe();
         ingredients.add(new Ingredient( "Corn" , 1)); //change 5 with required number
         //ingredients.add(new Ingredient( "salt" , 1));
-        ingredients.add(new Ingredient( "Butter" , 1));
+        ingredients.add(new Ingredient( "Butter" , 50));
         recipe.setName( "Corn On the Tob" );
         recipe.setRecipe( "Place ear of corn in a microwave oven and cook on high for 2 minutes;" +
                 " flip corn over and cook on high until kernels are hot and steaming, another 2 minutes." +
@@ -535,11 +535,11 @@ public class MainActivity extends AppCompatActivity {
         recipe = new Recipe();
         ingredients.add(new Ingredient( "Garbanzo beans" , 1 )); //change 5 with required number
         ingredients.add(new Ingredient( "Lemon" , 1));
-        ingredients.add(new Ingredient( "Olive oil" , 1));
+        ingredients.add(new Ingredient( "Olive oil" , 70));
         ingredients.add(new Ingredient( "Garlic" , 1));
         ingredients.add(new Ingredient( "Cumin" , 1));
         //ingredients.add(new Ingredient( "salt" , 1));
-        ingredients.add(new Ingredient( "Sesame oil" , 1));
+        ingredients.add(new Ingredient( "Sesame oil" , 10));
         recipe.setName( "Hummus" );
         recipe.setRecipe( "Blend garbanzo beans, lemon juice, olive oil, garlic, cumin,  salt, and sesame oil in a food processor;" +
                 " stream reserved bean liquid into the mixture as it blends until desired consistency is achieved." );
@@ -550,7 +550,7 @@ public class MainActivity extends AppCompatActivity {
         
         ingredients = new ArrayList<>();
         recipe = new Recipe();
-        ingredients.add(new Ingredient( "Cream cheese" , 1)); //change 5 with required number
+        ingredients.add(new Ingredient( "Cream cheese" , 60)); //change 5 with required number
         //ingredients.add(new Ingredient( "mayonnaise" , 1));
         ingredients.add(new Ingredient( "Cucumber" , 2));
         ingredients.add(new Ingredient( "Bread" , 1));
@@ -583,9 +583,9 @@ public class MainActivity extends AppCompatActivity {
         ingredients = new ArrayList<>();
         recipe = new Recipe();
         ingredients.add(new Ingredient( "Egg" , 3)); //change 5 with required number
-        ingredients.add(new Ingredient( "Sugar" , 1));
-        ingredients.add(new Ingredient( "Cream cheese" , 1));
-        ingredients.add(new Ingredient( "Cream tartar" , 1));
+        ingredients.add(new Ingredient( "Sugar" , 50));
+        ingredients.add(new Ingredient( "Cream cheese" , 50));
+        ingredients.add(new Ingredient( "Cream tartar" , 25));
 
         recipe.setName( "Easy Cloud Bread" );
         recipe.setRecipe( "Preheat oven to 350 degrees F (175 degrees C)." +
