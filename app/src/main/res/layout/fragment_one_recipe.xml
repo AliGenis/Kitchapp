@@ -11,18 +11,6 @@
     android:padding="40dp"
     tools:context=".fridgeUI">
 
-        <ImageView
-            android:id="@+id/imageOfRecipe"
-            android:layout_width="329dp"
-            android:layout_height="207dp"
-            android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.107"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
         <TextView
             android:id="@+id/recipeTitle"
             android:layout_width="match_parent"
@@ -31,56 +19,44 @@
             android:text="Change Me with Recipe Title..."
             android:textAlignment="center"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageOfRecipe"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.131" />
-
-        <TextView
-            android:id="@+id/recipeText"
-            android:layout_width="348dp"
-            android:layout_height="167dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="324dp"
-            android:layout_marginEnd="48dp"
-            android:text="RecipeText goes here..."
-            android:textColor="#000000"
-            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/dislikeButton"
-            android:layout_width="89dp"
-            android:layout_height="61dp"
-            android:layout_marginBottom="568dp"
-            android:background="@android:color/background_light"
-            android:src="@drawable/ic_dislike"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <TextView
+            android:id="@+id/recipeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="112dp"
+            android:text="RecipeText goes here..."
+            android:textColor="#000000"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.92"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/timeText"
             android:layout_width="126dp"
             android:layout_height="37dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
             android:drawableStart="@drawable/ic_time_icon"
-            app:layout_constraintBottom_toTopOf="@+id/dislikeButton"
             app:layout_constraintEnd_toStartOf="@+id/calText"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipeText" />
+            app:layout_constraintTop_toBottomOf="@+id/recipeTitle" />
 
         <TextView
             android:id="@+id/calText"
             android:layout_width="149dp"
             android:layout_height="38dp"
+            android:layout_marginTop="22dp"
             android:drawableStart="@drawable/ic_calorie_icon"
             android:text="@string/suggested_calorie"
-            app:layout_constraintBottom_toTopOf="@+id/dislikeButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipeText" />
+            app:layout_constraintTop_toBottomOf="@+id/recipeTitle" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
