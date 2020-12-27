@@ -118,7 +118,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
 
         SectionPagerAdapter adapter = new SectionPagerAdapter(getChildFragmentManager());
 
-        adapter.addFragment(RecipeFragment.newInstance(recipeID), "Ingredients");
+        adapter.addFragment(IngredientsFragment.newInstance(recipeID), "Ingredients");
         adapter.addFragment(RecipeFragment.newInstance(recipeID), "Recipe");
 
         viewPager.setAdapter(adapter);
