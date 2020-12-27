@@ -15,7 +15,7 @@ I learned buttons, listviews, searchview and other qui components.
 I found some recipes for data. I tried to finish RecipeFragment class and its xml. 
 
 ~ 21/12/2020 - 27/12/2020 ~
-I added the RecipeScreen and I updated the RecipeFragment class and their xml files.
+I added the RecipeScreen and I updated the RecipeFragment class and their xml files. I added the recipes in the application one by one. I found some images and I edited them. 
 
 
 
