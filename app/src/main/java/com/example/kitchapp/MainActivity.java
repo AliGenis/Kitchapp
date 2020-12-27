@@ -604,11 +604,10 @@ public class MainActivity extends AppCompatActivity {
 
         ingredients = new ArrayList<Ingredient>();
         recipe = new Recipe();
-        ingredients.add(new Ingredient( "Butter" , 1)); //change 5 with required number
+        ingredients.add(new Ingredient( "Butter" , 50)); //change 5 with required number
         ingredients.add(new Ingredient( "Egg" , 1));
-        ingredients.add(new Ingredient( "Sugar" , 1));
-        ingredients.add(new Ingredient( "Flour" , 1));
-        ingredients.add(new Ingredient( "Salt" , 1));
+        ingredients.add(new Ingredient( "Sugar" ,50 ));
+        ingredients.add(new Ingredient( "Flour" , 250));
         ingredients.add(new Ingredient( "Vanilla" , 1));
 
         recipe.setName( "Fresh Fruit Frangipane Tart " );
