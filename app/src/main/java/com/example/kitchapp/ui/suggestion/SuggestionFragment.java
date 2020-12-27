@@ -39,19 +39,19 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     int recipeID;
     Random random = new Random();
     private String[] listOfQuotes = {"So, you do not like it, ha?!"
-            +"How could you dare to not like it!"
-            +"Dammit Jacob, You are very hard to please!"
-            +"私はこれが嫌いです!!!"
-            +"Comment me rejetez-vous"
-            +"Bu gezek bolmady!"
-            +"Come puoi rifiutarmi \uD83D\uDC4C"};
+            ,"How could you dare to not like it!"
+            ,"Dammit Jacob, You are very hard to please!"
+            ,"私はこれが嫌いです!!!"
+            ,"Comment me rejetez-vous"
+            ,"Bu gezek bolmady!"
+            ,"Come puoi rifiutarmi \uD83D\uDC4C"};
     private String[] listOfQuotes2 = {"I see you liked it."
-            +"I love you too!"
-            +"Dammit Jacob, You are very easy to please!"
-            +"どうもありがとう!!!"
-            +"haha je vois que tu as aimé"
-            +"Bu gezek boldy!"
-            +"ti amo tanto \uD83D\uDC4C"};
+            ,"I love you too!"
+            ,"Dammit Jacob, You are very easy to please!"
+            ,"どうもありがとう!!!"
+            ,"haha je vois que tu as aimé"
+            ,"Bu gezek boldy!"
+            ,"ti amo tanto \uD83D\uDC4C"};
 
     public SuggestionFragment() {
     }
