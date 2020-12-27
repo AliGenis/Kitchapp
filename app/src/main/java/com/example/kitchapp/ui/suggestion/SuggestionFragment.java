@@ -30,7 +30,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class SuggestionFragment extends Fragment implements View.OnClickListener{
+public class SuggestionFragment extends Fragment implements View.OnClickListener {
 
     ViewPager viewPager;
     TabLayout tabLayout;
@@ -43,30 +43,30 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     int recipeID;
     Random random = new Random();
     private String[] listOfQuotes = {"So, you do not like it, ha?!"
-            ,"How could you dare to not like it!"
-            ,"Dammit Jacob, You are very hard to please!"
-            ,"私はこれが嫌いです!!!"
-            ,"Comment me rejetez-vous"
-            ,"Bu gezek bolmady!"
-            ,"Come puoi rifiutarmi \uD83D\uDC4C"};
+            , "How could you dare to not like it!"
+            , "Dammit Jacob, You are very hard to please!"
+            , "私はこれが嫌いです!!!"
+            , "Comment me rejetez-vous"
+            , "Bu gezek bolmady!"
+            , "Come puoi rifiutarmi \uD83D\uDC4C"};
     private String[] listOfQuotes2 = {"I see you liked it."
-            ,"I love you too!"
-            ,"Dammit Jacob, You are very easy to please!"
-            ,"どうもありがとう!!!"
-            ,"haha je vois que tu as aimé"
-            ,"Bu gezek boldy!"
-            ,"ti amo tanto ♥️\uD83D\uDC4C"};
+            , "I love you too!"
+            , "Dammit Jacob, You are very easy to please!"
+            , "どうもありがとう!!!"
+            , "haha je vois que tu as aimé"
+            , "Bu gezek boldy!"
+            , "ti amo tanto ♥️\uD83D\uDC4C"};
 
     public SuggestionFragment() {
     }
 
     public static SuggestionFragment newInstance(List<Recipe> recList) {
         SuggestionFragment fragment = new SuggestionFragment();
-        if( !recList.isEmpty() ){
+        if (!recList.isEmpty()) {
             Bundle args = new Bundle();
             Gson gson = new Gson();
             String ingredients = gson.toJson(recList);
-            args.putString("suggestionRec",ingredients);
+            args.putString("suggestionRec", ingredients);
 
             fragment.setArguments(args);
         }
@@ -89,12 +89,13 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
         prepTime = view.findViewById(R.id.timeText);
 
 
-        if(getArguments() != null) {
+        if (getArguments() != null) {
 
-            Type listType = new TypeToken<ArrayList<Recipe>>(){}.getType();
+            Type listType = new TypeToken<ArrayList<Recipe>>() {
+            }.getType();
             suggestionList = new Gson().fromJson(getArguments().getString("suggestionRec"), listType);
 
-            if( !suggestionList.isEmpty() ){
+            if (!suggestionList.isEmpty()) {
                 Collections.shuffle(suggestionList);
                 suggestion = suggestionList.get(0);
 
@@ -108,8 +109,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
                 recipeID = suggestion.getRecipeID();
                 setUpViewPager(viewPager);
                 tabLayout.setupWithViewPager(viewPager);
-            }
-            else{
+            } else {
                 recipeTitle.setText("No suggestion.");
                 btAccept.setOnClickListener(null);
                 btReject.setOnClickListener(null);
@@ -138,20 +138,20 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     @SuppressLint("SetTextI18n")
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case(R.id.acceptButton):
+        switch (v.getId()) {
+            case (R.id.acceptButton):
                 Toast.makeText(getActivity(), listOfQuotes2[random.nextInt(7)], Toast.LENGTH_LONG).show();
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, OneRecipeFragment.newInstance(recipeID), null).addToBackStack(null).commit();
                 break;
-            case(R.id.rejectButton):
-                if( !suggestionList.isEmpty() ){
+            case (R.id.rejectButton):
+                if (!suggestionList.isEmpty()) {
                     suggestion = suggestionList.get(0);
                     suggestionList.remove(0);
                     Collections.shuffle(suggestionList);
                     Toast.makeText(getActivity(), listOfQuotes[random.nextInt(7)], Toast.LENGTH_LONG).show();
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, SuggestionFragment.newInstance(suggestionList), null).addToBackStack(null).commit();
 
-                } else{
+                } else {
                     recipeTitle.setText("No suggestion.");
                 }
         }

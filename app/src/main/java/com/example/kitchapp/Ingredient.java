@@ -78,7 +78,11 @@ public class Ingredient {
      * @param number takes an int value from outside and sets the number to it.
      */
     public void setNumber(int number) {
-        this.number = number;
+        if ( number >= 0 )
+            this.number = number;
+        else
+            this.number = 0;
+
     }
 
     /**
@@ -94,7 +98,10 @@ public class Ingredient {
      * @param buyValue takes an int value from outside and sets the buyValue; to it.
      */
     public void setBuyValue(int buyValue) {
-        this.buyValue = buyValue;
+        if ( buyValue >= 0 )
+            this.buyValue = buyValue;
+        else
+            this.buyValue = 0;
     }
 
     /**

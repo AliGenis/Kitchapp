@@ -92,14 +92,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
                     break;
 
                 case (R.id.plusButton):
-                    ingredient.setNumber( ingredient.getNumber() + 1 );
+                    ingredient.setNumber(ingredient.getNumber() + 1);
                     MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new FridgeFragment(), null).commit();
                     break;
 
                 case (R.id.minusButton):
-                    ingredient.setNumber( ingredient.getNumber() - 1 );
+                    ingredient.setNumber(ingredient.getNumber() - 1);
                     MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new FridgeFragment(), null).commit();

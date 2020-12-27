@@ -37,6 +37,7 @@ public class Recipe {
 
     /**
      * get method for ingredients property
+     *
      * @return String ingredients
      */
     public String getIngredients() {
@@ -45,6 +46,7 @@ public class Recipe {
 
     /**
      * set method for ingredients property
+     *
      * @param ingredients
      */
     public void setIngredients(String ingredients) {
@@ -53,15 +55,17 @@ public class Recipe {
 
     /**
      * @return List<Ingredients> returns list of ingredients provided by the string type property of ingredients
-     *                           by translating the ingredients to List type property
+     * by translating the ingredients to List type property
      */
     public List<Ingredient> getIngredientList() {
-        Type listType = new TypeToken<ArrayList<Ingredient>>(){}.getType();
+        Type listType = new TypeToken<ArrayList<Ingredient>>() {
+        }.getType();
         return new Gson().fromJson(ingredients, listType);
     }
 
     /**
      * translates this List type property to a string type variable and sets the ingredients to it.
+     *
      * @param ingredients List type property
      */
     public void setIngredientList(List<Ingredient> ingredients) {
@@ -71,6 +75,7 @@ public class Recipe {
 
     /**
      * get method for recipeID property
+     *
      * @return int recipeID
      */
     public int getRecipeID() {
@@ -79,6 +84,7 @@ public class Recipe {
 
     /**
      * set method for recipeID property
+     *
      * @param recipeID takes an int from outside and sets the recipeID to it.
      */
     public void setRecipeID(int recipeID) {
@@ -87,6 +93,7 @@ public class Recipe {
 
     /**
      * get method for the name property
+     *
      * @return String name
      */
     public String getName() {
@@ -95,6 +102,7 @@ public class Recipe {
 
     /**
      * set method for the name property
+     *
      * @param name takes a string from outside and sets the name to it.
      */
     public void setName(String name) {
@@ -103,13 +111,16 @@ public class Recipe {
 
     /**
      * get method for the recipe property
+     *
      * @return String Recipe
      */
     public String getRecipe() {
         return recipe;
     }
+
     /**
      * set method for the recipe property
+     *
      * @param recipe takes a string from outside and sets the recipe
      */
     public void setRecipe(String recipe) {
@@ -117,7 +128,8 @@ public class Recipe {
     }
 
     /**
-     * get mathod for the calorie
+     * get method for the calorie
+     *
      * @return double calorie
      */
     public double getCalorie() {
@@ -126,14 +138,18 @@ public class Recipe {
 
     /**
      * set method for calorie property
+     *
      * @param calorie takes a double value as a parameter and sets calorie to it
      */
     public void setCalorie(double calorie) {
-        this.calorie = calorie;
+        if (calorie > 0)
+            this.calorie = calorie;
+        else this.calorie = 1;
     }
 
     /**
      * get method for prepTime property
+     *
      * @return int prepTime
      */
     public int getPrepTime() {
@@ -142,6 +158,7 @@ public class Recipe {
 
     /**
      * set method for prepTime property
+     *
      * @param prepTime takes a int value from outside and sets the prepTime to it.
      */
     public void setPrepTime(int prepTime) {

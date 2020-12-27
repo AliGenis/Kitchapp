@@ -23,7 +23,8 @@ public class IngredientsFragment extends Fragment {
     Recipe recipe;
     int recipeID;
 
-    public IngredientsFragment(){}
+    public IngredientsFragment() {
+    }
 
     public static IngredientsFragment newInstance(int id) {
         IngredientsFragment fragment = new IngredientsFragment();
@@ -37,7 +38,7 @@ public class IngredientsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_suggestion_tab_ingredients, container, false);
-        if(getArguments() != null) {
+        if (getArguments() != null) {
             recipeID = getArguments().getInt("idOfRecipe", 0);
             ArrayList<Integer> id = new ArrayList<Integer>();
             id.add(recipeID);
