@@ -78,10 +78,13 @@ public class Ingredient {
      * @param number takes an int value from outside and sets the number to it.
      */
     public void setNumber(int number) {
-        if ( number >= 0 )
+        if ( number > 0 )
             this.number = number;
-        else
+        else {
             this.number = 0;
+            isInShoppingList = true;
+            isInFridge = false;
+        }
 
     }
 
