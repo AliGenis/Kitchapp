@@ -12,5 +12,8 @@ recipe class has completed. I worked on layouts and Learned how to add buttons, 
 ### ~ 14/12/2020 - 20/12/2020 ~
 worked on recipe ui. I learned how to use searchView and listView. I updated  recipe class and added recipeList class.
 
-
+### ~ 21/12/2020 - 27/12/2020 ~
+we worked on firebase database and later switched to a local database(android room database). I worked on user settings ui
+we cancelled the feature afterwards tho. I found fancy recipes from the Internet. I created the recipe prepopulation method and added first couple of recipes. Later 
+worked together with my friends to fix ui, to fix some bugs and to polish the application further.
 ****
