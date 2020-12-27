@@ -1,5 +1,6 @@
 package com.example.kitchapp.ui.recipes;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 import com.example.kitchapp.Recipe;
-import com.example.kitchapp.ui.fridge.FridgeFragment;
 import com.example.kitchapp.ui.suggestion.tabs.RecipeFragment;
 
 import java.util.List;
@@ -32,10 +31,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recipe
     public RecyclerAdapter.RecipesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_recipes_item, parent, false);
-        com.example.kitchapp.ui.recipes.RecyclerAdapter.RecipesViewHolder recipesViewHolder = new RecyclerAdapter.RecipesViewHolder(view);
-        return recipesViewHolder;
+        return new RecipesViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(final RecyclerAdapter.RecipesViewHolder holder, int position) {
         holder.recipe = list.get(position);
@@ -92,10 +91,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recipe
                     break;
 
             }
-        }
-
-        public TextView getTvName() {
-            return tvName;
         }
 
         public Recipe getRecipe() {

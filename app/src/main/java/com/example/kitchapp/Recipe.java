@@ -57,8 +57,7 @@ public class Recipe {
      */
     public List<Ingredient> getIngredientList() {
         Type listType = new TypeToken<ArrayList<Ingredient>>(){}.getType();
-        List<Ingredient> list = new Gson().fromJson(ingredients, listType);
-        return list;
+        return new Gson().fromJson(ingredients, listType);
     }
 
     /**
@@ -67,8 +66,7 @@ public class Recipe {
      */
     public void setIngredientList(List<Ingredient> ingredients) {
         Gson gson = new Gson();
-        String jsonString = gson.toJson(ingredients);
-        this.ingredients = jsonString;
+        this.ingredients = gson.toJson(ingredients);
     }
 
     /**

@@ -22,14 +22,13 @@ public class RecipesFragment extends Fragment implements View.OnClickListener {
 
     RecyclerAdapter recyclerAdapter;
     ImageButton addRecipe;
-    private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_recipes, container, false);
 
-        recyclerView = view.findViewById(R.id.recipesRecyclerView);
+        RecyclerView recyclerView = view.findViewById(R.id.recipesRecyclerView);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         List<Recipe> recipeList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
@@ -44,11 +43,9 @@ public class RecipesFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case (R.id.addRecipeButton):
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new AddRecipeFragment()
-                        , null).addToBackStack(null).commit();
-                break;
+        if (v.getId() == R.id.addRecipeButton) {
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new AddRecipeFragment()
+                    , null).addToBackStack(null).commit();
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.kitchapp.ui.fridge;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,10 +29,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
     public FridgeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_fridge_item, parent, false);
-        FridgeViewHolder fridgeViewHolder = new FridgeViewHolder(view);
-        return fridgeViewHolder;
+        return new FridgeViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(final FridgeViewHolder holder, int position) {
         holder.ingredient = list.get(position);
@@ -62,14 +63,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
             minusButton.setOnClickListener(this);
         }
 
-        public TextView getTvName() {
-            return tvName;
-        }
-
-        public TextView getTvNumber() {
-            return tvNumber;
-        }
-
         public Ingredient getIngredient() {
             return ingredient;
         }
@@ -90,14 +83,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
             ID = list.get(getAdapterPosition()).getId();
             name = list.get(getAdapterPosition()).getName();
             number = list.get(getAdapterPosition()).getNumber();
-            defBuyValue = list.get(getAdapterPosition()).getDefaultBuyValue();
+            defBuyValue = list.get(getAdapterPosition()).getBuyValue();
             isInShoppingList = list.get(getAdapterPosition()).isInShoppingList();
             isInFridge = list.get(getAdapterPosition()).isInFridge();
 
             ingredient.setId(ID);
             ingredient.setName(name);
             ingredient.setNumber(number);
-            ingredient.setDefaultBuyValue(defBuyValue);
+            ingredient.setBuyValue(defBuyValue);
             ingredient.setInShoppingList(isInShoppingList);
             ingredient.setInFridge(isInFridge);
 

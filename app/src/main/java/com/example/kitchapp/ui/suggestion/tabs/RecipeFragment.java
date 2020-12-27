@@ -35,6 +35,7 @@ public class RecipeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_suggestion_tab_recipe, container, false);
 
+        assert getArguments() != null;
         recipeID = getArguments().getInt("idOfRecipe",0);
         List<Recipe> recipes = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
         for(int i = 0; i < recipes.size();i++) {

@@ -1,5 +1,6 @@
 package com.example.kitchapp.ui.suggestion;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +28,9 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     ViewPager viewPager;
     TabLayout tabLayout;
     ImageButton btAccept, btReject;
-    TextView recipeTitle, recipeInfo, calorieInfo, prepTime;
+    TextView recipeTitle;
+    TextView calorieInfo;
+    TextView prepTime;
     List<Recipe> suggestionList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
     Recipe suggestion;
     int recipeID;
@@ -35,14 +38,10 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     public SuggestionFragment() {
     }
 
-    public static SuggestionFragment getInstance() {
-        return new SuggestionFragment();
-    }
-
     public static SuggestionFragment newInstance(List<Recipe> recList) {
         SuggestionFragment fragment = new SuggestionFragment();
         Bundle args = new Bundle();
-        ArrayList<Integer> recIDs = new ArrayList<Integer>();
+        ArrayList<Integer> recIDs = new ArrayList<>();
         for(int i=0; i < recList.size();i++)
         {
             recIDs.add(recList.get(i).getRecipeID());
@@ -54,6 +53,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
         return fragment;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -61,7 +61,6 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
 
         viewPager = view.findViewById(R.id.viewPager);
         tabLayout = view.findViewById(R.id.tabLayout);
-        ArrayList<Integer> recIDList = new ArrayList<>();
         List<Recipe> testList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
         List<Recipe> suggestedList = null;
         btAccept = view.findViewById(R.id.acceptButton);
@@ -72,7 +71,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
 
         if(getArguments() != null) {
             if (testList.get(0).getRecipe().equalsIgnoreCase(suggestionList.get(0).getName())) {
-                recIDList = getArguments().getIntegerArrayList("recIDs");
+                ArrayList<Integer> recIDList = getArguments().getIntegerArrayList("recIDs");
 
                 suggestedList = MainActivity.roomDatabaseClass.recipeDao().getRecipeByID(recIDList);
             }
@@ -121,6 +120,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
         viewPager.setAdapter(adapter);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onClick(View v) {
         switch (v.getId()){

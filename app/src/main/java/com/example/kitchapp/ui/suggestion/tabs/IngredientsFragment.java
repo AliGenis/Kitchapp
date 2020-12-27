@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,21 +14,14 @@ import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 import com.example.kitchapp.Recipe;
-import com.example.kitchapp.ui.recipes.OneRecipeFragment;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 public class IngredientsFragment extends Fragment {
     RecyclerAdapter recyclerAdapter;
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
     Recipe recipe;
     int recipeID;
-    private List<Ingredient> ingredientList;
 
     public IngredientsFragment(){}
 
@@ -51,12 +43,11 @@ public class IngredientsFragment extends Fragment {
             if(recipeID == recipes.get(i).getRecipeID() )
                 recipe = recipes.get(i);
         }
-        recyclerView = root.findViewById(R.id.recipe_list_of_ingredients);
-        layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView recyclerView = root.findViewById(R.id.recipe_list_of_ingredients);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        ingredientList = new ArrayList<>();
 
-        ingredientList.addAll(recipe.getIngredientList());
+        List<Ingredient> ingredientList = new ArrayList<>(recipe.getIngredientList());
 
         System.out.println(ingredientList.size());
         recyclerAdapter = new RecyclerAdapter(ingredientList);

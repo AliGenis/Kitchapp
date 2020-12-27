@@ -1,8 +1,8 @@
 package com.example.kitchapp.ui.shoppinglist;
 
+import android.annotation.SuppressLint;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kitchapp.Ingredient;
@@ -32,6 +33,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return itemStateArray;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -39,11 +41,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return new ViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.ingredient = list.get(position);
         holder.checkBox.setText(list.get(position).getName());
-        holder.number.setText(Integer.toString(list.get(position).getDefaultBuyValue()));
+        holder.number.setText(Integer.toString(list.get(position).getBuyValue()));
     }
 
     @Override
@@ -75,12 +78,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             checkBox.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (checkBox.isChecked())
-                    {
-                        itemStateArray[getAdapterPosition()] = true;
-                    } else {
-                        itemStateArray[getAdapterPosition()] = false;
-                    }
+                    itemStateArray[getAdapterPosition()] = checkBox.isChecked();
                 }
             });
 
@@ -111,10 +109,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     ingredient.setInFridge(isInFridge);
 
                     try {
-                        if (number.getText().toString() != "")
-                            ingredient.setDefaultBuyValue(Integer.parseInt(number.getText().toString()));
+                        if (!number.getText().toString().equals(""))
+                            ingredient.setBuyValue(Integer.parseInt(number.getText().toString()));
                         else
-                            ingredient.setDefaultBuyValue(0);
+                            ingredient.setBuyValue(0);
                     }catch (NumberFormatException numberFormatException){
                         System.out.println("Invalid İnput!");
                     }
@@ -138,14 +136,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             ID = list.get(getAdapterPosition()).getId();
             name = list.get(getAdapterPosition()).getName();
             number = list.get(getAdapterPosition()).getNumber();
-            defBuyValue = list.get(getAdapterPosition()).getDefaultBuyValue();
+            defBuyValue = list.get(getAdapterPosition()).getBuyValue();
             isInShoppingList = list.get(getAdapterPosition()).isInShoppingList();
             isInFridge = list.get(getAdapterPosition()).isInFridge();
 
             ingredient.setId(ID);
             ingredient.setName(name);
             ingredient.setNumber(number);
-            ingredient.setDefaultBuyValue(defBuyValue);
+            ingredient.setBuyValue(defBuyValue);
             ingredient.setInShoppingList(isInShoppingList);
             ingredient.setInFridge(isInFridge);
 
@@ -159,7 +157,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
                 case (R.id.plus_in_shopping):
                     defBuyValue++;
-                    ingredient.setDefaultBuyValue(defBuyValue);
+                    ingredient.setBuyValue(defBuyValue);
                     MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new ShoppingListFragment(), null).commit();
@@ -169,7 +167,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     if(defBuyValue>0) {
                         defBuyValue--;
                     }
-                    ingredient.setDefaultBuyValue(defBuyValue);
+                    ingredient.setBuyValue(defBuyValue);
                     MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.Container,
                             new ShoppingListFragment(), null).commit();

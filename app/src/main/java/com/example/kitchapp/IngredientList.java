@@ -6,7 +6,7 @@ public abstract class IngredientList {
     protected ArrayList<Ingredient> list;
 
     public IngredientList() {
-        list = new ArrayList<Ingredient>();
+        list = new ArrayList<>();
     }
 
     public boolean add(Ingredient ingredient, int number) {
@@ -23,7 +23,7 @@ public abstract class IngredientList {
         return true;
     }
 
-    public boolean eat(Ingredient ingredient, int number) {
+    public void eat(Ingredient ingredient, int number) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getName().equalsIgnoreCase(ingredient.getName())) {
                 //If there isn't any left after eat
@@ -32,10 +32,9 @@ public abstract class IngredientList {
                     list.remove(i);
                 else
                     list.get(i).setNumber(list.get(i).getNumber() - number);
-                return true;
+                return;
             }
         }
-        return false;
     }
 
     /**

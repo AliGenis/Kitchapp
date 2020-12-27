@@ -21,7 +21,6 @@ import java.util.List;
 public class AddItemFragment extends Fragment {
 
     private EditText inputName, inputNumber;
-    private Button btSave;
 
     public AddItemFragment() {
         // Required empty public constructor
@@ -35,7 +34,7 @@ public class AddItemFragment extends Fragment {
 
         inputName = view.findViewById(R.id.inputName);
         inputNumber = view.findViewById(R.id.inputNumber);
-        btSave = view.findViewById(R.id.buttonSave);
+        Button btSave = view.findViewById(R.id.buttonSave);
 
         btSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +54,7 @@ public class AddItemFragment extends Fragment {
                 {
                     Ingredient ingredient = new Ingredient();
                     ingredient.setName(name);
-                    ingredient.setDefaultBuyValue(number);
+                    ingredient.setBuyValue(number);
                     ingredient.setNumber(0);
                     ingredient.setInShoppingList(true);
                     if(number > 0) {
@@ -63,7 +62,7 @@ public class AddItemFragment extends Fragment {
                     }
                 } else {
                     Ingredient ingredient = sameName.get(0);
-                    ingredient.setDefaultBuyValue(number);
+                    ingredient.setBuyValue(number);
                     ingredient.setInShoppingList(true);
                     if(number > 0) {
                         MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);

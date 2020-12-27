@@ -21,16 +21,14 @@ public class FridgeFragment extends Fragment implements View.OnClickListener {
 
     RecyclerAdapter recyclerAdapter;
     Button btAddData;
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
     List<Ingredient> list;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fridge, container, false);
 
-        recyclerView = view.findViewById(R.id.fridgeRecyclerView);
-        layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView recyclerView = view.findViewById(R.id.fridgeRecyclerView);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
         list = MainActivity.roomDatabaseClass.ingredientDao().getInFridge();
@@ -47,11 +45,9 @@ public class FridgeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case (R.id.addToFridgeButton):
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new AddItemFragment()
-                        , null).addToBackStack(null).commit();
-                break;
+        if (v.getId() == R.id.addToFridgeButton) {
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.Container, new AddItemFragment()
+                    , null).addToBackStack(null).commit();
         }
     }
 }

@@ -19,7 +19,6 @@ import java.util.List;
 public class AddItemFragment extends Fragment {
 
     private EditText inputName, inputNumber;
-    private Button btSave;
 
     public AddItemFragment() {
         // Required empty public constructor
@@ -33,7 +32,7 @@ public class AddItemFragment extends Fragment {
 
         inputName = view.findViewById(R.id.inputName);
         inputNumber = view.findViewById(R.id.inputNumber);
-        btSave = view.findViewById(R.id.buttonSave);
+        Button btSave = view.findViewById(R.id.buttonSave);
 
         btSave.setOnClickListener(new View.OnClickListener() {
             @Override
