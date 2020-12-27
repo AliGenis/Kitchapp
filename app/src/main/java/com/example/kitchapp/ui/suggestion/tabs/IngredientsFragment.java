@@ -56,14 +56,11 @@ public class IngredientsFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         ingredientList = new ArrayList<>();
 
-        //ingredientList.addAll(recipe.getIngredientList());
+        ingredientList.addAll(recipe.getIngredientList());
 
-        ingredientList.add(new Ingredient("Egg",3));
-        ingredientList.add(new Ingredient("Milk",1));
         System.out.println(ingredientList.size());
         recyclerAdapter = new RecyclerAdapter(ingredientList);
         recyclerView.setAdapter(recyclerAdapter);
-
 
         return root;
     }

@@ -17,7 +17,6 @@ import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 import com.example.kitchapp.Recipe;
-import com.example.kitchapp.ui.fridge.RecyclerAdapter;
 
 import java.util.List;
 import java.util.Objects;
