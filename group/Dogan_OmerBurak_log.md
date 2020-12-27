@@ -11,4 +11,10 @@ And, I fixed some errors about other classes and added some comments to them.
 ### ~ 14/12/2020 - 20/12/2020 ~
 I created sign-up and user selection screens' GUI. 
 I updated Fridge class.
+### ~ 21/12/2020 - 28/12/2020 ~
+I implemented the Room database.
+I established the connections between the database and our project.
+I implemented Fridge object's functions that communicate with the Fridge UI.
+I implemented some of the fridge screen and shopping list UI.
+I made sure that the fridge screen and the shopping list screen work in coordination.
 ****
