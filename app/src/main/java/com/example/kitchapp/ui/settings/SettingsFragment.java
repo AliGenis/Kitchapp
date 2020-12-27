@@ -25,11 +25,11 @@ public class SettingsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         List<Recipe> recipes = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
-
-        System.out.println(recipes.get(2).getIngredientList().size());
-        for (int i = 0; i < recipes.get(2).getIngredientList().size(); i++) {
-            System.out.println(recipes.get(2).getIngredientList().get(i).getName());
-        }
+//        Test Case
+//        System.out.println(recipes.get(2).getIngredientList().size());
+//        for (int i = 0; i < recipes.get(2).getIngredientList().size(); i++) {
+//            System.out.println(recipes.get(2).getIngredientList().get(i).getName());
+//        }
         return view;
     }
 }
