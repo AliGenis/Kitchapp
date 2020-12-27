@@ -12,14 +12,11 @@ By using this application, we hope that people can easily control their kitchen 
 + **Requirements:** completed 
 + **UI Design:** completed 
 + **Detailed Design:** completed
-+ **Implementation:** incompleted
-+ **Reflections:** incompleted 
++ **Implementation:** completed
++ **Reflections:** completed 
 
 [Group Meetings Log](group/meetings_log.md)
-- On 15/12/2020
-   We've completed our Detailed Design Stage.
-   We shared our experiences with Android Studio.
-   We updated some classes in the code.
+
 #### Group Members
 
 
