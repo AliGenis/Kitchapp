@@ -600,6 +600,48 @@ public class MainActivity extends AppCompatActivity {
         recipe.setCalorie( 93 );
         recipe.setIngredientList(ingredients);
         roomDatabaseClass.recipeDao().addRecipe(recipe);
+
+
+        ingredients = new ArrayList<Ingredient>();
+        recipe = new Recipe();
+        ingredients.add(new Ingredient( "Butter" , 1)); //change 5 with required number
+        ingredients.add(new Ingredient( "Egg" , 1));
+        ingredients.add(new Ingredient( "Sugar" , 1));
+        ingredients.add(new Ingredient( "Flour" , 1));
+        ingredients.add(new Ingredient( "Salt" , 1));
+        ingredients.add(new Ingredient( "Vanilla" , 1));
+
+        recipe.setName( "Fresh Fruit Frangipane Tart " );
+        recipe.setRecipe( "Preheat oven to 400 degrees F (200 degrees C). " +
+                "Place 1 piece of puff pastry on a baking sheet lined with a silicone mat or parchment paper. " +
+                "Lightly moisten one of the short edges with water. " +
+                "Connect the end of the other puff pastry to the moistened edge." +
+                "Press pieces together to form a long rectangle, trimming off loose ends with a dough scraper as needed." +
+                "Cut the third puff pastry piece lengthwise into 1-inch strips." +
+                "Moisten the outer edges of the long rectangle with your finger; " +
+                "stick the pastry strips on top. Poke shallow holes all over the bottom of the dough using a fork." +
+                "Do not prick the raised border. " +
+                "Bake pastry shell in the preheated oven until it starts to turn golden brown, about 15 minutes. " +
+                "Remove from oven. Reduce oven temperature to 375 degrees F (190 degrees C)." +
+                "Readjust the borders and push the bottom down with the flat side of a fork. " +
+                "Let cool completely while preparing the filling." +
+                "Place butter and 1/3 cup plus 1 tablespoon sugar in a bowl; smear together using a spatula until combined. " +
+                "Whisk in egg until mixture is creamy." +
+                "Add almond flour, salt, vanilla extract, and almond extract. " +
+                "Mix thoroughly. Cut each pluot into 6 wedges." +
+                "Fill pastry shell with the almond paste. " +
+                "Stick the pluots snugly, but not too deeply, into the filling." +
+                "Bake in the preheated oven until browned and almond filling is set, 30 to 40 minutes." +
+                "Transfer tart onto a wire rack and let cool completely, at least 40 minutes. " );
+        recipe.setPrepTime( 105 );
+        recipe.setCalorie( 397 );
+        recipe.setIngredientList(ingredients);
+        roomDatabaseClass.recipeDao().addRecipe(recipe);
+
+        
+
+
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
