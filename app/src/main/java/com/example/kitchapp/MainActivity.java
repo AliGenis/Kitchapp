@@ -656,7 +656,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         fragmentManager.beginTransaction().replace(R.id.Container, new FridgeFragment()).commit();
-        addRecipesToDatabase();
+        //addRecipesToDatabase();
 //        roomDatabaseClass.clearAllTables();
     }
 }

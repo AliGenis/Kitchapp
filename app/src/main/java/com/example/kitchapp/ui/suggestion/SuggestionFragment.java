@@ -38,7 +38,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     TextView recipeTitle;
     TextView calorieInfo;
     TextView prepTime;
-    List<Recipe> suggestionList; //= MainActivity.roomDatabaseClass.recipeDao().getRecipe();
+    List<Recipe> suggestionList;
     Recipe suggestion;
     int recipeID;
     Random random = new Random();
@@ -64,15 +64,6 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
         SuggestionFragment fragment = new SuggestionFragment();
         if( !recList.isEmpty() ){
             Bundle args = new Bundle();
-            /*
-            ArrayList<Integer> recIDs = new ArrayList<>();
-            for(int i=0; i < recList.size();i++)
-            {
-                recIDs.add(recList.get(i).getRecipeID());
-            }
-
-            args.putIntegerArrayList("recIDs", recIDs);
-            */
             Gson gson = new Gson();
             String ingredients = gson.toJson(recList);
             args.putString("suggestionRec",ingredients);
@@ -91,47 +82,38 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
 
         viewPager = view.findViewById(R.id.viewPager);
         tabLayout = view.findViewById(R.id.tabLayout);
-        //List<Recipe> testList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
-        List<Recipe> suggestedList = null;
         btAccept = view.findViewById(R.id.acceptButton);
         btReject = view.findViewById(R.id.rejectButton);
         recipeTitle = view.findViewById(R.id.recipeTitle);
         calorieInfo = view.findViewById(R.id.calText);
         prepTime = view.findViewById(R.id.timeText);
 
+
         if(getArguments() != null) {
 
             Type listType = new TypeToken<ArrayList<Recipe>>(){}.getType();
             suggestionList = new Gson().fromJson(getArguments().getString("suggestionRec"), listType);
-            /*if (testList.get(0).getRecipe().equalsIgnoreCase(suggestionList.get(0).getName())) {
-                ArrayList<Integer> recIDList = getArguments().getIntegerArrayList("recIDs");
-                suggestedList = MainActivity.roomDatabaseClass.recipeDao().getRecipeByID(recIDList);
+
+            if( !suggestionList.isEmpty() ){
+                Collections.shuffle(suggestionList);
+                suggestion = suggestionList.get(0);
+
+                recipeTitle.setText(suggestion.getName());
+                calorieInfo.setText(Double.toString(suggestion.getCalorie()));
+                prepTime.setText(Integer.toString(suggestion.getPrepTime()));
+                calorieInfo.setText(Double.toString(suggestion.getCalorie()));
+                prepTime.setText(Integer.toString(suggestion.getPrepTime()));
+                btReject.setOnClickListener(this);
+                btAccept.setOnClickListener(this);
+                recipeID = suggestion.getRecipeID();
+                setUpViewPager(viewPager);
+                tabLayout.setupWithViewPager(viewPager);
             }
-            if (suggestedList != null)
-                suggestionList = suggestedList;
-
-             */
-        }
-
-        btReject.setOnClickListener(this);
-        btAccept.setOnClickListener(this);
-
-        if( !suggestionList.isEmpty() ){
-            Collections.shuffle(suggestionList);
-            suggestion = suggestionList.get(0);
-
-            recipeTitle.setText(suggestion.getName());
-            calorieInfo.setText(Double.toString(suggestion.getCalorie()));
-            prepTime.setText(Integer.toString(suggestion.getPrepTime()));
-            calorieInfo.setText(Double.toString(suggestion.getCalorie()));
-            prepTime.setText(Integer.toString(suggestion.getPrepTime()));
-            recipeID = suggestion.getRecipeID();
-            setUpViewPager(viewPager);
-            tabLayout.setupWithViewPager(viewPager);
-        }
-        else{
-            recipeTitle.setText("No suggestion.");
-            btAccept.setOnClickListener(null);
+            else{
+                recipeTitle.setText("No suggestion.");
+                btAccept.setOnClickListener(null);
+                btReject.setOnClickListener(null);
+            }
         }
 
         return view;
@@ -140,11 +122,6 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-/*
-        setUpViewPager(viewPager);
-        tabLayout.setupWithViewPager(viewPager);
-
- */
 
     }
 

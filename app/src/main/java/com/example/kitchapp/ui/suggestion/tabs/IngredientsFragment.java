@@ -37,21 +37,29 @@ public class IngredientsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_suggestion_tab_ingredients, container, false);
-        recipeID = getArguments().getInt("idOfRecipe",0);
-        List<Recipe> recipes = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
+        if(getArguments() != null) {
+            recipeID = getArguments().getInt("idOfRecipe", 0);
+            ArrayList<Integer> id = new ArrayList<Integer>();
+            id.add(recipeID);
+            List<Recipe> recipes = MainActivity.roomDatabaseClass.recipeDao().getRecipeByID(id);
+            recipe = recipes.get(0);
+        /*
         for(int i = 0; i < recipes.size();i++) {
             if(recipeID == recipes.get(i).getRecipeID() )
                 recipe = recipes.get(i);
         }
-        RecyclerView recyclerView = root.findViewById(R.id.recipe_list_of_ingredients);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
 
-        List<Ingredient> ingredientList = new ArrayList<>(recipe.getIngredientList());
+         */
+            RecyclerView recyclerView = root.findViewById(R.id.recipe_list_of_ingredients);
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+            recyclerView.setLayoutManager(layoutManager);
 
-        System.out.println(ingredientList.size());
-        recyclerAdapter = new RecyclerAdapter(ingredientList);
-        recyclerView.setAdapter(recyclerAdapter);
+            List<Ingredient> ingredientList = new ArrayList<>(recipe.getIngredientList());
+
+            System.out.println(ingredientList.size());
+            recyclerAdapter = new RecyclerAdapter(ingredientList);
+            recyclerView.setAdapter(recyclerAdapter);
+        }
 
         return root;
     }
