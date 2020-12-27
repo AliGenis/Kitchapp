@@ -21,11 +21,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Fridge
     //Properties
     private final List<Ingredient> list;
     private final Fridge fridge = MainActivity.fridge;
-
+    //Constructors
     public RecyclerAdapter(List<Ingredient> items) {
         list = items;
     }
-
+    /**
+     * onCreateViewHolder creates a new view holder when there is no view holder
+     * @parameter parent,viewType
+     *
+     */
     @NonNull
     @Override
     public FridgeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
