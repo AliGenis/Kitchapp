@@ -148,12 +148,4 @@ public class Recipe {
         this.prepTime = prepTime;
     }
 
-    /*
-    public int getRecipePhotoId() {
-        return recipePhotoId;
-    }
-
-    public void setRecipePhotoId(int recipePhotoId) {
-        this.recipePhotoId = recipePhotoId;
-    }*/
 }

@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 import com.example.kitchapp.Recipe;
@@ -20,7 +21,10 @@ import com.example.kitchapp.ui.recipes.OneRecipeFragment;
 import com.example.kitchapp.ui.suggestion.tabs.IngredientsFragment;
 import com.example.kitchapp.ui.suggestion.tabs.RecipeFragment;
 import com.google.android.material.tabs.TabLayout;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -34,7 +38,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     TextView recipeTitle;
     TextView calorieInfo;
     TextView prepTime;
-    List<Recipe> suggestionList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
+    List<Recipe> suggestionList; //= MainActivity.roomDatabaseClass.recipeDao().getRecipe();
     Recipe suggestion;
     int recipeID;
     Random random = new Random();
@@ -60,6 +64,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
         SuggestionFragment fragment = new SuggestionFragment();
         if( !recList.isEmpty() ){
             Bundle args = new Bundle();
+            /*
             ArrayList<Integer> recIDs = new ArrayList<>();
             for(int i=0; i < recList.size();i++)
             {
@@ -67,6 +72,10 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
             }
 
             args.putIntegerArrayList("recIDs", recIDs);
+            */
+            Gson gson = new Gson();
+            String ingredients = gson.toJson(recList);
+            args.putString("suggestionRec",ingredients);
 
             fragment.setArguments(args);
         }
@@ -82,7 +91,7 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
 
         viewPager = view.findViewById(R.id.viewPager);
         tabLayout = view.findViewById(R.id.tabLayout);
-        List<Recipe> testList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
+        //List<Recipe> testList = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
         List<Recipe> suggestedList = null;
         btAccept = view.findViewById(R.id.acceptButton);
         btReject = view.findViewById(R.id.rejectButton);
@@ -91,12 +100,17 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
         prepTime = view.findViewById(R.id.timeText);
 
         if(getArguments() != null) {
-            if (testList.get(0).getRecipe().equalsIgnoreCase(suggestionList.get(0).getName())) {
+
+            Type listType = new TypeToken<ArrayList<Recipe>>(){}.getType();
+            suggestionList = new Gson().fromJson(getArguments().getString("suggestionRec"), listType);
+            /*if (testList.get(0).getRecipe().equalsIgnoreCase(suggestionList.get(0).getName())) {
                 ArrayList<Integer> recIDList = getArguments().getIntegerArrayList("recIDs");
                 suggestedList = MainActivity.roomDatabaseClass.recipeDao().getRecipeByID(recIDList);
             }
             if (suggestedList != null)
                 suggestionList = suggestedList;
+
+             */
         }
 
         btReject.setOnClickListener(this);
@@ -112,6 +126,8 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
             calorieInfo.setText(Double.toString(suggestion.getCalorie()));
             prepTime.setText(Integer.toString(suggestion.getPrepTime()));
             recipeID = suggestion.getRecipeID();
+            setUpViewPager(viewPager);
+            tabLayout.setupWithViewPager(viewPager);
         }
         else{
             recipeTitle.setText("No suggestion.");
@@ -124,9 +140,11 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+/*
         setUpViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
+
+ */
 
     }
 
