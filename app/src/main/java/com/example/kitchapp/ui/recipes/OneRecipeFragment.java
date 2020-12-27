@@ -17,7 +17,6 @@ import com.example.kitchapp.Ingredient;
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 import com.example.kitchapp.Recipe;
-import com.example.kitchapp.ui.fridge.RecyclerAdapter;
 
 import java.util.List;
 import java.util.Objects;
@@ -31,7 +30,6 @@ public class OneRecipeFragment extends Fragment {
 
     private ImageView imageOfRecipe;
     private TextView recipeTitle;
-    private TextView recipeWindow;
     private TextView timeText;
     private TextView calText;
     private int recipeID;
@@ -64,7 +62,6 @@ public class OneRecipeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_one_recipe, container, false);
 
        recipeID = getArguments().getInt("idOfRecipe",0);
-      //  recipeID = Objects.requireNonNull(getArguments()).getInt("idOfRecipe",0);
         List<Recipe> recipes = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
         for(int i = 0; i < recipes.size();i++) {
             if(recipeID == recipes.get(i).getRecipeID() )
@@ -72,13 +69,12 @@ public class OneRecipeFragment extends Fragment {
         }
 
         recipeTitle = view.findViewById(R.id.recipeTitle);
-        recipeWindow = view.findViewById(R.id.recipeText);
+        //recipeWindow = view.findViewById(R.id.recipeText);
         calText = view.findViewById(R.id.calText);
         imageOfRecipe = view.findViewById(R.id.imageOfRecipe);
         timeText = view.findViewById(R.id.timeText);
 
         recipeTitle.setText(recipe.getName());
-        recipeWindow.setText(recipe.getRecipe());
         calText.setText(Double.toString(recipe.getCalorie()));
         timeText.setText(Integer.toString(recipe.getPrepTime()));
 

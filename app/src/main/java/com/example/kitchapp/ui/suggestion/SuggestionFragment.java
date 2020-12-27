@@ -9,15 +9,12 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 import com.example.kitchapp.Recipe;
 import com.example.kitchapp.ui.recipes.OneRecipeFragment;
-import com.example.kitchapp.ui.suggestion.tabs.IngredientsFragment;
 import com.example.kitchapp.ui.suggestion.tabs.RecipeFragment;
 import com.google.android.material.tabs.TabLayout;
 
@@ -69,9 +66,9 @@ public class SuggestionFragment extends Fragment implements View.OnClickListener
         List<Recipe> suggestedList = null;
         btAccept = view.findViewById(R.id.acceptButton);
         btReject = view.findViewById(R.id.rejectButton);
-        recipeTitle = view.findViewById(R.id.suggestionTitle);
-        calorieInfo = view.findViewById(R.id.calorieInfo);
-        prepTime = view.findViewById(R.id.prepTimeInfo);
+        recipeTitle = view.findViewById(R.id.recipeTitle);
+        calorieInfo = view.findViewById(R.id.calText);
+        prepTime = view.findViewById(R.id.timeText);
 
         if(getArguments() != null) {
             if (testList.get(0).getRecipe().equalsIgnoreCase(suggestionList.get(0).getName())) {
