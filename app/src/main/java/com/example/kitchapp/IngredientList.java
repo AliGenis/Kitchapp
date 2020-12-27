@@ -1,9 +1,10 @@
 package com.example.kitchapp;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class IngredientList {
-    protected ArrayList<Ingredient> list;
+    protected List<Ingredient> list;
 
     public IngredientList() {
         list = new ArrayList<>();
@@ -32,7 +33,8 @@ public abstract class IngredientList {
                     list.remove(i);
                 else
                     list.get(i).setNumber(list.get(i).getNumber() - number);
-                return;
+                Ingredient updatedIngredient = list.get(i);
+                MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(updatedIngredient);
             }
         }
     }

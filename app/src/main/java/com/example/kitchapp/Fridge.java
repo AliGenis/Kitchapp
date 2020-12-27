@@ -13,7 +13,7 @@ import java.util.List;
 public class Fridge extends IngredientList {
 
     //constructor
-    public Fridge(ArrayList<Ingredient> list) {
+    public Fridge(List<Ingredient> list) {
         super();
         this.list = list;
     }
@@ -49,16 +49,16 @@ public class Fridge extends IngredientList {
      */
     public ArrayList<Ingredient> ingredientsSpecificToUser(User user) {
 
-        ArrayList<Ingredient> allergiesList = user.getAllergiesList();
-        ArrayList<Ingredient> specificIngredients = (ArrayList<Ingredient>) list.clone();
-
-        for (int i = 0; i < allergiesList.size(); i++) {
-            if (findByName(allergiesList.get(i).getName()) != null)
-                specificIngredients.remove(findByName(allergiesList.get(i).getName()));
-        }
-
-        return specificIngredients;
-
+//        ArrayList<Ingredient> allergiesList = user.getAllergiesList();
+//        ArrayList<Ingredient> specificIngredients = (ArrayList<Ingredient>) list.clone();
+//
+//        for (int i = 0; i < allergiesList.size(); i++) {
+//            if (findByName(allergiesList.get(i).getName()) != null)
+//                specificIngredients.remove(findByName(allergiesList.get(i).getName()));
+//        }
+//
+//        return specificIngredients;
+        return null;
     }
 
     /**
@@ -136,8 +136,9 @@ public class Fridge extends IngredientList {
         List<Ingredient> recipeIngredients;
         recipeIngredients = meal.getIngredientList();
 
-        for (int i = 0; i < recipeIngredients.size(); i++)
+        for (int i = 0; i < recipeIngredients.size(); i++) {
             eat(recipeIngredients.get(i), recipeIngredients.get(i).getNumber());
+        }
     }
 
 }

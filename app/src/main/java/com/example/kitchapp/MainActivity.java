@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     public static FragmentManager fragmentManager;
     public static RoomDatabaseClass roomDatabaseClass;
+    public static Fridge fridge;
+
+    // Navigation listener
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @SuppressLint("NonConstantResourceId")
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
+
+
     public void addRecipesToDatabase(){
         ArrayList<Ingredient> ingredients;
         Recipe recipe;
@@ -610,6 +615,8 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         fragmentManager.beginTransaction().replace(R.id.Container, new FridgeFragment()).commit();
+
+        fridge = new Fridge(MainActivity.roomDatabaseClass.ingredientDao().getInFridge());
         addRecipesToDatabase();
 //        roomDatabaseClass.clearAllTables();
     }
