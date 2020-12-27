@@ -19,12 +19,17 @@ import com.example.kitchapp.R;
 import java.util.List;
 
 public class FridgeFragment extends Fragment implements View.OnClickListener {
-
+    //Properites
     RecyclerAdapter recyclerAdapter;
     Button btAddData;
     List<Ingredient> list;
     private final Fridge fridge = MainActivity.fridge;
 
+    /**
+     * onCreateView provides the connection between this class and xml
+     * @parameter inflater,container,savedInstanceState
+     *
+     */
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fridge, container, false);
@@ -44,7 +49,11 @@ public class FridgeFragment extends Fragment implements View.OnClickListener {
 
         return view;
     }
-
+    /**
+     * onClick is used to
+     * @parameter v
+     *
+     */
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.addToFridgeButton) {

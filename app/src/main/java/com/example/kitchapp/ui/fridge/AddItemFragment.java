@@ -15,12 +15,18 @@ import com.example.kitchapp.MainActivity;
 import com.example.kitchapp.R;
 
 public class AddItemFragment extends Fragment {
-
+    //Properties
     private EditText inputName, inputNumber;
     private final Fridge fridge = MainActivity.fridge;
 
+    //Constructors
     public AddItemFragment() {
     }
+    /**
+     * onCreateView provides the connection between this class and xml
+     * @parameter inflater,container,savedInstanceState
+     *
+     */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,6 +40,11 @@ public class AddItemFragment extends Fragment {
         Button btSave = view.findViewById(R.id.buttonSave);
 
         btSave.setOnClickListener(new View.OnClickListener() {
+            /**
+             * onClick is used to add item
+             * @parameter v
+             *
+             */
             @Override
             public void onClick(View v) {
                 int number = 0;

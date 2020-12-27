@@ -18,7 +18,7 @@ import com.example.kitchapp.R;
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.FridgeViewHolder> {
-
+    //Properties
     private final List<Ingredient> list;
     private final Fridge fridge = MainActivity.fridge;
 
