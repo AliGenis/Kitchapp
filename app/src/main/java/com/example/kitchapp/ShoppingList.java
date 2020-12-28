@@ -13,6 +13,11 @@ import static com.example.kitchapp.MainActivity.fridge;
  */
 public class ShoppingList extends IngredientList {
 
+    /**
+     * Method to add ingredient to shopping list
+     * @param name name of that ingredient
+     * @param buyValue amount of it
+     */
     public void addToShoppingList(String name, int buyValue) {
         add(name, 0);
         Ingredient ingredient = findByName(name);
@@ -35,6 +40,11 @@ public class ShoppingList extends IngredientList {
         MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
     }
 
+    /**
+     * Method for move ingredients from shopping list to fridge
+     * @param checkedItems checkbox values for ingredients
+     * @param ingredientList list of ingredients
+     */
     public void buy(boolean[] checkedItems, List<Ingredient> ingredientList) {
         for (int i = 0; i < checkedItems.length; i++) {
             if(checkedItems[i]){
@@ -48,10 +58,18 @@ public class ShoppingList extends IngredientList {
         }
     }
 
+    /**
+     * Method for access all ingredients in shopping list
+     * @return all ingredients in shopping list
+     */
     public List<Ingredient> getInShoppingList() {
         return MainActivity.roomDatabaseClass.ingredientDao().getInShoppingList();
     }
 
+    /**
+     * Method for remove desired ingredient from shopping list
+     * @param name name of desired ingredient
+     */
     public void removeFromShoppingList(String name) {
         Ingredient ingredient = findByName(name);
         ingredient.setInShoppingList(false);

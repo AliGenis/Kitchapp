@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public static Fridge fridge;
     public static ShoppingList shoppingList;
 
-    // Navigation listener
+    //Navigation
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @SuppressLint("NonConstantResourceId")
@@ -39,26 +39,18 @@ public class MainActivity extends AppCompatActivity {
                             break;
 
                         case R.id.shoppingListScreenFragment:
-                            // Intent intent1 = new Intent(MainActivity.this, ShoppingListScreenFragment.class);
-                            //   startActivity(intent1);
                             selectedFragment = new ShoppingListFragment();
                             break;
 
                         case R.id.suggestionScreen:
-                            //     Intent intent2 = new Intent(MainActivity.this, SuggestionScreen.class);
-                            //  startActivity(intent2);
                             selectedFragment = SuggestionFragment.newInstance( fridge.suggest() );
                             break;
                         case R.id.recipesFragment:
-                            //      Intent intent3 = new Intent(MainActivity.this, RecipesFragment.class);
-                            //     startActivity(intent3);
                             selectedFragment = new RecipesFragment();
                             break;
 
                         case R.id.settingsFragment:
                             selectedFragment = new SettingsFragment();
-                            //   Intent intent4 = new Intent(MainActivity.this, SettingsFragment.class);
-                            //   startActivity(intent4);
                             break;
                     }
                     assert selectedFragment != null;
@@ -67,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
-
+    /**
+     * Method to adding all recipes to database manually
+     */
     public void addRecipesToDatabase(){
         ArrayList<Ingredient> ingredients;
         Recipe recipe;
@@ -656,7 +650,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         fragmentManager.beginTransaction().replace(R.id.Container, new FridgeFragment()).commit();
-        //addRecipesToDatabase();
+        addRecipesToDatabase();
 //        roomDatabaseClass.clearAllTables();
     }
 }

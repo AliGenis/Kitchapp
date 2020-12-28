@@ -4,6 +4,11 @@ import java.util.List;
 
 public abstract class IngredientList {
 
+    /**
+     * Method for add any amount of that ingredient
+     * @param name name of ingredient
+     * @param number desired amount
+     */
     public void add(String name, int number) {
 
         Ingredient ingredient = new Ingredient();
@@ -23,6 +28,11 @@ public abstract class IngredientList {
         }
     }
 
+    /**
+     * Method for delete any amount of that ingredient
+     * @param name name of ingredient
+     * @param number desired amount
+     */
     public void eat(String name, int number) {
 
         Ingredient ingredient = new Ingredient();

@@ -4,7 +4,7 @@ import android.media.Image;
 
 import java.util.ArrayList;
 
-/**
+/**TODO: this class is not used but it will used if we want to add users to the app
  * @version 10/12/2020
  * @authors Burak, Tarik...
  */

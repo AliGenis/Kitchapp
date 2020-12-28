@@ -97,7 +97,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    //int newValue;// = Integer.parseInt(number.getText().toString().trim());
                     String name = list.get(getAdapterPosition()).getName();
                     int buyValue = 0;
 

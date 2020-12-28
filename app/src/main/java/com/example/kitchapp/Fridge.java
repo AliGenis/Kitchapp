@@ -12,6 +12,10 @@ import java.util.List;
  */
 public class Fridge extends IngredientList {
 
+    /**
+     * Method to add ingredient to fridge
+     * @param name name of that ingredient
+     */
     public void addToFridge(String name, int number) {
         add(name, number);
         Ingredient ingredient = findByName(name);
@@ -19,6 +23,10 @@ public class Fridge extends IngredientList {
         MainActivity.roomDatabaseClass.ingredientDao().updateIngredient(ingredient);
     }
 
+    /**
+     * Method to remove ingredient from fridge
+     * @param name name of that ingredient
+     */
     public void removeFromFridge(String name) {
         Ingredient ingredient = findByName(name);
         ingredient.setInFridge(false);
@@ -34,6 +42,11 @@ public class Fridge extends IngredientList {
         addToFridge(name, 1);
     }
 
+    /**
+     * Check that recipe could be made with ingredients in fridge
+     * @param recipe desired recipe
+     * @return it is available or not
+     */
     public boolean isInFridge(Recipe recipe) {
         List<Ingredient> list = recipe.getIngredientList();
         for (int i = 0; i < list.size(); i++) {
@@ -47,7 +60,7 @@ public class Fridge extends IngredientList {
     /**
      * eats just one from the amount of ingredient
      *
-     * @param name
+     * @param name of that ingredient
      */
     public void eatByOne(String name) {
         eat(name, 1);
@@ -127,6 +140,7 @@ public class Fridge extends IngredientList {
     /**
      * -Burak, Emre
      * When user accepts a recipe, the ingredients will be remove from fridge.
+     * @param meal the recipe user ate
      */
     public void eatMeal(Recipe meal) {
         List<Ingredient> recipeIngredients = meal.getIngredientList();
@@ -136,6 +150,10 @@ public class Fridge extends IngredientList {
         }
     }
 
+    /**
+     * Method to suggest meals with available ingredients
+     * @return list of all available meals
+     */
     public List<Recipe> suggest() {
         List<Recipe> allRecipes = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
         List<Recipe> suggestionList = new ArrayList<>();
@@ -147,6 +165,10 @@ public class Fridge extends IngredientList {
         return suggestionList;
     }
 
+    /**
+     * Method to access all ingredients in fridge
+     * @return list of all ingredients in fridge
+     */
     public List<Ingredient> getInFridge() {
         return MainActivity.roomDatabaseClass.ingredientDao().getInFridge();
     }
