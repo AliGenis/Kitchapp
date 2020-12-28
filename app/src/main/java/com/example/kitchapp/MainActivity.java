@@ -596,7 +596,7 @@ public class MainActivity extends AppCompatActivity {
         roomDatabaseClass.recipeDao().addRecipe(recipe);
 
 
-        ingredients = new ArrayList<Ingredient>();
+        ingredients = new ArrayList<>();
         recipe = new Recipe();
         ingredients.add(new Ingredient( "Butter" , 50)); //change 5 with required number
         ingredients.add(new Ingredient( "Egg" , 1));

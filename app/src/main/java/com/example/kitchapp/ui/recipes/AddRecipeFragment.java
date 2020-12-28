@@ -52,7 +52,7 @@ public class AddRecipeFragment extends Fragment {
                 inputRecipe.setText("");
                 inputCalorie.setText("");
                 inputPrepTime.setText("");
-                getActivity().onBackPressed();
+                requireActivity().onBackPressed();
             }
         });
 

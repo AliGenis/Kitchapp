@@ -166,43 +166,4 @@ public class Fridge extends IngredientList {
 //
 //        return usableRecipes;
 //    }
-<<<<<<< Updated upstream
-
-    /**
-     * -Burak, Emre
-     * When user accepts a recipe, the ingredients will be remove from fridge.
-     * @param meal the recipe user ate
-     */
-    public void eatMeal(Recipe meal) {
-        List<Ingredient> recipeIngredients = meal.getIngredientList();
-
-        for (int i = 0; i < recipeIngredients.size(); i++) {
-            eat(recipeIngredients.get(i).getName(), recipeIngredients.get(i).getNumber());
-        }
-    }
-
-    /**
-     * Method to suggest meals with available ingredients
-     * @return list of all available meals
-     */
-    public List<Recipe> suggest() {
-        List<Recipe> allRecipes = MainActivity.roomDatabaseClass.recipeDao().getRecipe();
-        List<Recipe> suggestionList = new ArrayList<>();
-        for (int i = 0; i < allRecipes.size(); i++) {
-            if (isInFridge(allRecipes.get(i)))
-                suggestionList.add(allRecipes.get(i));
-        }
-        Collections.shuffle(suggestionList);
-        return suggestionList;
-    }
-
-    /**
-     * Method to access all ingredients in fridge
-     * @return list of all ingredients in fridge
-     */
-    public List<Ingredient> getInFridge() {
-        return MainActivity.roomDatabaseClass.ingredientDao().getInFridge();
-    }
-=======
->>>>>>> Stashed changes
 }
